@@ -1,2354 +1,3003 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A dedicated Ukrainian cohort of 50 founders at Stanford GSB's Innovation & Growth programme, August 2026." />
-  <meta property="og:title" content="Endeavor Ukraine Executive Education: Stanford 2026" />
-  <meta property="og:description" content="A dedicated Ukrainian cohort of 50 founders at Stanford GSB's Innovation & Growth programme, August 2026." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stanford2026.endeavor.org" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <title>Endeavor Ukraine Executive Education: Stanford 2026</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A dedicated Ukrainian cohort of 50 founders at Stanford GSB's Innovation & Growth programme, August 2026."
+    />
+    <meta
+      property="og:title"
+      content="Endeavor Ukraine Executive Education: Stanford 2026"
+    />
+    <meta
+      property="og:description"
+      content="A dedicated Ukrainian cohort of 50 founders at Stanford GSB's Innovation & Growth programme, August 2026."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://stanford2026.endeavor.org" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Endeavor Ukraine Executive Education: Stanford 2026</title>
 
-  <style>
-    @font-face {
-      font-family: 'Inter';
-      src: url('fonts/Inter-Light.ttf') format('truetype');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('fonts/Inter-Regular.ttf') format('truetype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('fonts/Inter-Medium.ttf') format('truetype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('fonts/Inter-SemiBold.ttf') format('truetype');
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('fonts/Inter-Bold.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    :root {
-      --black: #0A0A0A;
-      --ink: #141414;
-      --white: #FFFFFF;
-      --paper: #FAFAF7;
-      --surface-1: #F5F5F0;
-      --surface-2: #ECECE6;
-      --surface-3: #E0E0D8;
-      --line: rgba(0,0,0,0.08);
-      --line-strong: rgba(0,0,0,0.14);
-      --text: #0A0A0A;
-      --text-soft: #3A3A38;
-      --text-mute: #7A7A74;
-      --mint: #09E1CD;
-      --mint-deep: #DCFBFA;
-      --yellow: #FFE38A;
-      --yellow-soft: #FFF4C8;
-      --radius-sm: 14px;
-      --radius-md: 22px;
-      --radius-lg: 32px;
-      --maxw: 1240px;
-      --pad: clamp(20px, 4vw, 56px);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .display {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.02;
-    }
-
-    .container {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding-inline: var(--pad);
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ===================== NAV ===================== */
-    .nav {
-      padding: 22px 0;
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      z-index: 50;
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
-    .logo-mark {
-      width: 120px;
-      height: 36px;
-      display: block;
-      object-fit: contain;
-    }
-
-    .nav-tags { display: flex; gap: 8px; align-items: center; }
-    .nav-tag {
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text);
-      border: 1px solid var(--line-strong);
-    }
-    .nav-tag.ua { background: var(--mint); color: var(--ink); border-color: transparent; }
-    .flag-dot {
-      width: 16px; height: 11px;
-      border-radius: 2px;
-      background: linear-gradient(180deg, #0057B7 0% 50%, #FFD700 50% 100%);
-      display: inline-block;
-    }
-    .nav-ua-badge {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: var(--mint);
-      color: var(--ink);
-      display: grid;
-      place-items: center;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      position: relative;
-    }
-    .nav-ua-badge::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; right: -2px;
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--mint-deep);
-      border: 2px solid var(--white);
-    }
-    @media (max-width: 640px) {
-      .nav-tag:not(.ua) { display: none; }
-    }
-
-    /* ===================== HERO ===================== */
-    .hero {
-      padding-top: clamp(40px, 8vw, 100px);
-      padding-bottom: clamp(48px, 7vw, 96px);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -200px;
-      right: -200px;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(79,209,181,0.10) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--white);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 16px;
-      background: var(--ink);
-      border: 1px solid var(--ink);
-      border-radius: 999px;
-    }
-    .eyebrow .dot {
-      width: 7px; height: 7px;
-      background: var(--mint-deep);
-      border-radius: 50%;
-    }
-
-    .eyebrow-plain {
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-      margin-bottom: 22px;
-      display: block;
-    }
-
-    .hero h1 {
-      font-size: clamp(48px, 9vw, 132px);
-      margin-top: 28px;
-      max-width: 1100px;
-      color: var(--ink);
-    }
-
-    .hl-mint {
-      background: var(--mint);
-      color: var(--ink);
-      padding: 0 14px 6px;
-      border-radius: 14px;
-      display: inline-block;
-      line-height: 1;
-      padding-top: 6px;
-    }
-    .hl-outline {
-      background: var(--surface-2);
-      color: var(--ink);
-      padding: 0 14px 6px;
-      border-radius: 14px;
-      display: inline-block;
-      line-height: 1;
-      padding-top: 6px;
-    }
-
-    .hero-sub {
-      margin-top: 26px;
-      max-width: 640px;
-      font-size: clamp(16px, 1.6vw, 19px);
-      color: var(--text-soft);
-    }
-
-    /* Key facts strip */
-    .facts {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: clamp(40px, 5vw, 60px);
-    }
-    @media (max-width: 900px) {
-      .facts { grid-template-columns: repeat(2, 1fr); }
-    }
-    .fact {
-      padding: 26px 22px 22px;
-      border-radius: var(--radius-md);
-      position: relative;
-      min-height: 168px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-    }
-    .fact.mint {
-      background: var(--mint);
-      color: var(--ink);
-      border-color: transparent;
-    }
-    .fact.yellow {
-      background: #DCFBFA;
-      color: var(--ink);
-      border-color: transparent;
-    }
-    .fact-num {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: clamp(40px, 4vw, 56px);
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-    .fact-num small {
-      font-size: 0.35em;
-      font-weight: 600;
-      margin-left: 4px;
-      letter-spacing: 0;
-    }
-    .fact-idx {
-      position: absolute;
-      top: 18px; right: 22px;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-mute);
-      letter-spacing: 0.1em;
-    }
-    .fact.mint .fact-idx { color: rgba(0,0,0,0.45); }
-    .fact-rule {
-      height: 2px;
-      background: rgba(0,0,0,0.18);
-      margin: 14px 0 14px;
-      max-width: 60%;
-    }
-    .fact.mint .fact-rule { background: rgba(0,0,0,0.4); }
-    .fact.yellow .fact-rule { background: rgba(0,0,0,0.4); }
-    .fact-body {
-      font-size: 13.5px;
-      color: var(--text-soft);
-      line-height: 1.45;
-    }
-    .fact.mint .fact-body { color: rgba(0,0,0,0.75); }
-    .fact.yellow .fact-body { color: rgba(0,0,0,0.75); }
-
-    /* ===================== SECTION DIVIDERS via spacing only ===================== */
-    .section {
-      padding: clamp(56px, 7vw, 100px) 0;
-    }
-    .section + .section { border-top: 1px solid var(--line); }
-
-    .section-num {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--text-mute);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-    }
-    .section-num::before {
-      content: '';
-      width: 22px; height: 22px;
-      border-radius: 50%;
-      background: var(--mint);
-    }
-
-    .section-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: clamp(28px, 3vw, 44px);
-    }
-    .section-head h2 {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(34px, 5vw, 56px);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.05;
-      color: var(--text);
-    }
-    .section-meta {
-      font-size: 12.5px;
-      color: var(--text-mute);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* ===================== WHY ===================== */
-    .why-lead {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: clamp(24px, 3vw, 40px);
-      line-height: 1.18;
-      letter-spacing: -0.02em;
-      max-width: 920px;
-      color: var(--text);
-    }
-    .why-lead em {
-      font-style: normal;
-      font-weight: 700;
-      color: var(--mint);
-    }
-
-    .why-tiles {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: clamp(36px, 4vw, 56px);
-    }
-    @media (max-width: 880px) {
-      .why-tiles { grid-template-columns: 1fr; }
-    }
-    .why-tile {
-      padding: 30px 26px;
-      border-radius: var(--radius-md);
-      position: relative;
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-    }
-    .why-tile.mint {
-      background: var(--mint);
-      color: var(--ink);
-      border-color: transparent;
-    }
-    .why-tile.yellow {
-      background: var(--yellow);
-      color: var(--ink);
-      border-color: transparent;
-    }
-    .why-tile-num {
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      background: var(--mint);
-      color: var(--ink);
-      display: grid;
-      place-items: center;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-    }
-    .why-tile.mint .why-tile-num {
-      background: var(--ink);
-      color: var(--mint);
-    }
-    .why-tile h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-top: auto;
-    }
-    .why-tile p {
-      font-size: 14.5px;
-      color: var(--text-soft);
-      line-height: 1.5;
-    }
-    .why-tile.mint p { color: rgba(0,0,0,0.72); }
-    .why-tile.yellow p { color: rgba(0,0,0,0.72); }
-
-    /* ===================== PROGRAMME ===================== */
-    .components {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-    .component {
-      padding: 28px 30px;
-      border-radius: var(--radius-md);
-      display: grid;
-      grid-template-columns: 60px 1fr auto;
-      gap: 24px;
-      align-items: center;
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-    }
-    @media (max-width: 720px) {
-      .component {
-        grid-template-columns: 50px 1fr;
-        padding: 22px;
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-Light.ttf") format("truetype");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
       }
-      .component .duration { grid-column: 1 / -1; justify-self: start; }
-    }
-    .comp-num {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      background: transparent;
-      color: var(--text);
-      border: 2px solid var(--line-strong);
-    }
-    .component.mint .comp-num {
-      background: var(--ink);
-      color: var(--mint);
-      border-color: var(--ink);
-    }
-    .component.accent .comp-num {
-      background: var(--mint);
-      border-color: var(--mint);
-      color: var(--ink);
-    }
-    .comp-meta {
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-      margin-bottom: 6px;
-    }
-    .comp-title {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(20px, 2.2vw, 26px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-    .comp-desc {
-      font-size: 14.5px;
-      color: var(--text-soft);
-      max-width: 640px;
-    }
-    .duration {
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: var(--surface-3);
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .component.mint {
-      background: var(--mint);
-      color: var(--ink);
-      border-color: transparent;
-    }
-    .component.mint .comp-title,
-    .component.mint .comp-meta { color: var(--ink); }
-    .component.mint .comp-meta { opacity: 0.65; }
-    .component.mint .comp-desc { color: rgba(0,0,0,0.75); }
-    .component.mint .duration { background: rgba(0,0,0,0.1); color: var(--ink); }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
 
-    /* Inside Stanford Week */
-    .inside-week {
-      margin-top: 36px;
-      padding: 32px 30px;
-      border-radius: var(--radius-md);
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-    }
-    .inside-week-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-    .inside-week-head h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-    .inside-week-head .meta {
-      font-size: 11.5px;
-      color: var(--text-mute);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .tracks {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
-    }
-    .track {
-      padding: 18px 20px;
-      border-radius: var(--radius-sm);
-      background: var(--surface-2);
-      border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .track:hover {
-      border-color: var(--mint);
-      transform: translateY(-2px);
-    }
-    .track-idx {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--mint-deep);
-    }
-    .track-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 15.5px;
-      letter-spacing: -0.01em;
-      color: var(--text);
-    }
-    .track-faculty {
-      font-size: 13px;
-      color: var(--text-mute);
-    }
+      :root {
+        --black: #0a0a0a;
+        --ink: #141414;
+        --white: #ffffff;
+        --paper: #fafaf7;
+        --surface-1: #f5f5f0;
+        --surface-2: #ecece6;
+        --surface-3: #e0e0d8;
+        --line: rgba(0, 0, 0, 0.08);
+        --line-strong: rgba(0, 0, 0, 0.14);
+        --text: #0a0a0a;
+        --text-soft: #3a3a38;
+        --text-mute: #7a7a74;
+        --mint: #09e1cd;
+        --mint-deep: #dcfbfa;
+        --yellow: #ffe38a;
+        --yellow-soft: #fff4c8;
+        --radius-sm: 14px;
+        --radius-md: 22px;
+        --radius-lg: 32px;
+        --maxw: 1240px;
+        --pad: clamp(20px, 4vw, 56px);
+      }
 
-    /* ===================== FACULTY ===================== */
-    .faculty-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-    }
-    .faculty-card {
-      padding: 22px 22px 20px;
-      border-radius: var(--radius-sm);
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-      transition: border-color 0.2s, transform 0.2s, background 0.2s;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .faculty-card:hover {
-      border-color: var(--mint-deep);
-      background: var(--white);
-      transform: translateY(-2px);
-    }
-    .faculty-photo {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--surface-3);
-      margin-bottom: 8px;
-      display: grid;
-      place-items: center;
-      color: var(--text-mute);
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 22px;
-      letter-spacing: -0.02em;
-      flex-shrink: 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .faculty-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .faculty-name {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: -0.01em;
-      color: var(--text);
-    }
-    .faculty-role {
-      font-size: 13.5px;
-      color: var(--text-mute);
-      line-height: 1.45;
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    /* ===================== OUTCOMES ===================== */
-    .outcomes {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    @media (max-width: 900px) { .outcomes { grid-template-columns: 1fr; } }
-    .outcome {
-      padding: 30px 26px;
-      border-radius: var(--radius-md);
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      min-height: 200px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .outcome:hover {
-      border-color: var(--mint);
-      transform: translateY(-2px);
-    }
-    .outcome-num {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--mint-deep);
-    }
-    .outcome h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 19px;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      line-height: 1.2;
-      color: var(--text);
-    }
-    .outcome p {
-      font-size: 14.5px;
-      color: var(--text-soft);
-      line-height: 1.5;
-      margin-top: auto;
-    }
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--white);
+        color: var(--text);
+        line-height: 1.5;
+        font-size: 17px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-    /* ===================== CRITERIA ===================== */
-    .criteria {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 720px) { .criteria { grid-template-columns: 1fr; } }
-    .criterion {
-      padding: 28px 26px;
-      border-radius: var(--radius-md);
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transition: border-color 0.2s, transform 0.2s, background 0.2s;
-      position: relative;
-    }
-    .criterion:hover {
-      border-color: var(--mint);
-      background: var(--surface-2);
-      transform: translateY(-2px);
-    }
-    .criterion-mark {
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      background: var(--mint);
-      display: grid;
-      place-items: center;
-      margin-bottom: 4px;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
-      background-size: 16px;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .criterion h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      line-height: 1.2;
-      color: var(--text);
-    }
-    .criterion p {
-      font-size: 14.5px;
-      color: var(--text-soft);
-      line-height: 1.5;
-    }
+      .display {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
 
-    /* ===================== PROGRAMME VISUAL PLACEHOLDER ===================== */
-    .visual-section {
-      padding: 0 0 clamp(24px, 4vw, 56px) 0;
-    }
-    .visual-section.narrow { padding: clamp(24px, 4vw, 48px) 0; }
-    .visual-frame {
-      width: 100%;
-      aspect-ratio: 21 / 9;
-      border-radius: var(--radius-md);
-      background:
-        linear-gradient(135deg, var(--mint) 0%, var(--yellow) 100%);
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      place-items: center;
-    }
-    .visual-frame > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .visual-frame.has-image::before { display: none; }
-    .visual-frame.has-image .visual-overlay { display: none; }
-    .visual-frame.mini { aspect-ratio: 21 / 7; }
-    .visual-frame::before {
-      content: '';
-      position: absolute;
-      inset: 14px;
-      border: 2px dashed rgba(0,0,0,0.18);
-      border-radius: calc(var(--radius-md) - 8px);
-      pointer-events: none;
-    }
-    .visual-overlay {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      padding: 20px 28px;
-      text-align: center;
-      max-width: 540px;
-    }
-    .visual-tag {
-      display: inline-block;
-      padding: 8px 16px;
-      background: var(--ink);
-      color: var(--white);
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    .visual-hint {
-      font-size: 14px;
-      color: rgba(0,0,0,0.65);
-      max-width: 420px;
-      line-height: 1.4;
-    }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding-inline: var(--pad);
+      }
 
-    /* ===================== INCLUDED / NOT INCLUDED ===================== */
-    .included-block {
-      margin-top: 36px;
-      padding: 32px 30px;
-      border-radius: var(--radius-md);
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-    }
-    .included-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-    .included-head h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-    .included-head .meta {
-      font-size: 11.5px;
-      color: var(--text-mute);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .included-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    @media (max-width: 720px) { .included-grid { grid-template-columns: 1fr; } }
-    .included-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .included-col li {
-      display: flex;
-      gap: 10px;
-      font-size: 14.5px;
-      color: var(--text-soft);
-      line-height: 1.45;
-    }
-    .included-col li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      margin-top: 2px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 12px;
-    }
-    .included-yes + ul li::before {
-      background-color: var(--mint);
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
-    }
-    .included-no + ul li::before {
-      background-color: var(--surface-3);
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8F0E1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='6' y1='12' x2='18' y2='12'/></svg>");
-    }
-    .included-label {
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .included-yes { color: var(--mint-deep); }
-    .included-no { color: var(--text-mute); }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-    /* Currency suffix on price */
-    .pkg-currency {
-      font-size: 0.5em;
-      font-weight: 600;
-      color: var(--text-mute);
-      margin-left: 2px;
-      vertical-align: 0.18em;
-      letter-spacing: 0.05em;
-    }
-    .pkg.flagship .pkg-currency { color: rgba(0,0,0,0.55); }
-
-    /* ===================== FAQ ===================== */
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .faq-item {
-      padding: 22px 26px;
-      border-radius: var(--radius-md);
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-      transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-    }
-    .faq-item:hover {
-      border-color: rgba(9, 225, 205, 0.55);
-      background: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
-    }
-    .faq-item[open] {
-      border-color: var(--mint);
-      background: var(--surface-2);
-    }
-    .faq-item summary {
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: '+';
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 26px;
-      line-height: 1;
-      color: var(--mint);
-      transition: transform 0.2s;
-      flex-shrink: 0;
-    }
-    .faq-item[open] summary::after {
-      content: '–';
-    }
-    .faq-a {
-      padding-top: 14px;
-      font-size: 15px;
-      color: var(--text-soft);
-      line-height: 1.55;
-    }
-
-    /* ===================== TIMELINE BLOCK ===================== */
-    .timeline-block {
-      margin-bottom: 44px;
-      padding: 26px 28px;
-      border-radius: var(--radius-md);
-      background:
-        linear-gradient(180deg, #ffffff 0%, #f8fcfb 100%);
-      border: 1px solid rgba(9,225,205,0.22);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.04);
-    }
-    .timeline-head {
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 16px;
-    }
-    .timeline {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0;
-      counter-reset: step;
-      position: relative;
-    }
-    @media (max-width: 900px) {
-      .timeline { grid-template-columns: 1fr; gap: 14px; }
-    }
-    .timeline li {
-      position: relative;
-      padding: 14px 18px 14px 12px;
-      border-right: 1px solid rgba(0,0,0,0.06);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .timeline li:last-child { border-right: none; }
-    @media (max-width: 900px) {
-      .timeline li {
-        border-right: none;
+      /* ===================== NAV ===================== */
+      .nav {
+        padding: 22px 0;
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        z-index: 50;
         border-bottom: 1px solid var(--line);
-        padding: 14px 0;
       }
-      .timeline li:last-child { border-bottom: none; }
-    }
-    .timeline li::before {
-      counter-increment: step;
-      content: counter(step, decimal-leading-zero);
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: #00a794;
-      margin-bottom: 2px;
-    }
-    .t-when {
-      font-family: 'Inter', sans-serif;
-      font-size: 13.5px;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      color: var(--text);
-    }
-    .t-what {
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.4;
-    }
-
-    /* ===================== CONSENT CHECKBOX ===================== */
-    .consent {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.45;
-      cursor: pointer;
-    }
-    .consent input {
-      margin-top: 2px;
-      width: 16px; height: 16px;
-      flex-shrink: 0;
-      accent-color: var(--mint);
-      cursor: pointer;
-    }
-    .consent a {
-      color: var(--mint);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    /* ===================== VISA NOTE ===================== */
-    .eoi-side-block.visa-note {
-      background: var(--mint);
-      color: var(--ink);
-      border-color: transparent;
-    }
-    .eoi-side-block.visa-note .label { color: rgba(0,0,0,0.6); }
-    .eoi-side-block.visa-note .value {
-      color: var(--ink);
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1.45;
-      letter-spacing: 0;
-    }
-
-    /* ===================== FOOTER LEGAL ===================== */
-    .footer-legal {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .footer-legal a {
-      color: var(--text-mute);
-      font-size: 13px;
-      transition: color 0.2s;
-    }
-    .footer-legal a:hover { color: var(--mint); }
-
-    /* ===================== PACKAGES ===================== */
-    .pkgs {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    @media (max-width: 900px) {
-      .pkgs { grid-template-columns: 1fr; }
-    }
-    .pkg {
-      padding: 32px 28px;
-      border-radius: var(--radius-md);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      min-height: 380px;
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-    }
-    .pkg.flagship {
-      background: var(--mint);
-      color: var(--ink);
-      border-color: transparent;
-    }
-
-    .pkg-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .pkg-name {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 22px;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      color: var(--text);
-    }
-    .pkg.flagship .pkg-name { color: var(--ink); }
-    .pkg-flagship-tag {
-      background: var(--ink);
-      color: var(--mint);
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      padding: 5px 10px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      display: inline-block;
-      margin-top: 8px;
-    }
-    .pkg-price {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 30px;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-      color: var(--text);
-    }
-    .pkg.flagship .pkg-price { color: var(--ink); }
-    .pkg-tag {
-      font-size: 14.5px;
-      color: var(--text-soft);
-      margin-bottom: 22px;
-    }
-    .pkg.flagship .pkg-tag { color: rgba(0,0,0,0.7); }
-    .pkg ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-    .pkg li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 14.5px;
-      color: var(--text);
-    }
-    .pkg.flagship li { color: var(--ink); }
-    .pkg li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background-color: var(--mint);
-      margin-top: 2px;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
-      background-size: 12px;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .pkg.flagship li::before {
-      background-color: var(--ink);
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8F0E1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
-    }
-    .pkg-foot {
-      margin-top: auto;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-    }
-    .pkg.flagship .pkg-foot {
-      border-top-color: rgba(0,0,0,0.15);
-      color: rgba(0,0,0,0.55);
-    }
-
-    /* Teaser variant — for packages without firm pricing yet */
-    .pkg.teaser {
-      background: var(--yellow-soft);
-      border-color: transparent;
-      min-height: 320px;
-    }
-    .pkg-teaser-tag {
-      display: inline-block;
-      margin-top: 8px;
-      background: var(--ink);
-      color: var(--white);
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      padding: 5px 10px;
-      border-radius: 999px;
-      text-transform: uppercase;
-    }
-    .pkg-teaser-meta {
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: var(--text-mute);
-      text-transform: uppercase;
-      margin-top: auto;
-      padding-bottom: 18px;
-    }
-    .pkg-teaser-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 20px;
-      background: var(--ink);
-      color: var(--white);
-      border-radius: var(--radius-sm);
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: -0.01em;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .pkg-teaser-cta:hover {
-      background: var(--mint-deep);
-      color: var(--ink);
-      transform: translateY(-1px);
-    }
-    .pkg-teaser-cta .arrow {
-      width: 26px; height: 26px;
-      border-radius: 50%;
-      background: var(--mint);
-      color: var(--ink);
-      display: grid;
-      place-items: center;
-      font-size: 14px;
-    }
-    .pkg.teaser .pkg-name { color: var(--ink); }
-    .pkg.teaser .pkg-tag { color: var(--text-soft); }
-
-    /* ===================== VOICES ===================== */
-    .quotes {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    @media (max-width: 900px) {
-      .quotes { grid-template-columns: 1fr; }
-    }
-    .quote {
-      padding: 32px 28px;
-      border-radius: var(--radius-md);
-      display: grid;
-      grid-template-columns: auto 1fr;
-      grid-template-rows: auto 1fr auto;
-      column-gap: 16px;
-      row-gap: 14px;
-      align-items: center;
-      min-height: 320px;
-      background: var(--surface-1);
-      border: 1px solid var(--line);
-      position: relative;
-    }
-    .quote.mint {
-      background: var(--mint);
-      color: var(--ink);
-      border-color: transparent;
-    }
-    .quote.yellow {
-      background: var(--yellow);
-      color: var(--ink);
-      border-color: transparent;
-    }
-    .q-avatar {
-      grid-column: 1; grid-row: 1;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: var(--surface-2);
-    }
-    .q-avatar img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .quote-mark {
-      grid-column: 2; grid-row: 1;
-      justify-self: end;
-      align-self: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 56px;
-      line-height: 0.5;
-      color: var(--mint-deep);
-      font-weight: 700;
-    }
-    .quote.mint .quote-mark { color: var(--ink); opacity: 0.45; }
-    .quote.yellow .quote-mark { color: var(--ink); opacity: 0.45; }
-
-    .q-text {
-      grid-column: 1 / -1; grid-row: 2;
-      font-size: 15.5px;
-      line-height: 1.5;
-      color: var(--ink);
-      align-self: start;
-    }
-    .quote.mint .q-text { color: var(--ink); }
-    .quote.yellow .q-text { color: var(--ink); }
-    .q-attrib {
-      grid-column: 1 / -1; grid-row: 3;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      align-self: end;
-    }
-    .quote.mint .q-attrib { border-top-color: rgba(0,0,0,0.18); }
-    .quote.yellow .q-attrib { border-top-color: rgba(0,0,0,0.18); }
-    .q-name {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-      color: var(--ink);
-    }
-    .quote.mint .q-name { color: var(--ink); }
-    .q-role {
-      font-size: 13px;
-      color: var(--text-mute);
-      margin-top: 4px;
-      line-height: 1.45;
-    }
-    .quote.mint .q-role { color: rgba(0,0,0,0.6); }
-    .q-tag {
-      display: inline-flex;
-      margin-top: 10px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--mint);
-      color: var(--ink);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-    .quote.mint .q-tag {
-      background: var(--ink);
-      color: var(--mint);
-    }
-    .q-text {
-      font-size: 15.5px;
-      line-height: 1.5;
-      color: var(--text);
-    }
-    .quote.mint .q-text { color: var(--ink); }
-
-    /* ===================== EXPRESS INTEREST ===================== */
-    .eoi {
-      padding: clamp(72px, 9vw, 130px) 0;
-      background: var(--yellow-soft);
-      color: var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
-    .eoi::before { display: none; }
-    .eoi-inner { position: relative; z-index: 1; }
-    .eoi-eyebrow {
-      background: var(--ink);
-      color: var(--yellow);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      display: inline-block;
-      margin-bottom: 22px;
-    }
-    .eoi h2 {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(40px, 7vw, 92px);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      margin-bottom: 24px;
-      color: var(--ink);
-    }
-    .eoi h2 .accent {
-      background: var(--yellow-soft);
-      color: var(--ink);
-      padding: 0 14px 6px;
-      border-radius: 14px;
-      display: inline-block;
-      padding-top: 6px;
-    }
-    .eoi-sub {
-      max-width: 560px;
-      font-size: 17px;
-      color: rgba(0,0,0,0.78);
-      margin-bottom: 44px;
-    }
-    .eoi-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: start;
-    }
-    @media (max-width: 880px) {
-      .eoi-grid { grid-template-columns: 1fr; gap: 36px; }
-    }
-    .eoi-form {
-      background: var(--white);
-      border: 1px solid rgba(0,0,0,0.08);
-      color: var(--ink);
-      padding: 32px;
-      border-radius: var(--radius-md);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .field { display: flex; flex-direction: column; gap: 6px; }
-    .field label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-    }
-    .field input {
-      font-family: inherit;
-      font-size: 16px;
-      padding: 14px 16px;
-      border: 1.5px solid rgba(0,0,0,0.14);
-      border-radius: var(--radius-sm);
-      background: var(--paper);
-      color: var(--ink);
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .field input::placeholder { color: var(--text-mute); }
-    .field input:focus {
-      outline: none;
-      border-color: var(--ink);
-      background: var(--white);
-    }
-    .field-honeypot { position: absolute; left: -9999px; opacity: 0; }
-
-    button.cta {
-      margin-top: 8px;
-      padding: 16px 22px;
-      background: var(--ink);
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius-sm);
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      letter-spacing: -0.01em;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    button.cta:hover {
-      background: var(--mint-deep);
-      color: var(--ink);
-      transform: translateY(-1px);
-    }
-    button.cta .arrow {
-      width: 28px; height: 28px;
-      background: var(--mint);
-      color: var(--ink);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 14px;
-    }
-    .eoi-disclaimer {
-      font-size: 12.5px;
-      color: var(--text-mute);
-      line-height: 1.5;
-      margin-top: 4px;
-    }
-    .eoi-side { padding-top: 12px; }
-    .eoi-side-block {
-      padding: 22px 24px;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(0,0,0,0.08);
-      margin-bottom: 14px;
-      background: var(--white);
-    }
-    .eoi-side-block .label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-      margin-bottom: 8px;
-    }
-    .eoi-side-block .value {
-      font-family: 'Inter', sans-serif;
-      font-size: 17px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-    }
-    .eoi-side-block .value a:hover { color: var(--mint-deep); }
-
-    /* Confirmation state */
-    .eoi-confirm { display: none; }
-    .eoi-form.submitted .eoi-form-fields { display: none; }
-    .eoi-form.submitted .eoi-confirm { display: block; text-align: center; padding: 20px 0; }
-    .eoi-confirm h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-      color: var(--ink);
-    }
-    .eoi-confirm p { color: var(--text-soft); font-size: 15px; line-height: 1.5; }
-    .eoi-status {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-top: 6px;
-      min-height: 20px;
-    }
-    .eoi-status.error { color: #c62828; }
-    .eoi-status.success { color: #0e7a6f; }
-    .check-circle {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--mint);
-      color: var(--ink);
-      display: grid; place-items: center;
-      margin: 0 auto 18px;
-      font-size: 28px;
-    }
-
-    /* ===================== FOOTER ===================== */
-    .footer {
-      background: var(--black);
-      color: var(--text);
-      padding: 60px 0 36px;
-      border-top: 1px solid var(--line);
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 48px;
-    }
-    @media (max-width: 720px) {
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-    }
-    .footer-strap {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.05;
-      max-width: 480px;
-      color: var(--white);
-    }
-    .footer-strap .accent {
-      background: var(--mint);
-      color: var(--ink);
-      padding: 0 8px;
-      border-radius: 6px;
-    }
-    .footer-col h4 {
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-      margin-bottom: 14px;
-    }
-    .footer-col a {
-      display: block;
-      padding: 6px 0;
-      color: var(--text-soft);
-      font-size: 15px;
-      transition: color 0.2s;
-    }
-    .footer-col a:hover { color: var(--mint); }
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      padding-top: 32px;
-      border-top: 1px solid var(--line);
-      font-size: 13px;
-      color: var(--text-mute);
-    }
-    .footer-hashtag {
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--mint);
-      letter-spacing: -0.01em;
-    }
-    .footer-logos {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .footer-logo-mark {
-      width: 120px;
-      height: 28px;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* ===================== ANIMATIONS ===================== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.35s; }
-    .delay-4 { animation-delay: 0.5s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
       }
-    }
-  </style>
-</head>
-<body>
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+      .logo-mark {
+        width: 120px;
+        height: 36px;
+        display: block;
+        object-fit: contain;
+      }
 
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="/" class="logo">
-        <img class="logo-mark" src="images/endeavor-logo.png" alt="Endeavor logo" />
-      </a>
-      <div class="nav-tags">
-        <span class="nav-tag ua"><span class="flag-dot"></span> Ukraine '26</span>
-        <span class="nav-tag">Stanford GSB</span>
-        <!-- <span class="nav-ua-badge">UA</span> -->
+      .nav-tags {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .nav-tag {
+        padding: 7px 14px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--text);
+        border: 1px solid var(--line-strong);
+      }
+      .nav-tag.ua {
+        background: var(--mint);
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .nav-link {
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--text);
+        border: 1px solid var(--line-strong);
+        background: transparent;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+        white-space: nowrap;
+      }
+      .nav-link:hover {
+        border-color: var(--mint);
+        background: var(--surface-1);
+      }
+      .nav-link-cta {
+        background: var(--ink);
+        color: var(--white);
+        border-color: transparent;
+      }
+      .nav-link-cta:hover {
+        background: var(--mint-deep);
+        color: var(--ink);
+      }
+      #the-program,
+      #register {
+        scroll-margin-top: 88px;
+      }
+      #apply-form {
+        scroll-margin-top: clamp(200px, 32vh, 360px);
+      }
+      @media (max-width: 720px) {
+        .nav-inner {
+          flex-wrap: wrap;
+        }
+        .nav-menu {
+          width: 100%;
+          justify-content: flex-start;
+        }
+        .logo-mark {
+          width: 104px;
+          height: 32px;
+        }
+      }
+      .flag-dot {
+        width: 16px;
+        height: 11px;
+        border-radius: 2px;
+        background: linear-gradient(180deg, #0057b7 0% 50%, #ffd700 50% 100%);
+        display: inline-block;
+      }
+      .nav-ua-badge {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--mint);
+        color: var(--ink);
+        display: grid;
+        place-items: center;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        position: relative;
+      }
+      .nav-ua-badge::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--mint-deep);
+        border: 2px solid var(--white);
+      }
+      @media (max-width: 640px) {
+        .nav-tag:not(.ua) {
+          display: none;
+        }
+      }
+
+      /* ===================== HERO ===================== */
+      .hero {
+        padding-top: clamp(40px, 8vw, 100px);
+        padding-bottom: clamp(48px, 7vw, 96px);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(
+          circle,
+          rgba(79, 209, 181, 0.1) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--white);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 16px;
+        background: var(--ink);
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+      }
+      .eyebrow .dot {
+        width: 7px;
+        height: 7px;
+        background: var(--mint-deep);
+        border-radius: 50%;
+      }
+
+      .eyebrow-plain {
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--text-mute);
+        margin-bottom: 22px;
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 9vw, 132px);
+        margin-top: 28px;
+        max-width: 1100px;
+        color: var(--ink);
+      }
+
+      .hl-mint {
+        background: var(--mint);
+        color: var(--ink);
+        padding: 0 14px 6px;
+        border-radius: 14px;
+        display: inline-block;
+        line-height: 1;
+        padding-top: 6px;
+      }
+      .hl-outline {
+        background: var(--surface-2);
+        color: var(--ink);
+        padding: 0 14px 6px;
+        border-radius: 14px;
+        display: inline-block;
+        line-height: 1;
+        padding-top: 6px;
+      }
+
+      .hero-sub {
+        margin-top: 26px;
+        max-width: 640px;
+        font-size: clamp(16px, 1.6vw, 19px);
+        color: var(--text-soft);
+      }
+
+      /* Key facts strip */
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: clamp(40px, 5vw, 60px);
+      }
+      @media (max-width: 900px) {
+        .facts {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .fact {
+        padding: 26px 22px 22px;
+        border-radius: var(--radius-md);
+        position: relative;
+        min-height: 168px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+      }
+      .fact.mint {
+        background: var(--mint);
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .fact.yellow {
+        background: #dcfbfa;
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .fact-num {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: clamp(40px, 4vw, 56px);
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .fact-num small {
+        font-size: 0.35em;
+        font-weight: 600;
+        margin-left: 4px;
+        letter-spacing: 0;
+      }
+      .fact-idx {
+        position: absolute;
+        top: 18px;
+        right: 22px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--text-mute);
+        letter-spacing: 0.1em;
+      }
+      .fact.mint .fact-idx {
+        color: rgba(0, 0, 0, 0.45);
+      }
+      .fact-rule {
+        height: 2px;
+        background: rgba(0, 0, 0, 0.18);
+        margin: 14px 0 14px;
+        max-width: 60%;
+      }
+      .fact.mint .fact-rule {
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .fact.yellow .fact-rule {
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .fact-body {
+        font-size: 13.5px;
+        color: var(--text-soft);
+        line-height: 1.45;
+      }
+      .fact.mint .fact-body {
+        color: rgba(0, 0, 0, 0.75);
+      }
+      .fact.yellow .fact-body {
+        color: rgba(0, 0, 0, 0.75);
+      }
+
+      /* ===================== SECTION DIVIDERS via spacing only ===================== */
+      .section {
+        padding: clamp(56px, 7vw, 100px) 0;
+      }
+      .section + .section {
+        border-top: 1px solid var(--line);
+      }
+
+      .section-num {
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--text-mute);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+      }
+      .section-num::before {
+        content: "";
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--mint);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: clamp(28px, 3vw, 44px);
+      }
+      .section-head h2 {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(34px, 5vw, 56px);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+        color: var(--text);
+      }
+      .section-meta {
+        font-size: 12.5px;
+        color: var(--text-mute);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      /* ===================== WHY ===================== */
+      .why-lead {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: clamp(24px, 3vw, 40px);
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        max-width: 920px;
+        color: var(--text);
+      }
+      .why-lead em {
+        font-style: normal;
+        font-weight: 700;
+        color: var(--mint);
+      }
+
+      .why-tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: clamp(36px, 4vw, 56px);
+      }
+      @media (max-width: 880px) {
+        .why-tiles {
+          grid-template-columns: 1fr;
+        }
+      }
+      .why-tile {
+        padding: 30px 26px;
+        border-radius: var(--radius-md);
+        position: relative;
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+      }
+      .why-tile.mint {
+        background: var(--mint);
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .why-tile.yellow {
+        background: var(--yellow);
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .why-tile-num {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--mint);
+        color: var(--ink);
+        display: grid;
+        place-items: center;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+      }
+      .why-tile.mint .why-tile-num {
+        background: var(--ink);
+        color: var(--mint);
+      }
+      .why-tile h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        margin-top: auto;
+      }
+      .why-tile p {
+        font-size: 14.5px;
+        color: var(--text-soft);
+        line-height: 1.5;
+      }
+      .why-tile.mint p {
+        color: rgba(0, 0, 0, 0.72);
+      }
+      .why-tile.yellow p {
+        color: rgba(0, 0, 0, 0.72);
+      }
+
+      /* ===================== PROGRAMME ===================== */
+      .components {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .component {
+        padding: 28px 30px;
+        border-radius: var(--radius-md);
+        display: grid;
+        grid-template-columns: 60px 1fr auto;
+        gap: 24px;
+        align-items: center;
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+      }
+      @media (max-width: 720px) {
+        .component {
+          grid-template-columns: 50px 1fr;
+          padding: 22px;
+        }
+        .component .duration {
+          grid-column: 1 / -1;
+          justify-self: start;
+        }
+      }
+      .comp-num {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        background: transparent;
+        color: var(--text);
+        border: 2px solid var(--line-strong);
+      }
+      .component.mint .comp-num {
+        background: var(--ink);
+        color: var(--mint);
+        border-color: var(--ink);
+      }
+      .component.accent .comp-num {
+        background: var(--mint);
+        border-color: var(--mint);
+        color: var(--ink);
+      }
+      .comp-meta {
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-mute);
+        margin-bottom: 6px;
+      }
+      .comp-title {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(20px, 2.2vw, 26px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 6px;
+        color: var(--text);
+      }
+      .comp-desc {
+        font-size: 14.5px;
+        color: var(--text-soft);
+        max-width: 640px;
+      }
+      .duration {
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: var(--surface-3);
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .component.mint {
+        background: var(--mint);
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .component.mint .comp-title,
+      .component.mint .comp-meta {
+        color: var(--ink);
+      }
+      .component.mint .comp-meta {
+        opacity: 0.65;
+      }
+      .component.mint .comp-desc {
+        color: rgba(0, 0, 0, 0.75);
+      }
+      .component.mint .duration {
+        background: rgba(0, 0, 0, 0.1);
+        color: var(--ink);
+      }
+      .component.component-scroll-target {
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .component.component-scroll-target:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Inside Stanford Week */
+      .inside-week {
+        margin-top: 36px;
+        padding: 32px 30px;
+        border-radius: var(--radius-md);
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+      }
+      .inside-week-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+      .inside-week-head h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--text);
+      }
+      .inside-week-head .meta {
+        font-size: 11.5px;
+        color: var(--text-mute);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .tracks {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 12px;
+      }
+      .track {
+        padding: 18px 20px;
+        border-radius: var(--radius-sm);
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+      }
+      .track:hover {
+        border-color: var(--mint);
+        transform: translateY(-2px);
+      }
+      .track-idx {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--mint);
+      }
+      .track-title {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 15.5px;
+        letter-spacing: -0.01em;
+        color: var(--text);
+      }
+      .track-faculty {
+        font-size: 13px;
+        color: var(--text-mute);
+      }
+
+      /* ===================== FACULTY ===================== */
+      .faculty-panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--surface-1);
+        overflow: hidden;
+      }
+      .faculty-panel summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 26px 28px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        transition: background 0.2s;
+      }
+      .faculty-panel summary:hover {
+        background: var(--white);
+      }
+      .faculty-panel summary::-webkit-details-marker {
+        display: none;
+      }
+      .faculty-panel summary::after {
+        content: "+";
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 1;
+        color: var(--mint);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .faculty-panel[open] summary::after {
+        content: "–";
+      }
+      .faculty-panel-head {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 0;
+      }
+      .faculty-panel-head .display {
+        font-size: clamp(34px, 5vw, 56px);
+      }
+      .faculty-panel-head .section-meta {
+        margin: 0;
+      }
+      .faculty-panel-body {
+        padding: 0 28px 28px;
+        border-top: 1px solid var(--line);
+      }
+      .faculty-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+        padding-top: 22px;
+      }
+      .faculty-card {
+        padding: 22px 22px 20px;
+        border-radius: var(--radius-sm);
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+        transition:
+          border-color 0.2s,
+          transform 0.2s,
+          background 0.2s;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .faculty-card:hover {
+        border-color: var(--mint-deep);
+        background: var(--white);
+        transform: translateY(-2px);
+      }
+      .faculty-photo {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: var(--surface-3);
+        margin-bottom: 8px;
+        display: grid;
+        place-items: center;
+        color: var(--text-mute);
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: -0.02em;
+        flex-shrink: 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .faculty-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .faculty-name {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: -0.01em;
+        color: var(--text);
+      }
+      .faculty-role {
+        font-size: 13.5px;
+        color: var(--text-mute);
+        line-height: 1.45;
+      }
+
+      /* ===================== OUTCOMES ===================== */
+      .outcomes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      @media (max-width: 900px) {
+        .outcomes {
+          grid-template-columns: 1fr;
+        }
+      }
+      .outcome {
+        padding: 30px 26px;
+        border-radius: var(--radius-md);
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 200px;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+      }
+      .outcome:hover {
+        border-color: var(--mint);
+        transform: translateY(-2px);
+      }
+      .outcome-num {
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--mint-deep);
+      }
+      .outcome h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+        color: var(--text);
+      }
+      .outcome p {
+        font-size: 14.5px;
+        color: var(--text-soft);
+        line-height: 1.5;
+        margin-top: auto;
+      }
+
+      /* ===================== CRITERIA ===================== */
+      .criteria {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      @media (max-width: 720px) {
+        .criteria {
+          grid-template-columns: 1fr;
+        }
+      }
+      .criterion {
+        padding: 28px 26px;
+        border-radius: var(--radius-md);
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition:
+          border-color 0.2s,
+          transform 0.2s,
+          background 0.2s;
+        position: relative;
+      }
+      .criterion:hover {
+        border-color: var(--mint);
+        background: var(--surface-2);
+        transform: translateY(-2px);
+      }
+      .criterion-mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--mint);
+        display: grid;
+        place-items: center;
+        margin-bottom: 4px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+        background-size: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .criterion h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+        color: var(--text);
+      }
+      .criterion p {
+        font-size: 14.5px;
+        color: var(--text-soft);
+        line-height: 1.5;
+      }
+
+      /* ===================== PROGRAMME VISUAL PLACEHOLDER ===================== */
+      .visual-section {
+        padding: 0 0 clamp(24px, 4vw, 56px) 0;
+      }
+      .visual-section.narrow {
+        padding: clamp(24px, 4vw, 48px) 0;
+      }
+      .visual-frame {
+        width: 100%;
+        aspect-ratio: 21 / 9;
+        border-radius: var(--radius-md);
+        background: linear-gradient(135deg, var(--mint) 0%, var(--yellow) 100%);
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+      }
+      .visual-frame > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .visual-frame.has-image::before {
+        display: none;
+      }
+      .visual-frame.has-image .visual-overlay {
+        display: none;
+      }
+      .visual-frame.mini {
+        aspect-ratio: 21 / 7;
+      }
+      .visual-frame::before {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        border: 2px dashed rgba(0, 0, 0, 0.18);
+        border-radius: calc(var(--radius-md) - 8px);
+        pointer-events: none;
+      }
+      .visual-overlay {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 28px;
+        text-align: center;
+        max-width: 540px;
+      }
+      .visual-tag {
+        display: inline-block;
+        padding: 8px 16px;
+        background: var(--ink);
+        color: var(--white);
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .visual-hint {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.65);
+        max-width: 420px;
+        line-height: 1.4;
+      }
+
+      /* ===================== INCLUDED / NOT INCLUDED ===================== */
+      .included-block {
+        margin-top: 36px;
+        padding: 32px 30px;
+        border-radius: var(--radius-md);
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+      }
+      .included-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+      .included-head h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--text);
+      }
+      .included-head .meta {
+        font-size: 11.5px;
+        color: var(--text-mute);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .included-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      @media (max-width: 720px) {
+        .included-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .included-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .included-col li {
+        display: flex;
+        gap: 10px;
+        font-size: 14.5px;
+        color: var(--text-soft);
+        line-height: 1.45;
+      }
+      .included-col li::before {
+        content: "";
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        margin-top: 2px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 12px;
+      }
+      .included-yes + ul li::before {
+        background-color: var(--mint);
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+      }
+      .included-no + ul li::before {
+        background-color: var(--surface-3);
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8F0E1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='6' y1='12' x2='18' y2='12'/></svg>");
+      }
+      .included-label {
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .included-yes {
+        color: var(--mint-deep);
+      }
+      .included-no {
+        color: var(--text-mute);
+      }
+
+      /* Currency suffix on price */
+      .pkg-currency {
+        font-size: 0.5em;
+        font-weight: 600;
+        color: var(--text-mute);
+        margin-left: 2px;
+        vertical-align: 0.18em;
+        letter-spacing: 0.05em;
+      }
+      .pkg.flagship .pkg-currency {
+        color: rgba(0, 0, 0, 0.55);
+      }
+
+      /* ===================== FAQ ===================== */
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .faq-item {
+        padding: 22px 26px;
+        border-radius: var(--radius-md);
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+        transition:
+          border-color 0.2s,
+          background 0.2s,
+          transform 0.2s,
+          box-shadow 0.2s;
+        cursor: pointer;
+      }
+      .faq-item:hover {
+        border-color: rgba(9, 225, 205, 0.55);
+        background: var(--white);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+      }
+      .faq-item[open] {
+        border-color: var(--mint);
+        background: var(--surface-2);
+      }
+      .faq-item summary {
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: -0.01em;
+        color: var(--text);
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary::after {
+        content: "+";
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 1;
+        color: var(--mint);
+        transition: transform 0.2s;
+        flex-shrink: 0;
+      }
+      .faq-item[open] summary::after {
+        content: "–";
+      }
+      .faq-a {
+        padding-top: 14px;
+        font-size: 15px;
+        color: var(--text-soft);
+        line-height: 1.55;
+      }
+
+      /* ===================== TIMELINE BLOCK ===================== */
+      .timeline-block {
+        margin-bottom: 44px;
+        padding: 26px 28px;
+        border-radius: var(--radius-md);
+        background: linear-gradient(180deg, #ffffff 0%, #f8fcfb 100%);
+        border: 1px solid rgba(9, 225, 205, 0.22);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.04);
+      }
+      .timeline-head {
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin-bottom: 16px;
+      }
+      .timeline {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+        counter-reset: step;
+        position: relative;
+      }
+      @media (max-width: 900px) {
+        .timeline {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+      }
+      .timeline li {
+        position: relative;
+        padding: 14px 18px 14px 12px;
+        border-right: 1px solid rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .timeline li:last-child {
+        border-right: none;
+      }
+      @media (max-width: 900px) {
+        .timeline li {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+          padding: 14px 0;
+        }
+        .timeline li:last-child {
+          border-bottom: none;
+        }
+      }
+      .timeline li::before {
+        counter-increment: step;
+        content: counter(step, decimal-leading-zero);
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: #00a794;
+        margin-bottom: 2px;
+      }
+      .t-when {
+        font-family: "Inter", sans-serif;
+        font-size: 13.5px;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        color: var(--text);
+      }
+      .t-what {
+        font-size: 13px;
+        color: var(--text-soft);
+        line-height: 1.4;
+      }
+
+      /* ===================== CONSENT CHECKBOX ===================== */
+      .consent {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 13px;
+        color: var(--text-soft);
+        line-height: 1.45;
+        cursor: pointer;
+      }
+      .consent input {
+        margin-top: 2px;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        accent-color: var(--mint);
+        cursor: pointer;
+      }
+      .consent a {
+        color: var(--mint);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      /* ===================== VISA NOTE ===================== */
+      .eoi-side-block.visa-note {
+        background: var(--mint);
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .eoi-side-block.visa-note .label {
+        color: rgba(0, 0, 0, 0.6);
+      }
+      .eoi-side-block.visa-note .value {
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.45;
+        letter-spacing: 0;
+      }
+
+      /* ===================== FOOTER LEGAL ===================== */
+      .footer-legal {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .footer-legal a {
+        color: var(--text-mute);
+        font-size: 13px;
+        transition: color 0.2s;
+      }
+      .footer-legal a:hover {
+        color: var(--mint);
+      }
+
+      /* ===================== PACKAGES ===================== */
+      .pkgs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      @media (max-width: 900px) {
+        .pkgs {
+          grid-template-columns: 1fr;
+        }
+      }
+      .pkg {
+        padding: 32px 28px;
+        border-radius: var(--radius-md);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-height: 380px;
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+      }
+      .pkg.flagship {
+        background: var(--mint);
+        color: var(--ink);
+        border-color: transparent;
+      }
+
+      .pkg-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .pkg-name {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        color: var(--text);
+      }
+      .pkg.flagship .pkg-name {
+        color: var(--ink);
+      }
+      .pkg.flagship .pkg-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .pkg-head-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+      }
+      .pkg-flagship-tag {
+        background: var(--ink);
+        color: var(--mint);
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        padding: 5px 10px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-top: 0;
+        white-space: nowrap;
+      }
+      .pkg-price {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+        color: var(--text);
+      }
+      .pkg.flagship .pkg-price {
+        color: var(--ink);
+      }
+      .pkg-tag {
+        font-size: 14.5px;
+        color: var(--text-soft);
+        margin-bottom: 22px;
+      }
+      .pkg.flagship .pkg-tag {
+        color: rgba(0, 0, 0, 0.7);
+      }
+      .pkg ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+      .pkg li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 14.5px;
+        color: var(--text);
+      }
+      .pkg.flagship li {
+        color: var(--ink);
+      }
+      .pkg li::before {
+        content: "";
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--mint);
+        margin-top: 2px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+        background-size: 12px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .pkg.flagship li::before {
+        background-color: var(--ink);
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8F0E1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+      }
+      .pkg-foot {
+        margin-top: auto;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-mute);
+      }
+      .pkg.flagship .pkg-foot {
+        border-top-color: rgba(0, 0, 0, 0.15);
+        color: rgba(0, 0, 0, 0.55);
+      }
+
+      /* Teaser variant — for packages without firm pricing yet */
+      .pkg.teaser {
+        background: var(--yellow-soft);
+        border-color: transparent;
+        min-height: 320px;
+      }
+      .pkg-teaser-tag {
+        display: inline-block;
+        margin-top: 8px;
+        background: var(--ink);
+        color: var(--white);
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        padding: 5px 10px;
+        border-radius: 999px;
+        text-transform: uppercase;
+      }
+      .pkg-teaser-meta {
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: var(--text-mute);
+        text-transform: uppercase;
+        margin-top: auto;
+        padding-bottom: 18px;
+      }
+      .pkg-teaser-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 20px;
+        background: var(--ink);
+        color: var(--white);
+        border-radius: var(--radius-sm);
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: -0.01em;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .pkg-teaser-cta:hover {
+        background: var(--mint-deep);
+        color: var(--ink);
+        transform: translateY(-1px);
+      }
+      .pkg-teaser-cta .arrow {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--mint);
+        color: var(--ink);
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+      }
+      .pkg.teaser .pkg-name {
+        color: var(--ink);
+      }
+      .pkg.teaser .pkg-tag {
+        color: var(--text-soft);
+      }
+
+      /* ===================== VOICES ===================== */
+      .quotes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      @media (max-width: 900px) {
+        .quotes {
+          grid-template-columns: 1fr;
+        }
+      }
+      .quote {
+        padding: 32px 28px;
+        border-radius: var(--radius-md);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        column-gap: 16px;
+        row-gap: 14px;
+        align-items: center;
+        min-height: 320px;
+        background: var(--surface-1);
+        border: 1px solid var(--line);
+        position: relative;
+      }
+      .quote.mint {
+        background: var(--mint);
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .quote.yellow {
+        background: var(--yellow);
+        color: var(--ink);
+        border-color: transparent;
+      }
+      .q-avatar {
+        grid-column: 1;
+        grid-row: 1;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: var(--surface-2);
+      }
+      .q-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .quote-mark {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+        font-family: "Inter", sans-serif;
+        font-size: 56px;
+        line-height: 0.5;
+        color: var(--mint-deep);
+        font-weight: 700;
+      }
+      .quote.mint .quote-mark {
+        color: var(--ink);
+        opacity: 0.45;
+      }
+      .quote.yellow .quote-mark {
+        color: var(--ink);
+        opacity: 0.45;
+      }
+
+      .q-text {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        font-size: 15.5px;
+        line-height: 1.5;
+        color: var(--ink);
+        align-self: start;
+      }
+      .quote.mint .q-text {
+        color: var(--ink);
+      }
+      .quote.yellow .q-text {
+        color: var(--ink);
+      }
+      .q-attrib {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        align-self: end;
+      }
+      .quote.mint .q-attrib {
+        border-top-color: rgba(0, 0, 0, 0.18);
+      }
+      .quote.yellow .q-attrib {
+        border-top-color: rgba(0, 0, 0, 0.18);
+      }
+      .q-name {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        color: var(--ink);
+      }
+      .quote.mint .q-name {
+        color: var(--ink);
+      }
+      .q-role {
+        font-size: 13px;
+        color: var(--text-mute);
+        margin-top: 4px;
+        line-height: 1.45;
+      }
+      .quote.mint .q-role {
+        color: rgba(0, 0, 0, 0.6);
+      }
+      .q-tag {
+        display: inline-flex;
+        margin-top: 10px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--mint);
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+      .quote.mint .q-tag {
+        background: var(--ink);
+        color: var(--mint);
+      }
+      .q-text {
+        font-size: 15.5px;
+        line-height: 1.5;
+        color: var(--text);
+      }
+      .quote.mint .q-text {
+        color: var(--ink);
+      }
+
+      /* ===================== EXPRESS INTEREST ===================== */
+      .eoi {
+        padding: clamp(72px, 9vw, 130px) 0;
+        background: var(--yellow-soft);
+        color: var(--ink);
+        position: relative;
+        overflow: hidden;
+      }
+      .eoi::before {
+        display: none;
+      }
+      .eoi-inner {
+        position: relative;
+        z-index: 1;
+      }
+      .eoi-eyebrow {
+        background: var(--ink);
+        color: var(--yellow);
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 22px;
+      }
+      .eoi h2 {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(40px, 7vw, 92px);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        margin-bottom: 24px;
+        color: var(--ink);
+      }
+      .eoi h2 .accent {
+        background: var(--yellow-soft);
+        color: var(--ink);
+        padding: 0 14px 6px;
+        border-radius: 14px;
+        display: inline-block;
+        padding-top: 6px;
+      }
+      .eoi-sub {
+        max-width: 560px;
+        font-size: 17px;
+        color: rgba(0, 0, 0, 0.78);
+        margin-bottom: 44px;
+      }
+      .eoi-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        align-items: start;
+      }
+      @media (max-width: 880px) {
+        .eoi-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+      }
+      .eoi-form {
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        color: var(--ink);
+        padding: 32px;
+        border-radius: var(--radius-md);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field label {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-mute);
+      }
+      .field input {
+        font-family: inherit;
+        font-size: 16px;
+        padding: 14px 16px;
+        border: 1.5px solid rgba(0, 0, 0, 0.14);
+        border-radius: var(--radius-sm);
+        background: var(--paper);
+        color: var(--ink);
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .field input::placeholder {
+        color: var(--text-mute);
+      }
+      .field input:focus {
+        outline: none;
+        border-color: var(--ink);
+        background: var(--white);
+      }
+      .field-honeypot {
+        position: absolute;
+        left: -9999px;
+        opacity: 0;
+      }
+
+      button.cta {
+        margin-top: 8px;
+        padding: 16px 22px;
+        background: var(--ink);
+        color: var(--white);
+        border: none;
+        border-radius: var(--radius-sm);
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      button.cta:hover {
+        background: var(--mint-deep);
+        color: var(--ink);
+        transform: translateY(-1px);
+      }
+      button.cta .arrow {
+        width: 28px;
+        height: 28px;
+        background: var(--mint);
+        color: var(--ink);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+      }
+      .eoi-disclaimer {
+        font-size: 12.5px;
+        color: var(--text-mute);
+        line-height: 1.5;
+        margin-top: 4px;
+      }
+      .eoi-side {
+        padding-top: 12px;
+      }
+      .eoi-side-block {
+        padding: 22px 24px;
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        margin-bottom: 14px;
+        background: var(--white);
+      }
+      .eoi-side-block .label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-mute);
+        margin-bottom: 8px;
+      }
+      .eoi-side-block .value {
+        font-family: "Inter", sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+      }
+      .eoi-side-block .value a:hover {
+        color: var(--mint-deep);
+      }
+
+      /* Confirmation state */
+      .eoi-confirm {
+        display: none;
+      }
+      .eoi-form.submitted .eoi-form-fields {
+        display: none;
+      }
+      .eoi-form.submitted .eoi-confirm {
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+      }
+      .eoi-confirm h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+        color: var(--ink);
+      }
+      .eoi-confirm p {
+        color: var(--text-soft);
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      .eoi-status {
+        font-size: 13px;
+        color: var(--text-soft);
+        margin-top: 6px;
+        min-height: 20px;
+      }
+      .eoi-status.error {
+        color: #c62828;
+      }
+      .eoi-status.success {
+        color: #0e7a6f;
+      }
+      .check-circle {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: var(--mint);
+        color: var(--ink);
+        display: grid;
+        place-items: center;
+        margin: 0 auto 18px;
+        font-size: 28px;
+      }
+
+      /* ===================== FOOTER ===================== */
+      .footer {
+        background: var(--black);
+        color: var(--text);
+        padding: 60px 0 36px;
+        border-top: 1px solid var(--line);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+      @media (max-width: 720px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+      }
+      .footer-strap {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+        max-width: 480px;
+        color: var(--white);
+      }
+      .footer-strap .accent {
+        background: var(--mint);
+        color: var(--ink);
+        padding: 0 8px;
+        border-radius: 6px;
+      }
+      .footer-col h4 {
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-mute);
+        margin-bottom: 14px;
+      }
+      .footer-col a {
+        display: block;
+        padding: 6px 0;
+        color: var(--text-soft);
+        font-size: 15px;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--mint);
+      }
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding-top: 32px;
+        border-top: 1px solid var(--line);
+        font-size: 13px;
+        color: var(--text-mute);
+      }
+      .footer-hashtag {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--mint);
+        letter-spacing: -0.01em;
+      }
+      .footer-logos {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .footer-logo-mark {
+        width: 120px;
+        height: 28px;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* ===================== ANIMATIONS ===================== */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.35s;
+      }
+      .delay-4 {
+        animation-delay: 0.5s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="/" class="logo">
+          <img
+            class="logo-mark"
+            src="images/endeavor-logo.png"
+            alt="Endeavor logo"
+          />
+        </a>
+        <nav class="nav-menu" aria-label="Page sections">
+          <a href="#the-program" class="nav-link">The Program</a>
+          <a href="#register" class="nav-link">Application Deadline</a>
+          <a href="#apply-form" class="nav-link nav-link-cta">Apply Now</a>
+        </nav>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- ======================= HERO ======================= -->
-  <header class="hero">
-    <div class="container">
-      <div class="eyebrow fade-in"><span class="dot"></span>Made in Ukraine · Built at Stanford</div>
-      <span class="eyebrow-plain fade-in delay-1" style="margin-top: 20px;">Endeavor Ukraine · Stanford GSB Executive Education · August 2026</span>
+    <!-- ======================= HERO ======================= -->
+    <header class="hero">
+      <div class="container">
+        <!-- <div class="eyebrow fade-in"><span class="dot"></span>Made in Ukraine · Built at Stanford</div> -->
+        <span class="eyebrow-plain fade-in delay-1" style="margin-top: 20px"
+          >Endeavor Ukraine · Stanford GSB Executive Education · August
+          2026</span
+        >
 
-      <h1 class="display fade-in delay-2">
-        Endeavor Ukraine<br />
-        Executive Education:<br />
-        <span class="hl-outline">Stanford 2026</span>.
-      </h1>
+        <h1 class="display fade-in delay-2">
+          Endeavor Ukraine<br />
+          Executive Education:<br />
+          <span class="hl-outline">Stanford 2026</span>.
+        </h1>
 
-      <p class="hero-sub fade-in delay-3">
-        A dedicated Ukrainian cohort of 50 founders at Stanford GSB's Innovation &amp; Growth programme, August 2026.
-      </p>
+        <p class="hero-sub fade-in delay-3">
+          A dedicated Ukrainian cohort of 50 founders at Stanford GSB's
+          Innovation &amp; Growth programme, August 2026.
+        </p>
 
-      <div class="facts fade-in delay-4">
-        <div class="fact mint">
-          <div>
-            <span class="fact-idx">01</span>
-            <div class="fact-num">50</div>
-          </div>
-          <div>
-            <div class="fact-rule"></div>
-            <p class="fact-body">Ukrainian founders selected by Endeavor Ukraine.</p>
-          </div>
-        </div>
-        <div class="fact yellow">
-          <div>
-            <span class="fact-idx">02</span>
-            <div class="fact-num">70</div>
-          </div>
-          <div>
-            <div class="fact-rule"></div>
-            <p class="fact-body">Global Endeavor entrepreneurs running in parallel.</p>
-          </div>
-        </div>
-        <div class="fact yellow">
-          <div>
-            <span class="fact-idx">03</span>
-            <div class="fact-num">120<small>+</small></div>
-          </div>
-          <div>
-            <div class="fact-rule"></div>
-            <p class="fact-body">Founders in one place. Built-in deal-flow and lifelong peers.</p>
-          </div>
-        </div>
-        <div class="fact mint">
-          <div>
-            <span class="fact-idx">04</span>
-            <div class="fact-num">9<small>days</small></div>
-          </div>
-          <div>
-            <div class="fact-rule"></div>
-            <p class="fact-body">Stanford GSB + Silicon Valley + Independence Day.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ======================= PROGRAMME VISUAL (placeholder) ======================= -->
-  <section class="visual-section">
-    <div class="container">
-      <div class="visual-frame has-image" role="img" aria-label="Programme visual">
-        <img src="images/programme-visual.jpeg" alt="Programme visual" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= WHY ======================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-num">01 / The News</div>
-      <p class="why-lead">
-        <em>For the first time</em>, Ukrainian tech has its own room at Stanford. 50 Ukrainian founders.
-      </p>
-
-      <div class="why-tiles">
-        <div class="why-tile mint">
-          <div class="why-tile-num">01</div>
-          <h3>A first for Ukrainian tech.</h3>
-          <p>Ukraine's first dedicated cohort at Stanford GSB.</p>
-        </div>
-        <div class="why-tile">
-          <div class="why-tile-num">02</div>
-          <h3>The room is the product.</h3>
-          <p>50 founders defining the next decade of Ukrainian tech, in one room.</p>
-        </div>
-        <div class="why-tile yellow">
-          <div class="why-tile-num">03</div>
-          <h3>A flag in Silicon Valley.</h3>
-          <p>The week ends on Ukrainian Independence Day, 24 August, in San Francisco.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= PROGRAMME ======================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-num">02 / The Itinerary</div>
-      <div class="section-head">
-        <h2 class="display">The Programme.</h2>
-        <span class="section-meta">16 – 24 Aug 2026</span>
-      </div>
-
-      <div class="components">
-        <div class="component mint">
-          <div class="comp-num">I</div>
-          <div>
-            <div class="comp-meta">16 – 21 Aug · Palo Alto</div>
-            <div class="comp-title">Stanford GSB Innovation &amp; Growth</div>
-            <p class="comp-desc">A week of executive education with Stanford GSB faculty – frameworks, cases, and a working room of fifty Ukrainian operators. Held at Schwab Residential Center on the Stanford GSB campus. Lodging and meals included.</p>
-          </div>
-          <span class="duration">6 days</span>
-        </div>
-
-        <div class="component accent">
-          <div class="comp-num">II</div>
-          <div>
-            <div class="comp-meta">22 – 24 Aug · Bay Area</div>
-            <div class="comp-title">Endeavor Sprint &amp; Silicon Valley Tour</div>
-            <p class="comp-desc">Meet iconic founders and operators in San Francisco and the greater Bay Area – company visits, capital, and a visit to Napa Valley.</p>
-          </div>
-          <span class="duration">3 days</span>
-        </div>
-
-        <div class="component">
-          <div class="comp-num">III</div>
-          <div>
-            <div class="comp-meta">24 Aug · San Francisco</div>
-            <div class="comp-title">Meet &amp; Grit — Independence Day</div>
-            <p class="comp-desc">A community gathering of Ukrainian and global founders, hosted in San Francisco on Ukrainian Independence Day.</p>
-          </div>
-          <span class="duration">1 night</span>
-        </div>
-      </div>
-
-      <div class="inside-week">
-        <div class="inside-week-head">
-          <h3>Curriculum at a Glance</h3>
-          <span class="meta">4 Tracks · Stanford GSB Faculty</span>
-        </div>
-        <div class="tracks">
-          <div class="track">
-            <span class="track-idx">01 · Scaling &amp; Strategy</span>
-            <span class="track-title">How great companies grow without losing what made them great.</span>
-            <span class="track-faculty">George Foster, Huggy Rao</span>
-          </div>
-          <div class="track">
-            <span class="track-idx">02 · Growth &amp; Capital</span>
-            <span class="track-title">Pricing, fundraising, and negotiation as growth levers.</span>
-            <span class="track-faculty">Michael Kraus, Nir Halevy</span>
-          </div>
-          <div class="track">
-            <span class="track-idx">03 · AI &amp; Innovation</span>
-            <span class="track-title">Where AI creates real value – and how to get your org to adopt it.</span>
-            <span class="track-faculty">Diyi Yang, Michael Lepech, Jonathan Levav</span>
-          </div>
-          <div class="track">
-            <span class="track-idx">04 · Communication &amp; People</span>
-            <span class="track-title">Executive presence, storytelling, and collaboration at scale.</span>
-            <span class="track-faculty">Matt Abrahams, Dan Klein, Frank Flynn</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= FACULTY ======================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-num">03 / Faculty</div>
-      <div class="section-head">
-        <h2 class="display">Taught by Stanford GSB.</h2>
-        <span class="section-meta">Faculty Director · George Foster</span>
-      </div>
-      <div class="faculty-grid">
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="GF">
-            <img src="images/professors/george-foster.jpg" alt="George Foster" loading="lazy" />
-          </div>
-          <div class="faculty-name">George Foster</div>
-          <div class="faculty-role">Faculty Director. Entrepreneurship &amp; new venture analysis.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="HR">
-            <img src="images/professors/huggy-rao.jpg" alt="Huggy Rao" loading="lazy" />
-          </div>
-          <div class="faculty-name">Huggy Rao</div>
-          <div class="faculty-role">Co-author, Scaling Up Excellence. Organisational behaviour.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="MA">
-            <img src="images/professors/matt-abrahams.jpeg" alt="Matt Abrahams" loading="lazy" />
-          </div>
-          <div class="faculty-name">Matt Abrahams</div>
-          <div class="faculty-role">Host, Think Fast, Talk Smart. Executive communication.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="NH">
-            <img src="images/professors/nir-halevy.jpg" alt="Nir Halevy" loading="lazy" />
-          </div>
-          <div class="faculty-name">Nir Halevy</div>
-          <div class="faculty-role">Flagship negotiations professor, Stanford GSB.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="FF">
-            <img src="images/professors/frank-flynn.jpg" alt="Frank Flynn" loading="lazy" />
-          </div>
-          <div class="faculty-name">Frank Flynn</div>
-          <div class="faculty-role">Leadership, influence &amp; team collaboration.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="DY">
-            <img src="images/professors/diyi-yang.jpg" alt="Diyi Yang" loading="lazy" />
-          </div>
-          <div class="faculty-name">Diyi Yang</div>
-          <div class="faculty-role">Stanford CS. Generative AI &amp; NLP.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="JL">
-            <img src="images/professors/jonathan-levav.webp" alt="Jonathan Levav" loading="lazy" />
-          </div>
-          <div class="faculty-name">Jonathan Levav</div>
-          <div class="faculty-role">Behavioural science. Choice &amp; AI adoption.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="ML">
-            <img src="images/professors/michael-lepech.jpg" alt="Michael Lepech" loading="lazy" />
-          </div>
-          <div class="faculty-name">Michael Lepech</div>
-          <div class="faculty-role">AI for products &amp; services that scale.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="DK">
-            <img src="images/professors/dan-klein.jpg" alt="Dan Klein" loading="lazy" />
-          </div>
-          <div class="faculty-name">Dan Klein</div>
-          <div class="faculty-role">Storytelling &amp; improvisation for leaders.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo" data-initials="MK">
-            <img src="images/professors/maciej-kraus.jpeg" alt="Michael Kraus" loading="lazy" />
-          </div>
-          <div class="faculty-name">Michael Kraus</div>
-          <div class="faculty-role">Pricing strategy. Capturing more value.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= WHAT YOU WALK AWAY WITH ======================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-num">04 / Outcomes</div>
-      <div class="section-head">
-        <h2 class="display">What you walk away with.</h2>
-      </div>
-      <div class="outcomes">
-        <div class="outcome">
-          <div class="outcome-num">01</div>
-          <h3>Scale without losing what made you great.</h3>
-          <p>Frameworks from Rao &amp; Sutton to spread mindset, not just headcount.</p>
-        </div>
-        <div class="outcome">
-          <div class="outcome-num">02</div>
-          <h3>Sharper economics &amp; pricing.</h3>
-          <p>Stress-test growth, segment willingness-to-pay, capture more value.</p>
-        </div>
-        <div class="outcome">
-          <div class="outcome-num">03</div>
-          <h3>Communication, leadership &amp; storytelling.</h3>
-          <p>A sharper voice for pitches, all-hands, and high-stakes moments.</p>
-        </div>
-        <div class="outcome">
-          <div class="outcome-num">04</div>
-          <h3>Negotiation excellence.</h3>
-          <p>Win the moments that matter – hiring top talent, closing investors, structuring deals.</p>
-        </div>
-        <div class="outcome">
-          <div class="outcome-num">05</div>
-          <h3>Growth-capital playbook.</h3>
-          <p>Current VC trends and a practical playbook for attracting growth capital.</p>
-        </div>
-        <div class="outcome">
-          <div class="outcome-num">06</div>
-          <h3>AI bets you can defend.</h3>
-          <p>See where AI creates real value and how to get your org to adopt it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= PACKAGES ======================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-num">05 / Choose your path</div>
-      <div class="section-head">
-        <h2 class="display">Three ways in.</h2>
-        <span class="section-meta">Soft launch · Apply via Express Interest</span>
-      </div>
-
-      <div class="pkgs">
-        <article class="pkg flagship">
-          <div class="pkg-head">
+        <div class="facts fade-in delay-4">
+          <div class="fact mint">
             <div>
-              <div class="pkg-name">Stanford Pass</div>
+              <span class="fact-idx">01</span>
+              <div class="fact-num">50</div>
+            </div>
+            <div>
+              <div class="fact-rule"></div>
+              <p class="fact-body">Ukrainian founders.</p>
+            </div>
+          </div>
+          <div class="fact yellow">
+            <div>
+              <span class="fact-idx">02</span>
+              <div class="fact-num">120</div>
+            </div>
+            <div>
+              <div class="fact-rule"></div>
+              <p class="fact-body">
+                Endeavor Entrepreneurs and their leadership.
+              </p>
+            </div>
+          </div>
+          <div class="fact yellow">
+            <div>
+              <span class="fact-idx">03</span>
+              <div class="fact-num">16-21<small>st</small></div>
+            </div>
+            <div>
+              <div class="fact-rule"></div>
+              <p class="fact-body">August Stanford Executive Education</p>
+            </div>
+          </div>
+          <div class="fact mint">
+            <div>
+              <span class="fact-idx">04</span>
+              <div class="fact-num">21-24</div>
+            </div>
+            <div>
+              <div class="fact-rule"></div>
+              <p class="fact-body">Endeavor Sprint and Summit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ======================= PROGRAMME VISUAL (placeholder) ======================= -->
+    <section class="visual-section">
+      <div class="container">
+        <div
+          class="visual-frame has-image"
+          role="img"
+          aria-label="Programme visual"
+        >
+          <img
+            src="images/programme-visual.jpeg"
+            alt="Programme visual"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= PROGRAMME ======================= -->
+    <section class="section" id="the-program">
+      <div class="container">
+        <div class="section-num">02 / The Itinerary</div>
+        <div class="section-head">
+          <h2 class="display">The Programme.</h2>
+          <span class="section-meta">16 – 24 Aug 2026</span>
+        </div>
+
+        <div class="components">
+          <div
+            class="component mint component-scroll-target"
+            role="button"
+            tabindex="0"
+            aria-label="Scroll to Curriculum at a Glance"
+          >
+            <div class="comp-num">I</div>
+            <div>
+              <div class="comp-meta">16 – 21 Aug · Palo Alto</div>
+              <div class="comp-title">
+                Stanford Graduate School of Business Innovation &amp; Growth
+              </div>
+              <p class="comp-desc">
+                A week of executive education with Stanford GSB faculty –
+                frameworks, cases, and a working room of fifty Ukrainian
+                operators. Held at Schwab Residential Center on the Stanford GSB
+                campus. Lodging and meals included.
+              </p>
+            </div>
+            <span class="duration">6 days</span>
+          </div>
+
+          <div class="component accent">
+            <div class="comp-num">II</div>
+            <div>
+              <div class="comp-meta">22 – 24 Aug · Bay Area</div>
+              <div class="comp-title">
+                Endeavor Sprint &amp; Silicon Valley Tour
+              </div>
+              <p class="comp-desc">
+                Meet iconic founders and operators in San Francisco and the
+                greater Bay Area – company visits, capital, and a visit to Napa
+                Valley.
+              </p>
+            </div>
+            <span class="duration">3 days</span>
+          </div>
+
+          <div class="component">
+            <div class="comp-num">III</div>
+            <div>
+              <div class="comp-meta">24 Aug · San Francisco</div>
+              <div class="comp-title">Meet &amp; Grit — Independence Day</div>
+              <p class="comp-desc">
+                A community gathering of Ukrainian and global founders, hosted
+                in San Francisco on Ukrainian Independence Day.
+              </p>
+            </div>
+            <span class="duration">1 night</span>
+          </div>
+        </div>
+
+        <div class="inside-week" id="curriculum-at-a-glance">
+          <div class="inside-week-head">
+            <h3>Curriculum at a Glance</h3>
+            <span class="meta">4 Tracks · Stanford GSB Faculty</span>
+          </div>
+          <div class="tracks">
+            <div class="track">
+              <span class="track-idx">01 · Scaling &amp; Strategy</span>
+              <span class="track-title"
+                >How great companies grow without losing what made them
+                great.</span
+              >
+              <span class="track-faculty">George Foster, Huggy Rao</span>
+            </div>
+            <div class="track">
+              <span class="track-idx">02 · Endeavor Sprint</span>
+              <span class="track-title"
+                >Pricing, fundraising, and negotiation as growth levers.</span
+              >
+              <span class="track-faculty">Michael Kraus, Nir Halevy</span>
+            </div>
+            <div class="track">
+              <span class="track-idx"
+                >03 · Endeavor Summit & Meet and Grit - 1 day
+              </span>
+              <span class="track-title"
+                >Where AI creates real value – and how to get your org to adopt
+                it.</span
+              >
+              <span class="track-faculty"
+                >Diyi Yang, Michael Lepech, Jonathan Levav</span
+              >
+            </div>
+            <div class="track">
+              <span class="track-idx">04 · Communication &amp; People</span>
+              <span class="track-title"
+                >Executive presence, storytelling, and collaboration at
+                scale.</span
+              >
+              <span class="track-faculty"
+                >Matt Abrahams, Dan Klein, Frank Flynn</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= FACULTY ======================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-num">03 / Faculty</div>
+        <details class="faculty-panel" open>
+          <summary>
+            <div class="faculty-panel-head">
+              <h2 class="display">Taught by Stanford GSB.</h2>
+              <span class="section-meta">Faculty Director · George Foster</span>
+            </div>
+          </summary>
+          <div class="faculty-panel-body">
+            <div class="faculty-grid">
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="GF">
+                  <img
+                    src="images/professors/george-foster.jpg"
+                    alt="George Foster"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">George Foster</div>
+                <div class="faculty-role">
+                  Faculty Director. Entrepreneurship &amp; new venture analysis.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="HR">
+                  <img
+                    src="images/professors/huggy-rao.jpg"
+                    alt="Huggy Rao"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Huggy Rao</div>
+                <div class="faculty-role">
+                  Co-author, Scaling Up Excellence. Organisational behaviour.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="MA">
+                  <img
+                    src="images/professors/matt-abrahams.jpeg"
+                    alt="Matt Abrahams"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Matt Abrahams</div>
+                <div class="faculty-role">
+                  Host, Think Fast, Talk Smart. Executive communication.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="NH">
+                  <img
+                    src="images/professors/nir-halevy.jpg"
+                    alt="Nir Halevy"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Nir Halevy</div>
+                <div class="faculty-role">
+                  Flagship negotiations professor, Stanford GSB.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="FF">
+                  <img
+                    src="images/professors/frank-flynn.jpg"
+                    alt="Frank Flynn"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Frank Flynn</div>
+                <div class="faculty-role">
+                  Leadership, influence &amp; team collaboration.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="DY">
+                  <img
+                    src="images/professors/diyi-yang.jpg"
+                    alt="Diyi Yang"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Diyi Yang</div>
+                <div class="faculty-role">
+                  Stanford CS. Generative AI &amp; NLP.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="JL">
+                  <img
+                    src="images/professors/jonathan-levav.webp"
+                    alt="Jonathan Levav"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Jonathan Levav</div>
+                <div class="faculty-role">
+                  Behavioural science. Choice &amp; AI adoption.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="ML">
+                  <img
+                    src="images/professors/michael-lepech.jpg"
+                    alt="Michael Lepech"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Michael Lepech</div>
+                <div class="faculty-role">
+                  AI for products &amp; services that scale.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="DK">
+                  <img
+                    src="images/professors/dan-klein.jpg"
+                    alt="Dan Klein"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Dan Klein</div>
+                <div class="faculty-role">
+                  Storytelling &amp; improvisation for leaders.
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-photo" data-initials="MK">
+                  <img
+                    src="images/professors/maciej-kraus.jpeg"
+                    alt="Michael Kraus"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="faculty-name">Michael Kraus</div>
+                <div class="faculty-role">
+                  Pricing strategy. Capturing more value.
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ======================= WHO'S IN THE ROOM (Criteria) ======================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-num">07 / The brief</div>
+        <div class="section-head">
+          <h2 class="display">Who's in the room.</h2>
+          <span class="section-meta">Selection criteria · Class of '26</span>
+        </div>
+        <div class="criteria">
+          <div class="criterion">
+            <span class="criterion-mark" aria-hidden="true"></span>
+            <h3>Founder, co-founder, or CEO.</h3>
+            <p>Of a Ukrainian-built or Ukrainian-led company.</p>
+          </div>
+          <div class="criterion">
+            <span class="criterion-mark" aria-hidden="true"></span>
+            <h3>Past the scramble.</h3>
+            <p>Real revenue, growing team, product-market fit.</p>
+          </div>
+          <div class="criterion">
+            <span class="criterion-mark" aria-hidden="true"></span>
+            <h3>Ready to learn alongside peers.</h3>
+            <p>Curious and generous – here to give as much as take.</p>
+          </div>
+          <div class="criterion">
+            <span class="criterion-mark" aria-hidden="true"></span>
+            <h3>The full week.</h3>
+            <p>Available at Stanford 16 – 21 August 2026.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= WHAT YOU WALK AWAY WITH ======================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-num">04 / Outcomes</div>
+        <div class="section-head">
+          <h2 class="display">What you walk away with.</h2>
+        </div>
+        <div class="outcomes">
+          <div class="outcome">
+            <div class="outcome-num">01</div>
+            <h3>Scale without losing what made you great.</h3>
+            <p>
+              Frameworks from Rao &amp; Sutton to spread mindset, not just
+              headcount.
+            </p>
+          </div>
+          <div class="outcome">
+            <div class="outcome-num">02</div>
+            <h3>Sharper economics &amp; pricing.</h3>
+            <p>
+              Stress-test growth, segment willingness-to-pay, capture more
+              value.
+            </p>
+          </div>
+          <div class="outcome">
+            <div class="outcome-num">03</div>
+            <h3>Communication, leadership &amp; storytelling.</h3>
+            <p>
+              A sharper voice for pitches, all-hands, and high-stakes moments.
+            </p>
+          </div>
+          <div class="outcome">
+            <div class="outcome-num">04</div>
+            <h3>Negotiation excellence.</h3>
+            <p>
+              Win the moments that matter – hiring top talent, closing
+              investors, structuring deals.
+            </p>
+          </div>
+          <div class="outcome">
+            <div class="outcome-num">05</div>
+            <h3>Growth-capital playbook.</h3>
+            <p>
+              Current VC trends and a practical playbook for attracting growth
+              capital.
+            </p>
+          </div>
+          <div class="outcome">
+            <div class="outcome-num">06</div>
+            <h3>AI bets you can defend.</h3>
+            <p>
+              See where AI creates real value and how to get your org to adopt
+              it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= PACKAGES ======================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-num">05 / Choose your path</div>
+        <div class="section-head">
+          <h2 class="display">Three ways in.</h2>
+          <span class="section-meta"
+            >Soft launch · Apply via Express Interest</span
+          >
+        </div>
+
+        <div class="pkgs">
+          <article class="pkg flagship">
+            <div class="pkg-head">
+              <div class="pkg-head-top">
+                <div class="pkg-name">Stanford Pass</div>
+                <div class="pkg-price">
+                  $10,000 <span class="pkg-currency">USD</span>
+                </div>
+              </div>
               <span class="pkg-flagship-tag">The core programme</span>
             </div>
-            <div class="pkg-price">$10,000 <span class="pkg-currency">USD</span></div>
-          </div>
-          <p class="pkg-tag">The training week, in full.</p>
-          <ul>
-            <li>6 days at Stanford GSB (16 – 21 August 2026)</li>
-            <li>Programme materials, lodging at Schwab Residential Center, and meals on campus</li>
-            <li>All faculty sessions, cases, and the full Innovation &amp; Growth curriculum</li>
-            <li>Membership in the Class of '26 Ukrainian cohort</li>
-          </ul>
-          <div class="pkg-foot">
-            <span>16 – 21 Aug</span>
-            <span>Palo Alto</span>
-          </div>
-        </article>
-
-        <article class="pkg teaser">
-          <div class="pkg-head">
-            <div>
-              <div class="pkg-name">Endeavor Sprint &amp; Silicon Valley Tour</div>
-              <span class="pkg-teaser-tag">Optional add-on</span>
-            </div>
-          </div>
-          <p class="pkg-tag">Three days in San Francisco and the greater Bay Area – iconic founders, operators, capital, and a visit to Napa Valley.</p>
-          <div class="pkg-teaser-meta">22 – 24 August · Pricing and details to follow</div>
-          <a class="pkg-teaser-cta" href="#register">
-            Claim interest
-            <span class="arrow">→</span>
-          </a>
-        </article>
-
-        <article class="pkg teaser">
-          <div class="pkg-head">
-            <div>
-              <div class="pkg-name">Meet &amp; Grit – Independence Day</div>
-              <span class="pkg-teaser-tag">Optional add-on</span>
-            </div>
-          </div>
-          <p class="pkg-tag">Community gathering of Ukrainian and global founders, hosted in San Francisco on Ukrainian Independence Day.</p>
-          <div class="pkg-teaser-meta">24 August · Details to follow</div>
-          <a class="pkg-teaser-cta" href="#register">
-            Claim interest
-            <span class="arrow">→</span>
-          </a>
-        </article>
-      </div>
-
-      <div class="included-block">
-        <div class="included-head">
-          <h3>What's in the price.</h3>
-          <span class="meta">All packages, USD, before any local taxes</span>
-        </div>
-        <div class="included-grid">
-          <div class="included-col">
-            <div class="included-label included-yes">Included</div>
             <ul>
-              <li>Stanford GSB tuition for the full programme</li>
-              <li>Six days at Schwab Residential Center (lodging on campus)</li>
-              <li>Meals during the Stanford week</li>
-              <li>All faculty sessions, cases, and materials</li>
+              <li>6 days at Stanford GSB (16 – 21 August 2026)</li>
+              <li>
+                Programme materials, lodging at Schwab Residential Center, and
+                meals on campus
+              </li>
+              <li>
+                All faculty sessions, cases, and the full Innovation &amp;
+                Growth curriculum
+              </li>
               <li>Membership in the Class of '26 Ukrainian cohort</li>
             </ul>
-          </div>
-          <div class="included-col">
-            <div class="included-label included-no">Not included</div>
-            <ul>
-              <li>International flights to and from San Francisco</li>
-              <li>US visa fees and processing</li>
-              <li>Personal expenses and transit costs</li>
-              <li>Travel insurance</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= VOICES ======================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-num">06 / Voices</div>
-      <div class="section-head">
-        <h2 class="display">From the room.</h2>
-      </div>
-
-      <div class="quotes">
-        <figure class="quote mint">
-          <div class="q-avatar"><img alt="Sviatoslav Sviatnenko" src="images/speakers/sviatoslav-sviatnenko.jpeg" /></div>
-          <div class="quote-mark">"</div>
-          <blockquote class="q-text">For the first time, Ukrainian tech has its own room at Stanford. The Ukrainian founders we select will be the ones defining the next decade of this ecosystem. The room is the product.</blockquote>
-          <div class="q-attrib">
-            <div class="q-name">Sviatoslav Sviatnenko</div>
-            <div class="q-role">Managing Director, Endeavor Ukraine</div>
-          </div>
-        </figure>
-
-        <figure class="quote">
-          <div class="q-avatar"><img alt="Roman Prokofiev" src="images/speakers/roman-prokofiev.jpg" /></div>
-          <div class="quote-mark">"</div>
-          <blockquote class="q-text">Stanford shamelessly breaks the frame of what you think is real. The chance to meet entrepreneurs who grew up in completely different cultures, who face challenges I could not have imagined – that reshapes what you think is possible.</blockquote>
-          <div class="q-attrib">
-            <div class="q-name">Roman Prokofiev</div>
-            <div class="q-role">Founder, Jooble · Class of '25</div>
-            <span class="q-tag">Marketplaces</span>
-          </div>
-        </figure>
-
-        <figure class="quote yellow">
-          <div class="q-avatar"><img alt="Nataliya Anon" src="images/speakers/nataliya-anon.jpg" /></div>
-          <div class="quote-mark">"</div>
-          <blockquote class="q-text">Stanford GSB changed how I think about building companies. Bringing Ukrainian founders into that same environment – in one cohort – is exactly the kind of multiplier Ukrainian tech needs right now.</blockquote>
-          <div class="q-attrib">
-            <div class="q-name">Nataliya Anon</div>
-            <div class="q-role">Founder, Svitla Systems · Endeavor UA Board · GSB Alumna</div>
-            <span class="q-tag">B2B Software</span>
-          </div>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= WHO'S IN THE ROOM (Criteria) ======================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-num">07 / The brief</div>
-      <div class="section-head">
-        <h2 class="display">Who's in the room.</h2>
-        <span class="section-meta">Selection criteria · Class of '26</span>
-      </div>
-      <div class="criteria">
-        <div class="criterion">
-          <span class="criterion-mark" aria-hidden="true"></span>
-          <h3>Founder, co-founder, or CEO.</h3>
-          <p>Of a Ukrainian-built or Ukrainian-led company.</p>
-        </div>
-        <div class="criterion">
-          <span class="criterion-mark" aria-hidden="true"></span>
-          <h3>Past the scramble.</h3>
-          <p>Real revenue, growing team, product-market fit.</p>
-        </div>
-        <div class="criterion">
-          <span class="criterion-mark" aria-hidden="true"></span>
-          <h3>Ready to learn alongside peers.</h3>
-          <p>Curious and generous – here to give as much as take.</p>
-        </div>
-        <div class="criterion">
-          <span class="criterion-mark" aria-hidden="true"></span>
-          <h3>The full week.</h3>
-          <p>Available at Stanford 16 – 21 August 2026.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= FAQ ======================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-num">08 / Questions</div>
-      <div class="section-head">
-        <h2 class="display">Things founders ask.</h2>
-        <span class="section-meta">If yours isn't here, write to us</span>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Is the price per person?</summary>
-          <div class="faq-a">Yes, we invite one founder per company. The tuition fee includes lodging (single-person rooms), meals, and course materials for the duration of the program.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I choose my accommodations and/or bring family?</summary>
-          <div class="faq-a">It is the policy of the universities that all program participants stay in on-campus housing as designated by each program. This policy prohibits spouses or other family members from staying on-campus. This is to maintain a cohesive cohort experience dedicated to participants’ focused learning journey. </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What if I need a visa letter?</summary>
-          <div class="faq-a">Please email us for a visa letter to submit to your consulate at: evelina.holovanova@endeavor.org. In this email, please state your name as it appears on your passport, your passport number, and the address of the embassy you will submit this visa letter to.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens after I share interest?</summary>
-          <div class="faq-a">We review every response on onrolling basis & come back to those who fit with the application form. Selected founders pay by 10 July. Programme runs 16 – 24 August.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How can I pay?</summary>
-          <div class="faq-a">After being selected, we will provide a link for payment & registration.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= EXPRESS INTEREST ======================= -->
-  <section class="eoi" id="register">
-    <div class="container eoi-inner">
-      <span class="eoi-eyebrow">Share your interest</span>
-      <h2 class="display">Class of <span class="accent">'26</span><br />– we're putting the room together.</h2>
-      <p class="eoi-sub">We're taking 50 Ukrainian founders to Stanford this August. Seats are limited and we select carefully. Share a bit about you and your company below – if you're a fit, we'll be in touch with the application form and next steps. Please share interest by <strong>Friday 5 June 2026</strong>.</p>
-
-      <div class="timeline-block">
-        <div class="timeline-head">What happens next</div>
-        <ol class="timeline">
-          <li><span class="t-when">Now - 22 June</span><span class="t-what">Share your interest</span></li>
-          <li><span class="t-when">Onrolling Basis</span><span class="t-what">We review and come back to those who fit</span></li>
-          <li><span class="t-when">June - 10 July</span><span class="t-what">Confirm your seat &amp; Pay</span></li>
-          <li><span class="t-when">16-21 August</span><span class="t-what">Stanford GSB</span></li>
-          <li><span class="t-when">22-24 August</span><span class="t-what">Optional SV Tour &amp; Independence Day</span></li>
-        </ol>
-      </div>
-
-      <div class="eoi-grid">
-        <form class="eoi-form" id="eoiForm" novalidate>
-          <div class="eoi-form-fields" style="display: flex; flex-direction: column; gap: 18px;">
-            <div class="field">
-              <label for="name">Full name</label>
-              <input id="name" name="name" type="text" required autocomplete="name" />
+            <div class="pkg-foot">
+              <span>16 – 21 Aug</span>
+              <span>Palo Alto</span>
             </div>
-            <div class="field">
-              <label for="company">Company</label>
-              <input id="company" name="company" type="text" required autocomplete="organization" />
+          </article>
+
+          <article class="pkg teaser">
+            <div class="pkg-head">
+              <div>
+                <div class="pkg-name">
+                  Endeavor Sprint &amp; Silicon Valley Tour
+                </div>
+                <span class="pkg-teaser-tag">Optional add-on</span>
+              </div>
             </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required autocomplete="email" />
+            <p class="pkg-tag">
+              Three days in San Francisco and the greater Bay Area – iconic
+              founders, operators, capital, and a visit to Napa Valley.
+            </p>
+            <div class="pkg-teaser-meta">
+              22 – 24 August · Pricing and details to follow
             </div>
-            <div class="field-honeypot" aria-hidden="true">
-              <label for="website">Website</label>
-              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
-            </div>
-            <label class="consent">
-              <input id="consent" name="consent" type="checkbox" required />
-              <span>I agree to Endeavor Ukraine processing my data for the purpose of Class of '26 selection. See our <a href="#privacy">Privacy Policy</a>.</span>
-            </label>
-            <button type="submit" class="cta">
-              Share interest
+            <a class="pkg-teaser-cta" href="#register">
+              Claim interest
               <span class="arrow">→</span>
-            </button>
-            <p class="eoi-disclaimer">We'll be in touch with those who fit the Class of '26 brief. We don't share your details with third parties.</p>
-            <p class="eoi-status" id="eoiStatus" aria-live="polite"></p>
-          </div>
+            </a>
+          </article>
 
-          <div class="eoi-confirm">
-            <div class="check-circle">✓</div>
-            <h3>Got it.</h3>
-            <p>Thanks for sharing. We'll be in touch.</p>
-          </div>
-        </form>
-
-        <aside class="eoi-side">
-          <div class="eoi-side-block">
-            <div class="label">Programme dates</div>
-            <div class="value">16 – 24 August 2026</div>
-          </div>
-          <div class="eoi-side-block">
-            <div class="label">Cohort size</div>
-            <div class="value">50 Ukrainian founders</div>
-          </div>
-          <div class="eoi-side-block">
-            <div class="label">Founder questions</div>
-            <div class="value"><a href="mailto:evelina.holovanova@endeavor.org">evelina.holovanova@endeavor.org</a></div>
-          </div>
-          <div class="eoi-side-block visa-note">
-            <div class="label">A word on US visas</div>
-            <div class="value">Most Ukrainian founders need a B-1/B-2 visa. We provide invitation letters once you're confirmed – budget 4 – 8 weeks for processing.</div>
-          </div>
-        </aside>
+          <article class="pkg teaser">
+            <div class="pkg-head">
+              <div>
+                <div class="pkg-name">Meet &amp; Grit – Independence Day</div>
+                <span class="pkg-teaser-tag">Optional add-on</span>
+              </div>
+            </div>
+            <p class="pkg-tag">
+              Community gathering of Ukrainian and global founders, hosted in
+              San Francisco on Ukrainian Independence Day.
+            </p>
+            <div class="pkg-teaser-meta">24 August · Details to follow</div>
+            <a class="pkg-teaser-cta" href="#register">
+              Claim interest
+              <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================= FOOTER ======================= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-strap display">
+    <!-- ======================= VOICES ======================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-num">06 / Voices</div>
+        <div class="section-head">
+          <h2 class="display">From the room.</h2>
+        </div>
+
+        <div class="quotes">
+          <figure class="quote mint">
+            <div class="q-avatar">
+              <img
+                alt="Sviatoslav Sviatnenko"
+                src="images/speakers/sviatoslav-sviatnenko.jpeg"
+              />
+            </div>
+            <div class="quote-mark">"</div>
+            <blockquote class="q-text">
+              For the first time, Ukrainian tech has its own room at Stanford.
+              The Ukrainian founders we select will be the ones defining the
+              next decade of this ecosystem. The room is the product.
+            </blockquote>
+            <div class="q-attrib">
+              <div class="q-name">Sviatoslav Sviatnenko</div>
+              <div class="q-role">Managing Director, Endeavor Ukraine</div>
+            </div>
+          </figure>
+
+          <figure class="quote">
+            <div class="q-avatar">
+              <img
+                alt="Roman Prokofiev"
+                src="images/speakers/roman-prokofiev.jpg"
+              />
+            </div>
+            <div class="quote-mark">"</div>
+            <blockquote class="q-text">
+              Stanford shamelessly breaks the frame of what you think is real.
+              The chance to meet entrepreneurs who grew up in completely
+              different cultures, who face challenges I could not have imagined
+              – that reshapes what you think is possible.
+            </blockquote>
+            <div class="q-attrib">
+              <div class="q-name">Roman Prokofiev</div>
+              <div class="q-role">Founder, Jooble · Class of '25</div>
+            </div>
+          </figure>
+
+          <figure class="quote yellow">
+            <div class="q-avatar">
+              <img
+                alt="Nataliya Anon"
+                src="images/speakers/nataliya-anon.jpg"
+              />
+            </div>
+            <div class="quote-mark">"</div>
+            <blockquote class="q-text">
+              Stanford GSB changed how I think about building companies.
+              Bringing Ukrainian founders into that same environment – in one
+              cohort – is exactly the kind of multiplier Ukrainian tech needs
+              right now.
+            </blockquote>
+            <div class="q-attrib">
+              <div class="q-name">Nataliya Anon</div>
+              <div class="q-role">
+                Founder, Svitla Systems · Endeavor UA Board · GSB Alumna
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= FAQ ======================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-num">08 / Questions</div>
+        <div class="section-head">
+          <h2 class="display">Things founders ask.</h2>
+          <span class="section-meta">If yours isn't here, write to us</span>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Is the price per person?</summary>
+            <div class="faq-a">
+              Yes, we invite one founder per company. The tuition fee includes
+              lodging (single-person rooms), meals, and course materials for the
+              duration of the program.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              Can I choose my accommodations and/or bring family?
+            </summary>
+            <div class="faq-a">
+              It is the policy of the universities that all program participants
+              stay in on-campus housing as designated by each program. This
+              policy prohibits spouses or other family members from staying
+              on-campus. This is to maintain a cohesive cohort experience
+              dedicated to participants’ focused learning journey.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What if I need a visa letter?</summary>
+            <div class="faq-a">
+              Please email us for a visa letter to submit to your consulate at:
+              evelina.holovanova@endeavor.org. In this email, please state your
+              name as it appears on your passport, your passport number, and the
+              address of the embassy you will submit this visa letter to.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What happens after I share interest?</summary>
+            <div class="faq-a">
+              We review every response on onrolling basis & come back to those
+              who fit with the application form. Selected founders pay by 10
+              July. Programme runs 16 – 24 August.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How can I pay?</summary>
+            <div class="faq-a">
+              After being selected, we will provide a link for payment &
+              registration.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= EXPRESS INTEREST ======================= -->
+    <section class="eoi" id="register">
+      <div class="container eoi-inner">
+        <span class="eoi-eyebrow">Share your interest</span>
+        <h2 class="display">
+          Class of <span class="accent">'26</span><br />– we're putting the room
+          together.
+        </h2>
+        <p class="eoi-sub">
+          We're taking 50 Ukrainian founders to Stanford this August. Seats are
+          limited and we select carefully. Share a bit about you and your
+          company below – if you're a fit, we'll be in touch with the
+          application form and next steps. Please share interest by
+          <strong>Friday 22 June 2026</strong>.
+        </p>
+
+        <div class="timeline-block">
+          <div class="timeline-head">What happens next</div>
+          <ol class="timeline">
+            <li>
+              <span class="t-when">Now - 22 June</span
+              ><span class="t-what">Share your interest</span>
+            </li>
+            <li>
+              <span class="t-when">Onrolling Basis</span
+              ><span class="t-what"
+                >We review and come back to those who fit</span
+              >
+            </li>
+            <li>
+              <span class="t-when">June - 10 July</span
+              ><span class="t-what">Confirm your seat &amp; Pay</span>
+            </li>
+            <li>
+              <span class="t-when">16-21 August</span
+              ><span class="t-what">Stanford GSB</span>
+            </li>
+            <li>
+              <span class="t-when">22-24 August</span
+              ><span class="t-what"
+                >Optional SV Tour &amp; Independence Day</span
+              >
+            </li>
+          </ol>
+        </div>
+
+        <div class="eoi-grid">
+          <form class="eoi-form" id="apply-form" novalidate>
+            <div
+              class="eoi-form-fields"
+              style="display: flex; flex-direction: column; gap: 18px"
+            >
+              <div class="field">
+                <label for="name">Full name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="field">
+                <label for="company">Company</label>
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  required
+                  autocomplete="organization"
+                />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+              <div class="field-honeypot" aria-hidden="true">
+                <label for="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+              <label class="consent">
+                <input id="consent" name="consent" type="checkbox" required />
+                <span
+                  >I agree to Endeavor Ukraine processing my data for the
+                  purpose of Class of '26 selection. See our
+                  <a href="#privacy">Privacy Policy</a>.</span
+                >
+              </label>
+              <button type="submit" class="cta">
+                Share interest
+                <span class="arrow">→</span>
+              </button>
+              <p class="eoi-disclaimer">
+                We'll be in touch with those who fit the Class of '26 brief. We
+                don't share your details with third parties.
+              </p>
+              <p class="eoi-status" id="eoiStatus" aria-live="polite"></p>
+            </div>
+
+            <div class="eoi-confirm">
+              <div class="check-circle">✓</div>
+              <h3>Got it.</h3>
+              <p>Thanks for sharing. We'll be in touch.</p>
+            </div>
+          </form>
+
+          <aside class="eoi-side">
+            <div class="eoi-side-block">
+              <div class="label">Programme dates</div>
+              <div class="value">
+                16 - 21 August 2026. Put 4-6 weeks (block with visa)
+              </div>
+            </div>
+            <div class="eoi-side-block">
+              <div class="label">Cohort size</div>
+              <div class="value">50 Ukrainian founders</div>
+            </div>
+            <div class="eoi-side-block">
+              <div class="label">Founder questions</div>
+              <div class="value">
+                <a href="mailto:evelina.holovanova@endeavor.org"
+                  >evelina.holovanova@endeavor.org</a
+                >
+              </div>
+            </div>
+            <div class="eoi-side-block visa-note">
+              <div class="label">A word on US visas</div>
+              <div class="value">
+                Most Ukrainian founders need a B-1/B-2 visa. We provide
+                invitation letters once you're confirmed – budget 4 – 8 weeks
+                for processing.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="footer" id="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- <div class="footer-strap display">
           Made in <span class="accent">Ukraine</span>.<br />
           Built at Stanford.
+        </div> -->
+          <div class="footer-col">
+            <h4>Programme</h4>
+            <a href="#register">Share Interest</a>
+            <a href="mailto:stanford2026@endeavor.org">Founder questions</a>
+            <a href="mailto:partners@endeavor.org">Press &amp; partnerships</a>
+            <a href="https://endeavor.org" target="_blank" rel="noopener"
+              >Endeavor Global</a
+            >
+          </div>
+          <div class="footer-col">
+            <h4>Follow</h4>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+            <a href="#" target="_blank" rel="noopener">Facebook</a>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Programme</h4>
-          <a href="#register">Share Interest</a>
-          <a href="mailto:stanford2026@endeavor.org">Founder questions</a>
-          <a href="mailto:partners@endeavor.org">Press &amp; partnerships</a>
-          <a href="https://endeavor.org" target="_blank" rel="noopener">Endeavor Global</a>
-        </div>
-        <div class="footer-col">
-          <h4>Follow</h4>
-          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="#" target="_blank" rel="noopener">Instagram</a>
-          <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <div class="footer-bottom">
+          <div class="footer-logos">
+            <img
+              class="footer-logo-mark"
+              src="images/endeavor-logo-white.png"
+              alt="Endeavor logo"
+            />
+            <span
+              >Stanford GSB Innovation &amp; Growth · in partnership with
+              Endeavor Global</span
+            >
+          </div>
+          <div class="footer-legal">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms</a>
+            <span class="footer-hashtag">#UAClassOf26</span>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="footer-logos">
-          <img class="footer-logo-mark" src="images/endeavor-logo-white.png" alt="Endeavor logo" />
-          <span>Stanford GSB Innovation &amp; Growth · in partnership with Endeavor Global</span>
-        </div>
-        <div class="footer-legal">
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms</a>
-          <span class="footer-hashtag">#UAClassOf26</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    const EOI_WEBHOOK_URL = ''; // Paste your Google Apps Script / Make / Power Automate webhook URL here.
+    <script>
+      const EOI_WEBHOOK_URL = ""; // Paste your Google Apps Script / Make / Power Automate webhook URL here.
 
-    document.querySelectorAll('.faq-item').forEach((item) => {
-      item.addEventListener('click', (event) => {
-        const clickedSummary = event.target.closest('summary');
-        if (clickedSummary) return;
-        item.open = !item.open;
-      });
-    });
-
-    document.getElementById('eoiForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const honeypot = document.getElementById('website').value;
-      if (honeypot) return;
-
-      const form = e.currentTarget;
-      const status = document.getElementById('eoiStatus');
-      const consent = document.getElementById('consent').checked;
-      if (!consent) {
-        status.textContent = 'Please confirm consent before submitting.';
-        status.className = 'eoi-status error';
-        return;
-      }
-      const data = {
-        name: form.name.value.trim(),
-        company: form.company.value.trim(),
-        email: form.email.value.trim(),
-        consent: true,
-        submittedAt: new Date().toISOString(),
-        source: window.location.href
-      };
-      if (!data.name || !data.company || !data.email) {
-        status.textContent = 'Please fill out all required fields.';
-        status.className = 'eoi-status error';
-        return;
-      }
-
-      if (!EOI_WEBHOOK_URL) {
-        status.textContent = 'Webhook URL is not configured yet.';
-        status.className = 'eoi-status error';
-        return;
-      }
-
-      status.textContent = 'Sending...';
-      status.className = 'eoi-status';
-
-      try {
-        const response = await fetch(EOI_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", (event) => {
+          const clickedSummary = event.target.closest("summary");
+          if (clickedSummary) return;
+          item.open = !item.open;
         });
+      });
 
-        if (!response.ok) {
-          throw new Error('Submission failed');
-        }
-
-        form.classList.add('submitted');
-        status.textContent = '';
-        status.className = 'eoi-status success';
-      } catch (error) {
-        status.textContent = 'Could not send your details right now. Please try again.';
-        status.className = 'eoi-status error';
+      const curriculumBlock = document.getElementById("curriculum-at-a-glance");
+      const stanfordComponent = document.querySelector(
+        ".component-scroll-target",
+      );
+      if (curriculumBlock && stanfordComponent) {
+        const scrollToCurriculum = () => {
+          curriculumBlock.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        };
+        stanfordComponent.addEventListener("click", scrollToCurriculum);
+        stanfordComponent.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            scrollToCurriculum();
+          }
+        });
       }
 
-      if (typeof gtag === 'function') {
-        gtag('event', 'eoi_submit', { event_category: 'engagement' });
-      }
-    });
-  </script>
-</body>
+      document.querySelectorAll(".nav-menu a[href^='#']").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const hash = link.getAttribute("href");
+          if (!hash) return;
+          const target = document.querySelector(hash);
+          if (!target) return;
+          event.preventDefault();
+          const offsets = {
+            "#the-program": 88,
+            "#register": 88,
+            "#apply-form": 220,
+          };
+          const offset = offsets[hash] ?? 88;
+          const top =
+            target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: "smooth" });
+        });
+      });
+
+      document
+        .getElementById("apply-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const honeypot = document.getElementById("website").value;
+          if (honeypot) return;
+
+          const form = e.currentTarget;
+          const status = document.getElementById("eoiStatus");
+          const consent = document.getElementById("consent").checked;
+          if (!consent) {
+            status.textContent = "Please confirm consent before submitting.";
+            status.className = "eoi-status error";
+            return;
+          }
+          const data = {
+            name: form.name.value.trim(),
+            company: form.company.value.trim(),
+            email: form.email.value.trim(),
+            consent: true,
+            submittedAt: new Date().toISOString(),
+            source: window.location.href,
+          };
+          if (!data.name || !data.company || !data.email) {
+            status.textContent = "Please fill out all required fields.";
+            status.className = "eoi-status error";
+            return;
+          }
+
+          if (!EOI_WEBHOOK_URL) {
+            status.textContent = "Webhook URL is not configured yet.";
+            status.className = "eoi-status error";
+            return;
+          }
+
+          status.textContent = "Sending...";
+          status.className = "eoi-status";
+
+          try {
+            const response = await fetch(EOI_WEBHOOK_URL, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+              throw new Error("Submission failed");
+            }
+
+            form.classList.add("submitted");
+            status.textContent = "";
+            status.className = "eoi-status success";
+          } catch (error) {
+            status.textContent =
+              "Could not send your details right now. Please try again.";
+            status.className = "eoi-status error";
+          }
+
+          if (typeof gtag === "function") {
+            gtag("event", "eoi_submit", { event_category: "engagement" });
+          }
+        });
+    </script>
+  </body>
 </html>
