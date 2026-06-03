@@ -22,42 +22,38 @@
 
     <style>
       @font-face {
-        font-family: "Inter";
-        src: url("fonts/Inter-Light.ttf") format("truetype");
-        font-weight: 300;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "Inter";
-        src: url("fonts/Inter-Regular.ttf") format("truetype");
+        font-family: "Founders Grotesk";
+        src: url("fonts/FoundersGrotesk-Regular.otf") format("opentype");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
-        font-family: "Inter";
-        src: url("fonts/Inter-Medium.ttf") format("truetype");
+        font-family: "Founders Grotesk";
+        src: url("fonts/FoundersGrotesk-Medium.otf") format("opentype");
         font-weight: 500;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
-        font-family: "Inter";
-        src: url("fonts/Inter-SemiBold.ttf") format("truetype");
+        font-family: "Founders Grotesk";
+        src: url("fonts/FoundersGrotesk-Semibold.otf") format("opentype");
         font-weight: 600;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
         font-family: "Inter";
-        src: url("fonts/Inter-Bold.ttf") format("truetype");
-        font-weight: 700;
+        src: url("fonts/Inter-VariableFont_slnt wght.ttf")
+          format("truetype-variations");
+        font-weight: 100 900;
         font-style: normal;
         font-display: swap;
       }
 
       :root {
+        --font-display: "Founders Grotesk", system-ui, sans-serif;
+        --font-body: "Inter", system-ui, sans-serif;
         --black: #0a0a0a;
         --ink: #141414;
         --white: #ffffff;
@@ -74,6 +70,10 @@
         --mint-deep: #dcfbfa;
         --yellow: #ffe38a;
         --yellow-soft: #fff4c8;
+        --hero-blue: #0d1daf;
+        --hero-purple: #ac27f4;
+        --hero-yellow: #ffcf53;
+        --hero-video-bg: #0b0b0c;
         --radius-sm: 14px;
         --radius-md: 22px;
         --radius-lg: 32px;
@@ -88,14 +88,13 @@
       }
       html {
         scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
       }
 
       body {
-        font-family:
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          sans-serif;
+        margin: 0;
+        font-family: var(--font-body);
         background: var(--white);
         color: var(--text);
         line-height: 1.5;
@@ -105,10 +104,18 @@
       }
 
       .display {
-        font-family: "Inter", sans-serif;
-        font-weight: 700;
+        font-family: var(--font-display);
+        font-weight: 600;
         letter-spacing: -0.03em;
         line-height: 1.02;
+      }
+
+      .hero__nav,
+      .hero__links a,
+      .hero__pill,
+      .hero__line,
+      .hero__panel-btn {
+        font-family: var(--font-display);
       }
 
       .container {
@@ -122,33 +129,74 @@
         text-decoration: none;
       }
 
-      /* ===================== NAV ===================== */
-      .nav {
-        padding: 22px 0;
+      /* ===================== NAV (container-width bar) ===================== */
+      .site-nav {
         position: sticky;
         top: 0;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
         z-index: 50;
-        border-bottom: 1px solid var(--line);
+        margin: 0;
+        padding: clamp(14px, 2vw, 20px) 0;
       }
-      .nav-inner {
+      .hero__nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
+        gap: 24px;
+        background: var(--white);
+        color: var(--ink);
+        border-bottom: 1px solid rgba(1, 0, 15, 0.08);
+        border-radius: var(--radius-sm);
+        padding: clamp(16px, 2vw, 22px) clamp(20px, 4vw, 56px);
       }
       .logo {
         display: flex;
         align-items: center;
-        gap: 0;
+        flex-shrink: 0;
       }
       .logo-mark {
         width: 120px;
         height: 36px;
         display: block;
         object-fit: contain;
+      }
+      .hero__links {
+        display: flex;
+        gap: clamp(18px, 2.4vw, 32px);
+      }
+      .hero__links a {
+        font-weight: 500;
+        font-size: 15px;
+        color: var(--ink);
+        opacity: 0.72;
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+      .hero__links a:hover {
+        opacity: 1;
+      }
+      .hero__pill {
+        flex-shrink: 0;
+        font-weight: 500;
+        font-size: 12.5px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink);
+        border: 1px solid rgba(1, 0, 15, 0.42);
+        padding: 10px 20px;
+        border-radius: 999px;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .hero__pill:hover {
+        background: var(--ink);
+        color: var(--white);
+      }
+      @media (max-width: 760px) {
+        .hero__links {
+          display: none;
+        }
       }
 
       .nav-tags {
@@ -172,41 +220,6 @@
         color: var(--ink);
         border-color: transparent;
       }
-      .nav-menu {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-      .nav-link {
-        padding: 8px 14px;
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-        color: var(--text);
-        border: 1px solid var(--line-strong);
-        background: transparent;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
-        white-space: nowrap;
-      }
-      .nav-link:hover {
-        border-color: var(--mint);
-        background: var(--surface-1);
-      }
-      .nav-link-cta {
-        background: var(--ink);
-        color: var(--white);
-        border-color: transparent;
-      }
-      .nav-link-cta:hover {
-        background: var(--mint-deep);
-        color: var(--ink);
-      }
       #the-program,
       #register {
         scroll-margin-top: 88px;
@@ -215,12 +228,10 @@
         scroll-margin-top: clamp(200px, 32vh, 360px);
       }
       @media (max-width: 720px) {
-        .nav-inner {
+        .hero__nav {
           flex-wrap: wrap;
-        }
-        .nav-menu {
-          width: 100%;
-          justify-content: flex-start;
+          gap: 16px;
+          padding-inline: clamp(16px, 4vw, 24px);
         }
         .logo-mark {
           width: 104px;
@@ -242,7 +253,7 @@
         color: var(--ink);
         display: grid;
         place-items: center;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         font-size: 13px;
         position: relative;
@@ -264,64 +275,127 @@
         }
       }
 
-      /* ===================== HERO ===================== */
+      /* ===================== HERO (hero-example layout) ===================== */
       .hero {
-        padding-top: clamp(40px, 8vw, 100px);
-        padding-bottom: clamp(48px, 7vw, 96px);
         position: relative;
-        overflow: hidden;
+        min-height: 100vh;
+        min-height: 100svh;
+        margin: 0;
+        padding: 0 0 clamp(48px, 7vw, 96px);
+        isolation: isolate;
+        background: var(--hero-video-bg);
       }
-      .hero::before {
-        content: "";
+      .hero__video {
         position: absolute;
-        top: -200px;
-        right: -200px;
-        width: 700px;
-        height: 700px;
-        background: radial-gradient(
-          circle,
-          rgba(79, 209, 181, 0.1) 0%,
-          transparent 60%
-        );
-        pointer-events: none;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        z-index: 0;
       }
-
-      .eyebrow {
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--white);
+      .hero__inner {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100svh - clamp(48px, 7vw, 96px));
+        padding-top: clamp(24px, 5vh, 56px);
+      }
+      .hero__stack {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp(8px, 1vw, 12px);
+      }
+      .hero__line {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        padding: 9px 16px;
-        background: var(--ink);
-        border: 1px solid var(--ink);
-        border-radius: 999px;
-      }
-      .eyebrow .dot {
-        width: 7px;
-        height: 7px;
-        background: var(--mint-deep);
-        border-radius: 50%;
-      }
-
-      .eyebrow-plain {
-        font-size: 11.5px;
-        font-weight: 600;
-        letter-spacing: 0.16em;
+        gap: clamp(12px, 1.4vw, 18px);
+        font-weight: 400;
         text-transform: uppercase;
-        color: var(--text-mute);
-        margin-bottom: 22px;
-        display: block;
+        font-size: clamp(30px, 4.4vw, 60px);
+        line-height: 0.86;
+        letter-spacing: 0.005em;
+        white-space: nowrap;
+        padding: 0.2em 0.42em 0.27em;
+        border-radius: clamp(8px, 1vw, 14px);
       }
-
-      .hero h1 {
-        font-size: clamp(48px, 9vw, 132px);
-        margin-top: 28px;
-        max-width: 1100px;
+      .hero__line--1 {
+        background: var(--mint);
         color: var(--ink);
+      }
+      .hero__line--2 {
+        background: var(--hero-blue);
+        color: var(--mint);
+        margin-left: 7%;
+      }
+      .hero__line--3 {
+        background: var(--hero-purple);
+        color: var(--white);
+        margin-left: 2%;
+        font-size: clamp(15px, 1.7vw, 23px);
+        font-weight: 500;
+        padding: 0.7em 0.95em 0.78em;
+        gap: clamp(10px, 1vw, 14px);
+        white-space: normal;
+        max-width: min(100%, 920px);
+      }
+      .hero__ico {
+        display: inline-block;
+        flex: 0 0 auto;
+      }
+      .hero__ico--play {
+        width: 1.25em;
+        height: 0.82em;
+        color: var(--mint);
+      }
+      .hero__ico--mult {
+        width: 2.4em;
+        height: 1.85em;
+      }
+      .hero__panel {
+        margin-left: 18%;
+        margin-top: clamp(14px, 1.6vw, 20px);
+        background: var(--mint);
+        color: var(--ink);
+        padding: clamp(20px, 2vw, 26px) clamp(22px, 2.2vw, 30px)
+          clamp(22px, 2.2vw, 28px);
+        max-width: 680px;
+        border-radius: clamp(8px, 1vw, 14px);
+      }
+      .hero__panel p {
+        font-size: clamp(15px, 1.2vw, 16.5px);
+        line-height: 1.5;
+        margin: 0 0 20px;
+      }
+      .hero__panel-btn {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.02em;
+        padding: 13px 30px;
+        border-radius: 9px;
+        border: 1.5px solid var(--ink);
+        color: var(--ink);
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .hero__panel-btn:hover {
+        background: var(--ink);
+        color: var(--mint);
+      }
+      @media (max-width: 720px) {
+        .hero__line--2,
+        .hero__line--3,
+        .hero__panel {
+          margin-left: 0;
+        }
+        .hero__line {
+          white-space: normal;
+        }
       }
 
       .hl-mint {
@@ -341,13 +415,6 @@
         display: inline-block;
         line-height: 1;
         padding-top: 6px;
-      }
-
-      .hero-sub {
-        margin-top: 26px;
-        max-width: 640px;
-        font-size: clamp(16px, 1.6vw, 19px);
-        color: var(--text-soft);
       }
 
       /* Key facts strip */
@@ -384,8 +451,8 @@
         border-color: transparent;
       }
       .fact-num {
-        font-family: "Inter", sans-serif;
-        font-weight: 700;
+        font-family: var(--font-display);
+        font-weight: 600;
         font-size: clamp(40px, 4vw, 56px);
         line-height: 1;
         letter-spacing: -0.03em;
@@ -441,7 +508,7 @@
       }
 
       .section-num {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.1em;
@@ -469,7 +536,7 @@
         margin-bottom: clamp(28px, 3vw, 44px);
       }
       .section-head h2 {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: clamp(34px, 5vw, 56px);
         font-weight: 700;
         letter-spacing: -0.025em;
@@ -486,7 +553,7 @@
 
       /* ===================== WHY ===================== */
       .why-lead {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 500;
         font-size: clamp(24px, 3vw, 40px);
         line-height: 1.18;
@@ -540,7 +607,7 @@
         color: var(--ink);
         display: grid;
         place-items: center;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         font-size: 13px;
       }
@@ -549,7 +616,7 @@
         color: var(--mint);
       }
       .why-tile h3 {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 22px;
         font-weight: 700;
         letter-spacing: -0.02em;
@@ -600,7 +667,7 @@
         border-radius: 50%;
         display: grid;
         place-items: center;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         background: transparent;
         color: var(--text);
@@ -625,7 +692,7 @@
         margin-bottom: 6px;
       }
       .comp-title {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: clamp(20px, 2.2vw, 26px);
         font-weight: 700;
         letter-spacing: -0.02em;
@@ -692,7 +759,7 @@
         margin-bottom: 22px;
       }
       .inside-week-head h3 {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 24px;
         font-weight: 700;
         letter-spacing: -0.02em;
@@ -733,7 +800,7 @@
         color: var(--mint);
       }
       .track-title {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 600;
         font-size: 15.5px;
         letter-spacing: -0.01em;
@@ -769,7 +836,7 @@
       }
       .faculty-panel summary::after {
         content: "+";
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 500;
         font-size: 26px;
         line-height: 1;
@@ -829,7 +896,7 @@
         display: grid;
         place-items: center;
         color: var(--text-mute);
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         font-size: 22px;
         letter-spacing: -0.02em;
@@ -844,7 +911,7 @@
         display: block;
       }
       .faculty-name {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         font-size: 17px;
         letter-spacing: -0.01em;
@@ -885,14 +952,14 @@
         transform: translateY(-2px);
       }
       .outcome-num {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.1em;
         color: var(--mint-deep);
       }
       .outcome h3 {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 19px;
         font-weight: 700;
         letter-spacing: -0.015em;
@@ -950,7 +1017,7 @@
         background-repeat: no-repeat;
       }
       .criterion h3 {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 20px;
         font-weight: 700;
         letter-spacing: -0.015em;
@@ -963,9 +1030,83 @@
         line-height: 1.5;
       }
 
+      /* ===================== LOGO CAROUSEL ===================== */
+      .logo-carousel {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: clamp(28px, 4vw, 44px);
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 8%,
+          #000 92%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 8%,
+          #000 92%,
+          transparent
+        );
+      }
+      .logo-carousel__track {
+        display: flex;
+        width: max-content;
+        will-change: transform;
+        animation: logo-marquee 35s linear infinite;
+      }
+      .logo-carousel__group {
+        display: flex;
+        align-items: center;
+        gap: clamp(40px, 6vw, 80px);
+        padding-right: clamp(40px, 6vw, 80px);
+        flex-shrink: 0;
+      }
+      .logo-carousel__item {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(100px, 12vw, 140px);
+        height: clamp(40px, 5vw, 52px);
+      }
+      .logo-carousel__item img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+      @keyframes logo-marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .logo-carousel__track {
+          animation: none;
+          flex-wrap: wrap;
+          width: 100%;
+          justify-content: center;
+          gap: clamp(24px, 4vw, 40px);
+        }
+        .logo-carousel__group[data-clone] {
+          display: none;
+        }
+        .logo-carousel {
+          mask-image: none;
+          -webkit-mask-image: none;
+        }
+      }
+
       /* ===================== PROGRAMME VISUAL PLACEHOLDER ===================== */
       .visual-section {
-        padding: 0 0 clamp(24px, 4vw, 56px) 0;
+        padding: clamp(56px, 7vw, 100px) 0 clamp(24px, 4vw, 56px);
       }
       .visual-section.narrow {
         padding: clamp(24px, 4vw, 48px) 0;
@@ -1049,7 +1190,7 @@
         margin-bottom: 22px;
       }
       .included-head h3 {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 24px;
         font-weight: 700;
         letter-spacing: -0.02em;
@@ -1161,7 +1302,7 @@
       }
       .faq-item summary {
         cursor: pointer;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         font-size: 17px;
         letter-spacing: -0.01em;
@@ -1177,7 +1318,7 @@
       }
       .faq-item summary::after {
         content: "+";
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 500;
         font-size: 26px;
         line-height: 1;
@@ -1250,7 +1391,7 @@
       .timeline li::before {
         counter-increment: step;
         content: counter(step, decimal-leading-zero);
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 0.1em;
@@ -1258,7 +1399,7 @@
         margin-bottom: 2px;
       }
       .t-when {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 13.5px;
         font-weight: 700;
         letter-spacing: -0.015em;
@@ -1305,7 +1446,7 @@
       }
       .eoi-side-block.visa-note .value {
         color: var(--ink);
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 14px;
         font-weight: 400;
         line-height: 1.45;
@@ -1363,7 +1504,7 @@
         margin-bottom: 18px;
       }
       .pkg-name {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         font-size: 22px;
         letter-spacing: -0.02em;
@@ -1399,7 +1540,7 @@
         white-space: nowrap;
       }
       .pkg-price {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         font-size: 30px;
         letter-spacing: -0.02em;
@@ -1504,7 +1645,7 @@
         background: var(--ink);
         color: var(--white);
         border-radius: var(--radius-sm);
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 600;
         font-size: 15px;
         letter-spacing: -0.01em;
@@ -1589,7 +1730,7 @@
         grid-row: 1;
         justify-self: end;
         align-self: center;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 56px;
         line-height: 0.5;
         color: var(--mint-deep);
@@ -1632,7 +1773,7 @@
         border-top-color: rgba(0, 0, 0, 0.18);
       }
       .q-name {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 700;
         font-size: 17px;
         letter-spacing: -0.01em;
@@ -1703,7 +1844,7 @@
         margin-bottom: 22px;
       }
       .eoi h2 {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: clamp(40px, 7vw, 92px);
         font-weight: 700;
         letter-spacing: -0.03em;
@@ -1792,7 +1933,7 @@
         color: var(--white);
         border: none;
         border-radius: var(--radius-sm);
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 600;
         font-size: 16px;
         letter-spacing: -0.01em;
@@ -1845,7 +1986,7 @@
         margin-bottom: 8px;
       }
       .eoi-side-block .value {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 17px;
         font-weight: 500;
         letter-spacing: -0.01em;
@@ -1868,7 +2009,7 @@
         padding: 20px 0;
       }
       .eoi-confirm h3 {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-size: 22px;
         font-weight: 700;
         letter-spacing: -0.02em;
@@ -1924,9 +2065,9 @@
         }
       }
       .footer-strap {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-display);
         font-size: clamp(28px, 4vw, 44px);
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: -0.025em;
         line-height: 1.05;
         max-width: 480px;
@@ -1968,7 +2109,7 @@
         color: var(--text-mute);
       }
       .footer-hashtag {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         font-weight: 600;
         font-size: 15px;
         color: var(--mint);
@@ -2010,6 +2151,9 @@
       .delay-4 {
         animation-delay: 0.5s;
       }
+      .delay-5 {
+        animation-delay: 0.65s;
+      }
 
       @media (prefers-reduced-motion: reduce) {
         *,
@@ -2022,44 +2166,89 @@
     </style>
   </head>
   <body>
-    <nav class="nav">
-      <div class="container nav-inner">
-        <a href="/" class="logo">
-          <img
-            class="logo-mark"
-            src="images/endeavor-logo.png"
-            alt="Endeavor logo"
-          />
-        </a>
-        <nav class="nav-menu" aria-label="Page sections">
-          <a href="#the-program" class="nav-link">The Program</a>
-          <a href="#register" class="nav-link">Application Deadline</a>
-          <a href="#apply-form" class="nav-link nav-link-cta">Apply Now</a>
-        </nav>
-      </div>
-    </nav>
-
     <!-- ======================= HERO ======================= -->
-    <header class="hero">
-      <div class="container">
-        <!-- <div class="eyebrow fade-in"><span class="dot"></span>Made in Ukraine · Built at Stanford</div> -->
-        <span class="eyebrow-plain fade-in delay-1" style="margin-top: 20px"
-          >Endeavor Ukraine · Stanford GSB Executive Education · August
-          2026</span
-        >
+    <section class="hero" aria-label="Introduction">
+      <video
+        class="hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="media/background-poster.png"
+        aria-hidden="true"
+      >
+        <source src="media/background.webm" type="video/webm" />
+      </video>
 
-        <h1 class="display fade-in delay-2">
-          Endeavor Ukraine<br />
-          Executive Education:<br />
-          <span class="hl-outline">Stanford 2026</span>.
-        </h1>
+      <div class="site-nav">
+        <div class="container">
+          <header class="hero__nav">
+            <a href="/" class="logo">
+              <img
+                class="logo-mark"
+                src="images/endeavor-logo.png"
+                alt="Endeavor logo"
+              />
+            </a>
+            <nav class="hero__links" aria-label="Page sections">
+              <a href="#the-program">Programme</a>
+              <a href="#faculty">Faculty</a>
+              <a href="#newsroom">Newsroom</a>
+            </nav>
+            <a class="hero__pill" href="#apply-form">Share interest</a>
+          </header>
+        </div>
+      </div>
 
-        <p class="hero-sub fade-in delay-3">
-          A dedicated Ukrainian cohort of 50 founders at Stanford GSB's
-          Innovation &amp; Growth programme, August 2026.
-        </p>
+      <div class="container hero__inner">
+        <div class="hero__stack">
+          <h1 class="hero__line hero__line--1 fade-in delay-1">
+            AI, Innovation and Growth
+          </h1>
 
-        <div class="facts fade-in delay-4">
+          <span class="hero__line hero__line--2 fade-in delay-2"
+            >Executive
+            <svg
+              class="hero__ico hero__ico--play"
+              viewBox="0 0 86 56"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M8 6 L40 28 L8 50 Z"></path>
+              <path d="M44 6 L76 28 L44 50 Z"></path>
+            </svg>
+            Education</span
+          >
+
+          <span class="hero__line hero__line--3 fade-in delay-3"
+            >by Endeavor and Stanford Graduate School of Business
+            <svg
+              class="hero__ico hero__ico--mult"
+              viewBox="0 0 112 86"
+              fill="none"
+              aria-hidden="true"
+            >
+              <g stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+                <path d="M14 22 Q2 43 14 64"></path>
+                <path d="M26 14 Q9 43 26 72"></path>
+                <path d="M38 9 Q17 43 38 77"></path>
+              </g>
+              <circle cx="78" cy="43" r="22" fill="#FFCF53"></circle></svg
+          ></span>
+
+          <div class="hero__panel fade-in delay-4">
+            <p>
+              AI, Innovation &amp; Growth is an executive education program by
+              Endeavor and Stanford Graduate School of Business, bringing
+              Ukrainian and global Endeavor founders together for world-class
+              learning and Silicon Valley access.
+            </p>
+            <a class="hero__panel-btn" href="#the-program">Program</a>
+          </div>
+        </div>
+
+        <div class="facts fade-in delay-5">
           <div class="fact mint">
             <div>
               <span class="fact-idx">01</span>
@@ -2104,10 +2293,73 @@
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
     <!-- ======================= PROGRAMME VISUAL (placeholder) ======================= -->
     <section class="visual-section">
+      <div class="logo-carousel" aria-label="Partner companies">
+        <div class="logo-carousel__track">
+          <div class="logo-carousel__group" data-logo-set>
+            <div class="logo-carousel__item">
+              <img
+                src="images/logos/mono.png"
+                alt="monobank"
+                width="120"
+                height="40"
+              />
+            </div>
+            <div class="logo-carousel__item">
+              <img
+                src="images/logos/readdle.png"
+                alt="Readdle"
+                width="120"
+                height="40"
+              />
+            </div>
+            <div class="logo-carousel__item">
+              <img
+                src="images/logos/genesis.png"
+                alt="Genesis"
+                width="120"
+                height="40"
+              />
+            </div>
+            <div class="logo-carousel__item">
+              <img
+                src="images/logos/uklon.svg"
+                alt="Uklon"
+                width="120"
+                height="40"
+              />
+            </div>
+            <div class="logo-carousel__item">
+              <img
+                src="images/logos/macpaw.png"
+                alt="MacPaw"
+                width="120"
+                height="40"
+              />
+            </div>
+            <div class="logo-carousel__item">
+              <img
+                src="images/logos/cabify.png"
+                alt="Cabify"
+                width="120"
+                height="40"
+              />
+            </div>
+            <div class="logo-carousel__item">
+              <img
+                src="images/logos/wellhub.png"
+                alt="Wellhub"
+                width="120"
+                height="40"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
         <div
           class="visual-frame has-image"
@@ -2234,7 +2486,7 @@
     </section>
 
     <!-- ======================= FACULTY ======================= -->
-    <section class="section">
+    <section class="section" id="faculty">
       <div class="container">
         <div class="section-num">03 / Faculty</div>
         <details class="faculty-panel" open>
@@ -2558,7 +2810,7 @@
     </section>
 
     <!-- ======================= VOICES ======================= -->
-    <section class="section">
+    <section class="section" id="newsroom">
       <div class="container">
         <div class="section-num">06 / Voices</div>
         <div class="section-head">
@@ -2639,6 +2891,26 @@
           <span class="section-meta">If yours isn't here, write to us</span>
         </div>
         <div class="faq-list">
+          <details class="faq-item">
+            <summary>Who is it for?</summary>
+            <div class="faq-a">
+              The program is designed for founders of scale-ups — companies with
+              proven traction, a growing team, and the ambition to scale
+              globally.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What are the selection criteria?</summary>
+            <div class="faq-a">
+              Participants will be selected by a committee of Endeavor team
+              members and Stanford program alumni on a rolling basis.The
+              committee will consider founder background, company stage and
+              growth. Early applicants will be given priority during the
+              selection process.
+            </div>
+          </details>
+
           <details class="faq-item">
             <summary>Is the price per person?</summary>
             <div class="faq-a">
@@ -2788,7 +3060,12 @@
                 <span
                   >I agree to Endeavor Ukraine processing my data for the
                   purpose of Class of '26 selection. See our
-                  <a href="#privacy">Privacy Policy</a>.</span
+                  <a
+                    href="https://endeavor.org/privacy-policy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Privacy Policy</a
+                  >.</span
                 >
               </label>
               <button type="submit" class="cta">
@@ -2878,7 +3155,12 @@
             >
           </div>
           <div class="footer-legal">
-            <a href="#privacy">Privacy Policy</a>
+            <a
+              href="https://endeavor.org/privacy-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Privacy Policy</a
+            >
             <a href="#terms">Terms</a>
             <span class="footer-hashtag">#UAClassOf26</span>
           </div>
@@ -2888,6 +3170,78 @@
 
     <script>
       const EOI_WEBHOOK_URL = ""; // Paste your Google Apps Script / Make / Power Automate webhook URL here.
+
+      function initLogoCarousel() {
+        const carousel = document.querySelector(".logo-carousel");
+        if (!carousel) return;
+
+        const track = carousel.querySelector(".logo-carousel__track");
+        const sourceGroup = carousel.querySelector("[data-logo-set]");
+        if (!track || !sourceGroup) return;
+
+        const baseCount = Number(sourceGroup.dataset.baseCount || 0) ||
+          sourceGroup.querySelectorAll(".logo-carousel__item").length;
+        if (!sourceGroup.dataset.baseCount) {
+          sourceGroup.dataset.baseCount = String(baseCount);
+        }
+
+        track
+          .querySelectorAll(".logo-carousel__group[data-clone]")
+          .forEach((group) => group.remove());
+
+        while (sourceGroup.children.length > baseCount) {
+          sourceGroup.lastElementChild?.remove();
+        }
+
+        const baseItems = [...sourceGroup.children];
+        const minWidth = carousel.offsetWidth;
+
+        while (sourceGroup.scrollWidth < minWidth) {
+          baseItems.forEach((item) => {
+            const clone = item.cloneNode(true);
+            const img = clone.querySelector("img");
+            if (img) img.alt = "";
+            sourceGroup.appendChild(clone);
+          });
+        }
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          return;
+        }
+
+        const loopGroup = sourceGroup.cloneNode(true);
+        loopGroup.removeAttribute("data-logo-set");
+        loopGroup.setAttribute("data-clone", "true");
+        loopGroup.setAttribute("aria-hidden", "true");
+        loopGroup.querySelectorAll("img").forEach((img) => {
+          img.alt = "";
+        });
+        track.appendChild(loopGroup);
+      }
+
+      const logoImages = document.querySelectorAll(".logo-carousel img");
+      if (logoImages.length) {
+        Promise.all(
+          [...logoImages].map(
+            (img) =>
+              new Promise((resolve) => {
+                if (img.complete) resolve();
+                else {
+                  img.addEventListener("load", resolve, { once: true });
+                  img.addEventListener("error", resolve, { once: true });
+                }
+              })
+          )
+        ).then(initLogoCarousel);
+      } else {
+        initLogoCarousel();
+      }
+
+      let logoCarouselResizeTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(logoCarouselResizeTimer);
+        logoCarouselResizeTimer = setTimeout(initLogoCarousel, 150);
+      });
 
       document.querySelectorAll(".faq-item").forEach((item) => {
         item.addEventListener("click", (event) => {
@@ -2917,7 +3271,7 @@
         });
       }
 
-      document.querySelectorAll(".nav-menu a[href^='#']").forEach((link) => {
+      document.querySelectorAll(".hero__nav a[href^='#']").forEach((link) => {
         link.addEventListener("click", (event) => {
           const hash = link.getAttribute("href");
           if (!hash) return;
@@ -2926,6 +3280,8 @@
           event.preventDefault();
           const offsets = {
             "#the-program": 88,
+            "#faculty": 88,
+            "#newsroom": 88,
             "#register": 88,
             "#apply-form": 220,
           };
