@@ -401,6 +401,7 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 14px;
         margin-top: clamp(40px, 5vw, 60px);
+        align-items: stretch;
       }
       @media (max-width: 900px) {
         .facts {
@@ -412,11 +413,17 @@
         border-radius: var(--radius-md);
         position: relative;
         min-height: 168px;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 0;
         background: var(--surface-1);
         border: 1px solid var(--line);
+      }
+      .fact > div:first-child {
+        min-height: 92px;
+        flex-shrink: 0;
       }
       .fact.mint {
         background: var(--mint);
@@ -810,6 +817,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 12px;
+        align-items: stretch;
       }
       .track {
         padding: 18px 20px;
@@ -818,6 +826,7 @@
         border: 1px solid var(--line);
         display: flex;
         flex-direction: column;
+        height: 100%;
         gap: 8px;
         transition:
           border-color 0.2s,
@@ -849,11 +858,18 @@
         line-height: 1.45;
         color: var(--text-soft);
         margin: 0;
+        flex: 1 1 auto;
       }
       .track-faculty {
+        flex-shrink: 0;
+        margin-top: auto;
+        min-height: 72px;
+        box-sizing: border-box;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
         font-size: 13px;
+        line-height: 1.45;
         color: var(--text-mute);
-        margin-top: 2px;
       }
 
       /* ===================== FACULTY ===================== */
@@ -978,6 +994,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
+        align-items: stretch;
       }
       @media (max-width: 900px) {
         .outcomes {
@@ -992,6 +1009,7 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
+        height: 100%;
         min-height: 200px;
         transition:
           border-color 0.2s,
@@ -1020,7 +1038,7 @@
         font-size: 14.5px;
         color: var(--text-soft);
         line-height: 1.5;
-        margin-top: auto;
+        margin: 0;
       }
 
       .section--outcomes {
@@ -1181,16 +1199,21 @@
       }
       .logo-carousel-note {
         margin: 0;
-        padding: 10px 22px;
-        border-radius: 999px;
-        background: var(--ink);
-        color: var(--white);
+        padding: 0 0 4px;
+        width: 100%;
+        max-width: 100%;
+        background: none;
+        border: none;
+        border-bottom: 1px solid var(--line);
+        color: var(--text-mute);
         font-family: var(--font-body);
-        font-size: 13px;
+        font-size: 11.5px;
         font-weight: 600;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
         text-align: center;
+        cursor: default;
+        pointer-events: none;
       }
 
       /* ===================== PROGRAMME VISUAL ===================== */
@@ -1489,15 +1512,21 @@
       }
       .t-when {
         font-family: var(--font-body);
-        font-size: 13.5px;
+        font-size: 16px;
         font-weight: 700;
-        letter-spacing: -0.015em;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
         color: var(--text);
       }
       .t-what {
-        font-size: 13px;
+        font-size: 14.5px;
         color: var(--text-soft);
-        line-height: 1.4;
+        line-height: 1.45;
+      }
+      @media (max-width: 900px) {
+        .t-when {
+          font-size: 17px;
+        }
       }
 
       /* ===================== CONSENT CHECKBOX ===================== */
@@ -1896,6 +1925,57 @@
       }
       .quote.mint .q-text {
         color: var(--ink);
+      }
+
+      .program-fee {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px 40px;
+        margin-top: clamp(36px, 4vw, 52px);
+        padding: 28px 32px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--line);
+        background: var(--surface-1);
+      }
+      .program-fee__label {
+        flex-shrink: 0;
+        font-family: var(--font-display);
+        font-size: clamp(22px, 3vw, 30px);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        text-transform: none;
+        color: var(--text);
+        padding-top: 4px;
+      }
+      .program-fee__price-block {
+        text-align: right;
+        max-width: 520px;
+      }
+      .program-fee__price {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        color: var(--text);
+      }
+      .program-fee__note {
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--text-soft);
+      }
+      @media (max-width: 720px) {
+        .program-fee {
+          flex-direction: column;
+          padding: 22px 20px;
+        }
+        .program-fee__price-block {
+          text-align: left;
+          max-width: none;
+        }
       }
 
       /* ===================== EXPRESS INTEREST ===================== */
@@ -2378,11 +2458,12 @@
         muted
         loop
         playsinline
+        webkit-playsinline
         preload="auto"
         poster="media/hero-bg-poster.avif"
         aria-hidden="true"
       >
-        <source src="media/hero-bg-2.mp4" type="video/webm" />
+        <source src="media/hero-bg-2.mp4" type="video/mp4" />
       </video>
 
       <div class="site-nav">
@@ -2438,7 +2519,10 @@
 
           <div class="hero__panel fade-in delay-4">
             <p>
-              AI, Innovation &amp; Growth Growth is an executive education program by Endeavor and Stanford Graduate School of Business, bringing Ukrainian founders for world-class learning and Silicon Valley access.
+              AI, Innovation &amp; Growth Growth is an executive education
+              program by Endeavor and Stanford Graduate School of Business,
+              bringing Ukrainian founders for world-class learning and Silicon
+              Valley access.
             </p>
             <a class="hero__panel-btn" href="#the-program">Program</a>
           </div>
@@ -2484,7 +2568,7 @@
             </div>
             <div>
               <div class="fact-rule"></div>
-              <p class="fact-body">Endeavor Sprint and Summit.</p>
+              <p class="fact-body">Additional programming in Silicon Valley</p>
             </div>
           </div>
         </div>
@@ -2494,69 +2578,69 @@
     <!-- ======================= LOGO CAROUSEL ======================= -->
     <section class="logo-carousel-section">
       <div class="container">
+        <p class="logo-carousel-note">Already joining the program</p>
         <div class="logo-carousel" aria-label="Partner companies">
           <div class="logo-carousel__track">
             <div class="logo-carousel__group" data-logo-set>
-            <div class="logo-carousel__item">
-              <img
-                src="images/logos/mono.png"
-                alt="monobank"
-                width="120"
-                height="40"
-              />
-            </div>
-            <div class="logo-carousel__item">
-              <img
-                src="images/logos/readdle.png"
-                alt="Readdle"
-                width="120"
-                height="40"
-              />
-            </div>
-            <div class="logo-carousel__item">
-              <img
-                src="images/logos/genesis.png"
-                alt="Genesis"
-                width="120"
-                height="40"
-              />
-            </div>
-            <div class="logo-carousel__item">
-              <img
-                src="images/logos/uklon.svg"
-                alt="Uklon"
-                width="120"
-                height="40"
-              />
-            </div>
-            <div class="logo-carousel__item">
-              <img
-                src="images/logos/macpaw.png"
-                alt="MacPaw"
-                width="120"
-                height="40"
-              />
-            </div>
-            <div class="logo-carousel__item">
-              <img
-                src="images/logos/cabify.png"
-                alt="Cabify"
-                width="120"
-                height="40"
-              />
-            </div>
-            <div class="logo-carousel__item">
-              <img
-                src="images/logos/wellhub.png"
-                alt="Wellhub"
-                width="120"
-                height="40"
-              />
+              <div class="logo-carousel__item">
+                <img
+                  src="images/logos/mono.png"
+                  alt="monobank"
+                  width="120"
+                  height="40"
+                />
+              </div>
+              <div class="logo-carousel__item">
+                <img
+                  src="images/logos/readdle.png"
+                  alt="Readdle"
+                  width="120"
+                  height="40"
+                />
+              </div>
+              <div class="logo-carousel__item">
+                <img
+                  src="images/logos/genesis.png"
+                  alt="Genesis"
+                  width="120"
+                  height="40"
+                />
+              </div>
+              <div class="logo-carousel__item">
+                <img
+                  src="images/logos/uklon.svg"
+                  alt="Uklon"
+                  width="120"
+                  height="40"
+                />
+              </div>
+              <div class="logo-carousel__item">
+                <img
+                  src="images/logos/macpaw.png"
+                  alt="MacPaw"
+                  width="120"
+                  height="40"
+                />
+              </div>
+              <div class="logo-carousel__item">
+                <img
+                  src="images/logos/cabify.png"
+                  alt="Cabify"
+                  width="120"
+                  height="40"
+                />
+              </div>
+              <div class="logo-carousel__item">
+                <img
+                  src="images/logos/wellhub.png"
+                  alt="Wellhub"
+                  width="120"
+                  height="40"
+                />
+              </div>
             </div>
           </div>
         </div>
-        </div>
-        <p class="logo-carousel-note">Already joining the program</p>
       </div>
     </section>
 
@@ -2601,31 +2685,11 @@
                 </div>
                 <p class="comp-desc">
                   Meet iconic founders and operators in San Francisco and the
-                  greater Bay Area – company visits, capital, and a visit to Napa
-                  Valley.
+                  greater Bay Area – company visits, capital, and a visit to
+                  Napa Valley.
                 </p>
               </div>
               <span class="duration">3 days</span>
-            </div>
-            <div class="component--soon-message">
-              <p class="component--soon-title">
-                Additional Silicon Valley programming – coming soon
-              </p>
-            </div>
-          </div>
-
-          <div class="component component--soon">
-            <div class="component--soon-blur" aria-hidden="true">
-              <div class="comp-num">III</div>
-              <div>
-                <div class="comp-meta">24 Aug · San Francisco</div>
-                <div class="comp-title">Meet &amp; Grit — Independence Day</div>
-                <p class="comp-desc">
-                  A community gathering of Ukrainian and global founders, hosted
-                  in San Francisco on Ukrainian Independence Day.
-                </p>
-              </div>
-              <span class="duration">1 day</span>
             </div>
             <div class="component--soon-message">
               <p class="component--soon-title">
@@ -2638,10 +2702,6 @@
         <div class="inside-week" id="curriculum-at-a-glance">
           <div class="inside-week-head">
             <h3>Curriculum at a Glance</h3>
-            <span class="meta"
-              >3 Tracks · Stanford Stanford Graduate School of Business
-              Faculty</span
-            >
           </div>
           <div class="tracks">
             <div class="track">
@@ -2918,7 +2978,7 @@
             <div class="outcome-num">02</div>
             <h3>A global founder network that lasts</h3>
             <p>
-              Connect with founders from 55+ markets, learn from peers who have
+              Connect with founders  building at 50+ markets, learn from peers who have
               faced similar challenges, and build relationships that go beyond
               the program. Entrepreneurship shouldn’t be lonely.
             </p>
@@ -3051,7 +3111,12 @@
               <div class="quote-mark">"</div>
             </div>
             <blockquote class="q-text">
-              We are bringing some of Ukraine’s most ambitious founders and builders to Silicon Valley — to learn at one of the world’s top business schools, connect with global entrepreneurs, and get direct exposure to the heart of the tech ecosystem. This dedicated Endeavor cohort is an exceptional opportunity for Ukrainian founders and a powerful step for Ukraine’s tech ecosystem.
+              We are bringing some of Ukraine’s most ambitious founders and
+              builders to Silicon Valley — to learn at one of the world’s top
+              business schools, connect with global entrepreneurs, and get
+              direct exposure to the heart of the tech ecosystem. This dedicated
+              Endeavor cohort is an exceptional opportunity for Ukrainian
+              founders and a powerful step for Ukraine’s tech ecosystem.
             </blockquote>
             <div class="q-attrib">
               <div class="q-name">Sviatoslav Sviatnenko</div>
@@ -3070,7 +3135,11 @@
               <div class="quote-mark">"</div>
             </div>
             <blockquote class="q-text">
-              Stanford shamelessly breaks the frame of what you think is real. The chance to meet entrepreneurs who grew up in completely different cultures, who face challenges I could not have imagined — that reshapes what you think is possible. That makes me even more excited for this year’s Ukraine Class at Stanford.
+              Stanford shamelessly breaks the frame of what you think is real.
+              The chance to meet entrepreneurs who grew up in completely
+              different cultures, who face challenges I could not have imagined
+              — that reshapes what you think is possible. That makes me even
+              more excited for this year’s Ukraine Class at Stanford.
             </blockquote>
             <div class="q-attrib">
               <div class="q-name">Roman Prokofiev</div>
@@ -3089,7 +3158,13 @@
               <div class="quote-mark">"</div>
             </div>
             <blockquote class="q-text">
-              The Innovation & Growth Program is something truly unique. It changes the way you think about building companies — not only because of the curriculum, but because of the people in the room. You meet founders from completely different markets and realize that great entrepreneurship happens everywhere. I still come back to the ideas, conversations, and energy from that week. I can only imagine how powerful this year’s dedicated Ukraine cohort will be.
+              The Innovation & Growth Program is something truly unique. It
+              changes the way you think about building companies — not only
+              because of the curriculum, but because of the people in the room.
+              You meet founders from completely different markets and realize
+              that great entrepreneurship happens everywhere. I still come back
+              to the ideas, conversations, and energy from that week. I can only
+              imagine how powerful this year’s dedicated Ukraine cohort will be.
             </blockquote>
             <div class="q-attrib">
               <div class="q-name">Anton Borzov</div>
@@ -3099,6 +3174,17 @@
               </div>
             </div>
           </figure>
+        </div>
+
+        <div class="program-fee">
+          <div class="program-fee__label">Program fee</div>
+          <div class="program-fee__price-block">
+            <div class="program-fee__price">$ 10 000 per seat</div>
+            <p class="program-fee__note">
+              the fee covers the full Stanford experience: faculty sessions,
+              programme materials, on-campus lodging, and meals.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -3115,29 +3201,26 @@
           <details class="faq-item">
             <summary>Who is it for?</summary>
             <div class="faq-a">
-              The program is designed for founders of scale-ups — companies with
-              proven traction, a growing team, and the ambition to scale
-              globally.
+              The program is designed for founders of high-growth tech companies
+              with the ambition to become local, regional, and global champions.
             </div>
           </details>
 
           <details class="faq-item">
             <summary>What are the selection criteria?</summary>
             <div class="faq-a">
-              Participants will be selected by a committee of Endeavor team
-              members and Stanford program alumni on a rolling basis.The
-              committee will consider founder background, company stage and
-              growth. Early applicants will be given priority during the
-              selection process.
+              Participants will be selected by a committee consisting of
+              Endeavor leadership and Stanford program alumni. The committee
+              will consider each founder’s background, company stage, and
+              growth. <br /><br />Founders of scale-ups and early applicants will be given
+              priority during the review process.
             </div>
           </details>
 
           <details class="faq-item">
-            <summary>Is the price per person?</summary>
+            <summary>What is included in the Stanford program cost?</summary>
             <div class="faq-a">
-              Yes, we invite one founder per company. The tuition fee includes
-              lodging (single-person rooms), meals, and course materials for the
-              duration of the program.
+              The total price per seat of $10,000 includes lodging (single-person rooms), meals, and course materials for the duration of the program.
             </div>
           </details>
 
@@ -3197,7 +3280,7 @@
           limited and we select carefully. Share a bit about you and your
           company below – if you're a fit, we'll be in touch with the
           application form and next steps. Please share interest by
-          <strong>Friday 22 June 2026</strong>.
+          <strong>Friday, June 22, 2026</strong>.
         </p>
 
         <div class="timeline-block">
@@ -3237,307 +3320,334 @@
               <span class="arrow">→</span>
             </button>
             <div class="eoi-form-panel" id="eoiFormPanel">
-            <div
-              class="eoi-form-fields"
-              style="display: flex; flex-direction: column; gap: 18px"
-            >
-              <fieldset class="eoi-section">
-                <legend class="eoi-section-title">Basics</legend>
-                <div class="field">
-                  <label for="fullName"
-                    >Full name<span class="field-required" aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <input
-                    id="fullName"
-                    name="fullName"
-                    type="text"
-                    required
-                    autocomplete="name"
-                  />
-                </div>
-                <div class="field">
-                  <label for="linkedIn"
-                    >LinkedIn<span class="field-required" aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <input
-                    id="linkedIn"
-                    name="linkedIn"
-                    type="text"
-                    required
-                    placeholder="https://linkedin.com/in/..."
-                    autocomplete="url"
-                  />
-                </div>
-                <div class="field">
-                  <label for="email"
-                    >Email<span class="field-required" aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    autocomplete="email"
-                  />
-                </div>
-                <div class="field">
-                  <label for="companyName"
-                    >Company name<span class="field-required" aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <input
-                    id="companyName"
-                    name="companyName"
-                    type="text"
-                    required
-                    autocomplete="organization"
-                  />
-                </div>
-                <div class="field">
-                  <label for="yourRole"
-                    >Your role<span class="field-required" aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <input
-                    id="yourRole"
-                    name="yourRole"
-                    type="text"
-                    required
-                    autocomplete="organization-title"
-                  />
-                </div>
-                <div class="field">
-                  <label for="companyUrl"
-                    >Company website<span
-                      class="field-required"
-                      aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <input
-                    id="companyUrl"
-                    name="companyUrl"
-                    type="url"
-                    required
-                    placeholder="https://..."
-                    autocomplete="url"
-                  />
-                </div>
-                <div class="field">
-                  <label for="companyDescription"
-                    >What does your company do and what makes it unique?<span
-                      class="field-required"
-                      aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <textarea
-                    id="companyDescription"
-                    name="companyDescription"
-                    required
-                    maxlength="250"
-                    rows="3"
-                  ></textarea>
-                  <span class="field-hint">Max 250 characters</span>
-                </div>
-              </fieldset>
+              <div
+                class="eoi-form-fields"
+                style="display: flex; flex-direction: column; gap: 18px"
+              >
+                <fieldset class="eoi-section">
+                  <legend class="eoi-section-title">Basics</legend>
+                  <div class="field">
+                    <label for="fullName"
+                      >Full name<span class="field-required" aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <input
+                      id="fullName"
+                      name="fullName"
+                      type="text"
+                      required
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="linkedIn"
+                      >LinkedIn<span class="field-required" aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <input
+                      id="linkedIn"
+                      name="linkedIn"
+                      type="text"
+                      required
+                      placeholder="https://linkedin.com/in/..."
+                      autocomplete="url"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="email"
+                      >Email<span class="field-required" aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      autocomplete="email"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="companyName"
+                      >Company name<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <input
+                      id="companyName"
+                      name="companyName"
+                      type="text"
+                      required
+                      autocomplete="organization"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="yourRole"
+                      >Your role<span class="field-required" aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <input
+                      id="yourRole"
+                      name="yourRole"
+                      type="text"
+                      required
+                      autocomplete="organization-title"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="companyUrl"
+                      >Company website<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <input
+                      id="companyUrl"
+                      name="companyUrl"
+                      type="url"
+                      required
+                      placeholder="https://..."
+                      autocomplete="url"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="companyDescription"
+                      >What does your company do and what makes it unique?<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <textarea
+                      id="companyDescription"
+                      name="companyDescription"
+                      required
+                      maxlength="250"
+                      rows="3"
+                    ></textarea>
+                    <span class="field-hint">Max 250 characters</span>
+                  </div>
+                </fieldset>
 
-              <fieldset class="eoi-section">
-                <legend class="eoi-section-title">Traction</legend>
-                <div class="field">
-                  <label for="teamSize"
-                    >Full-time team size<span
-                      class="field-required"
-                      aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <select id="teamSize" name="teamSize" required>
-                    <option value="" disabled selected hidden>Select...</option>
-                    <option value="1–10">1–10</option>
-                    <option value="11–50">11–50</option>
-                    <option value="51–150">51–150</option>
-                    <option value="150+">150+</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="annualRevenue">Annual revenue, 2025 (USD)</label>
-                  <select id="annualRevenue" name="annualRevenue">
-                    <option value="" selected>Prefer not to say</option>
-                    <option value="pre-rev">pre-rev</option>
-                    <option value="&lt;$500K">&lt;$500K</option>
-                    <option value="$500K–$2M">$500K–$2M</option>
-                    <option value="$2M–$10M">$2M–$10M</option>
-                    <option value="$10-50M">$10-50M</option>
-                    <option value="50+">50+</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="revenueGrowth"
-                    >Revenue growth, last 12 months</label
-                  >
-                  <select id="revenueGrowth" name="revenueGrowth">
-                    <option value="" selected>Prefer not to say</option>
-                    <option value="flat">flat</option>
-                    <option value="&lt;50%">&lt;50%</option>
-                    <option value="50–100%">50–100%</option>
-                    <option value="100%+">100%+</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="fundingStatus"
-                    >Funding status<span class="field-required" aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <select id="fundingStatus" name="fundingStatus" required>
-                    <option value="" disabled selected hidden>Select...</option>
-                    <option value="bootstrapped">bootstrapped</option>
-                    <option value="pre-seed">pre-seed</option>
-                    <option value="seed">seed</option>
-                    <option value="Series A">Series A</option>
-                    <option value="B+">B+</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="pitchDeck"
-                    >Company overview (pitch deck / one pager)</label
-                  >
+                <fieldset class="eoi-section">
+                  <legend class="eoi-section-title">Traction</legend>
+                  <div class="field">
+                    <label for="teamSize"
+                      >Full-time team size<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <select id="teamSize" name="teamSize" required>
+                      <option value="" disabled selected hidden>
+                        Select...
+                      </option>
+                      <option value="1–10">1–10</option>
+                      <option value="11–50">11–50</option>
+                      <option value="51–150">51–150</option>
+                      <option value="150+">150+</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="revenueLast12MonthsUsd"
+                      >Last 12 months total revenue, USDm</label
+                    >
+                    <input
+                      id="revenueLast12MonthsUsd"
+                      name="revenueLast12MonthsUsd"
+                      type="text"
+                      inputmode="decimal"
+                      placeholder="e.g. 2.5"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="arrUsd">ARR, USDm (if relevant)</label>
+                    <input
+                      id="arrUsd"
+                      name="arrUsd"
+                      type="text"
+                      inputmode="decimal"
+                      placeholder="e.g. 1.2"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="revenueGrowthPct"
+                      >Revenue growth, last 12 months, %</label
+                    >
+                    <input
+                      id="revenueGrowthPct"
+                      name="revenueGrowthPct"
+                      type="text"
+                      inputmode="decimal"
+                      placeholder="e.g. 80"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="fundingStatus"
+                      >Funding status<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <select id="fundingStatus" name="fundingStatus" required>
+                      <option value="" disabled selected hidden>
+                        Select...
+                      </option>
+                      <option value="bootstrapped">bootstrapped</option>
+                      <option value="pre-seed">pre-seed</option>
+                      <option value="seed">seed</option>
+                      <option value="Series A">Series A</option>
+                      <option value="B+">B+</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="pitchDeck"
+                      >Company overview (pitch deck / one pager)</label
+                    >
+                    <input
+                      id="pitchDeck"
+                      name="pitchDeck"
+                      type="file"
+                      accept="application/pdf,.pdf"
+                    />
+                    <span class="field-hint">PDF only, max 10 MB</span>
+                  </div>
+                </fieldset>
+
+                <fieldset class="eoi-section">
+                  <legend class="eoi-section-title">Founder</legend>
+                  <div class="field">
+                    <label for="hardestProblem"
+                      >What is the hardest problem you're solving right
+                      now?<span class="field-required" aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <textarea
+                      id="hardestProblem"
+                      name="hardestProblem"
+                      required
+                      maxlength="250"
+                      rows="3"
+                    ></textarea>
+                    <span class="field-hint">Max 250 characters</span>
+                  </div>
+                  <div class="field">
+                    <label for="whyStanford"
+                      >Why you should be part of Stanford Class of 2026?<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <textarea
+                      id="whyStanford"
+                      name="whyStanford"
+                      required
+                      maxlength="250"
+                      rows="3"
+                    ></textarea>
+                    <span class="field-hint">Max 250 characters</span>
+                  </div>
+                </fieldset>
+
+                <fieldset class="eoi-section">
+                  <legend class="eoi-section-title">Logistics</legend>
+                  <div class="field">
+                    <label for="availabilityWeek"
+                      >Available for the full week, 16–21 Aug 2026?<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <select
+                      id="availabilityWeek"
+                      name="availabilityWeek"
+                      required
+                    >
+                      <option value="" disabled selected hidden>
+                        Select...
+                      </option>
+                      <option value="Yes">Yes</option>
+                      <option value="Likely">Likely</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="visaStatus"
+                      >US visa status<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
+                    >
+                    <select id="visaStatus" name="visaStatus" required>
+                      <option value="" disabled selected hidden>
+                        Select...
+                      </option>
+                      <option value="Have one">Have one</option>
+                      <option value="Need to apply">Need to apply</option>
+                    </select>
+                  </div>
+                </fieldset>
+
+                <div class="field-honeypot" aria-hidden="true">
                   <input
-                    id="pitchDeck"
-                    name="pitchDeck"
-                    type="file"
-                    accept="application/pdf,.pdf"
+                    id="botCheck"
+                    name="botCheck"
+                    type="text"
+                    value=""
+                    tabindex="-1"
+                    autocomplete="off"
+                    readonly
+                    data-lpignore="true"
+                    data-1p-ignore
+                    data-form-type="other"
                   />
-                  <span class="field-hint">PDF only, max 10 MB</span>
                 </div>
-              </fieldset>
-
-              <fieldset class="eoi-section">
-                <legend class="eoi-section-title">Founder</legend>
-                <div class="field">
-                  <label for="hardestProblem"
-                    >What is the hardest problem you're solving right now?<span
+                <label class="consent">
+                  <input id="consent" name="consent" type="checkbox" required />
+                  <span
+                    >I agree to Endeavor Ukraine processing my data for the
+                    purpose of Class of '26 selection.<span
                       class="field-required"
                       aria-hidden="true"
                       >*</span
-                    ></label
+                    >
+                    See our
+                    <a
+                      href="https://endeavor.org/privacy-policy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Privacy Policy</a
+                    >.</span
                   >
-                  <textarea
-                    id="hardestProblem"
-                    name="hardestProblem"
-                    required
-                    maxlength="250"
-                    rows="3"
-                  ></textarea>
-                  <span class="field-hint">Max 250 characters</span>
-                </div>
-                <div class="field">
-                  <label for="whyStanford"
-                    >Why you should be part of Stanford Class of 2026?<span
-                      class="field-required"
-                      aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <textarea
-                    id="whyStanford"
-                    name="whyStanford"
-                    required
-                    maxlength="250"
-                    rows="3"
-                  ></textarea>
-                  <span class="field-hint">Max 250 characters</span>
-                </div>
-              </fieldset>
-
-              <fieldset class="eoi-section">
-                <legend class="eoi-section-title">Logistics</legend>
-                <div class="field">
-                  <label for="availabilityWeek"
-                    >Available for the full week, 16–21 Aug 2026?<span
-                      class="field-required"
-                      aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <select id="availabilityWeek" name="availabilityWeek" required>
-                    <option value="" disabled selected hidden>Select...</option>
-                    <option value="Yes">Yes</option>
-                    <option value="Likely">Likely</option>
-                    <option value="No">No</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="visaStatus"
-                    >US visa status<span class="field-required" aria-hidden="true"
-                      >*</span
-                    ></label
-                  >
-                  <select id="visaStatus" name="visaStatus" required>
-                    <option value="" disabled selected hidden>Select...</option>
-                    <option value="Have one">Have one</option>
-                    <option value="Need to apply">Need to apply</option>
-                  </select>
-                </div>
-              </fieldset>
-
-              <div class="field-honeypot" aria-hidden="true">
-                <input
-                  id="botCheck"
-                  name="botCheck"
-                  type="text"
-                  value=""
-                  tabindex="-1"
-                  autocomplete="off"
-                  readonly
-                  data-lpignore="true"
-                  data-1p-ignore
-                  data-form-type="other"
-                />
+                </label>
+                <button type="submit" class="cta">
+                  Share interest
+                  <span class="arrow">→</span>
+                </button>
+                <p class="eoi-disclaimer">
+                  We'll be in touch with those who fit the Class of '26 brief.
+                  We don't share your details with third parties.
+                </p>
+                <p class="eoi-status" id="eoiStatus" aria-live="polite"></p>
               </div>
-              <label class="consent">
-                <input id="consent" name="consent" type="checkbox" required />
-                <span
-                  >I agree to Endeavor Ukraine processing my data for the
-                  purpose of Class of '26 selection.<span
-                    class="field-required"
-                    aria-hidden="true"
-                    >*</span
-                  >
-                  See our
-                  <a
-                    href="https://endeavor.org/privacy-policy/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Privacy Policy</a
-                  >.</span
-                >
-              </label>
-              <button type="submit" class="cta">
-                Share interest
-                <span class="arrow">→</span>
-              </button>
-              <p class="eoi-disclaimer">
-                We'll be in touch with those who fit the Class of '26 brief. We
-                don't share your details with third parties.
-              </p>
-              <p class="eoi-status" id="eoiStatus" aria-live="polite"></p>
-            </div>
 
-            <div class="eoi-confirm">
-              <div class="check-circle">✓</div>
-              <h3>Got it.</h3>
-              <p>Thanks for sharing. We'll be in touch.</p>
-            </div>
+              <div class="eoi-confirm">
+                <div class="check-circle">✓</div>
+                <h3>Got it.</h3>
+                <p>Thanks for sharing. We'll be in touch.</p>
+              </div>
             </div>
           </form>
 
@@ -3582,7 +3692,6 @@
             <h4>Programme</h4>
             <a href="#register">Share Interest</a>
             <a href="mailto:stanford2026@endeavor.org">Founder questions</a>
-            <a href="mailto:partners@endeavor.org">Press &amp; partnerships</a>
             <a href="https://endeavor.org" target="_blank" rel="noopener"
               >Endeavor Global</a
             >
@@ -3601,10 +3710,6 @@
               src="images/endeavor-logo-white.png"
               alt="Endeavor logo"
             />
-            <span
-              >Stanford GSB Innovation &amp; Growth · in partnership with
-              Endeavor Global</span
-            >
           </div>
           <div class="footer-legal">
             <a
@@ -3621,6 +3726,23 @@
     </footer>
 
     <script>
+      const heroVideo = document.querySelector(".hero__video");
+      if (heroVideo) {
+        heroVideo.muted = true;
+        heroVideo.defaultMuted = true;
+        const playHeroVideo = () => {
+          const playPromise = heroVideo.play();
+          if (playPromise?.catch) {
+            playPromise.catch(() => {});
+          }
+        };
+        playHeroVideo();
+        heroVideo.addEventListener("loadeddata", playHeroVideo, { once: true });
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden) playHeroVideo();
+        });
+      }
+
       const EOI_WEBHOOK_URL =
         "https://script.google.com/macros/s/AKfycbzqrMg2ChfYklpQZfv8mxj5dfO1ZVf-AquhfBUBBAiYaeYPFCJam-_MJvQGh4x9-95U/exec";
       const EOI_MAX_PDF_BYTES = 10 * 1024 * 1024;
@@ -3695,8 +3817,9 @@
           companyUrl: getFormValue(form, "companyUrl"),
           companyDescription: getFormValue(form, "companyDescription"),
           teamSize: getFormSelectValue(form, "teamSize"),
-          annualRevenue: getFormSelectValue(form, "annualRevenue"),
-          revenueGrowth: getFormSelectValue(form, "revenueGrowth"),
+          revenueLast12MonthsUsd: getFormValue(form, "revenueLast12MonthsUsd"),
+          arrUsd: getFormValue(form, "arrUsd"),
+          revenueGrowthPct: getFormValue(form, "revenueGrowthPct"),
           fundingStatus: getFormSelectValue(form, "fundingStatus"),
           pitchDeck,
           hardestProblem: getFormValue(form, "hardestProblem"),
@@ -3738,7 +3861,11 @@
           ["fundingStatus", "fundingStatus", "Funding status"],
           ["hardestProblem", "hardestProblem", "Hardest problem"],
           ["whyStanford", "whyStanford", "Why Stanford Class of 2026"],
-          ["availabilityWeek", "availabilityWeek", "Availability for the full week"],
+          [
+            "availabilityWeek",
+            "availabilityWeek",
+            "Availability for the full week",
+          ],
           ["visaStatus", "visaStatus", "US visa status"],
         ];
 
