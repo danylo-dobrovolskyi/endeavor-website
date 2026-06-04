@@ -151,11 +151,19 @@
       .logo {
         display: flex;
         align-items: center;
+        gap: clamp(14px, 2vw, 22px);
         flex-shrink: 0;
       }
       .logo-mark {
         width: 120px;
         height: 36px;
+        display: block;
+        object-fit: contain;
+      }
+      .logo-partner {
+        height: clamp(44px, 5vw, 56px);
+        width: auto;
+        max-width: min(280px, 42vw);
         display: block;
         object-fit: contain;
       }
@@ -214,6 +222,10 @@
         .logo-mark {
           width: 104px;
           height: 32px;
+        }
+        .logo-partner {
+          height: 38px;
+          max-width: 200px;
         }
       }
       .flag-dot {
@@ -2195,6 +2207,12 @@
         color: var(--ink);
         margin-bottom: -4px;
       }
+      .eoi-section-note {
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--text-soft);
+        margin: 0 0 6px;
+      }
       .field input:user-invalid,
       .field select:user-invalid,
       .field textarea:user-invalid {
@@ -2475,6 +2493,11 @@
                 src="images/endeavor-logo.png"
                 alt="Endeavor logo"
               />
+              <img
+                class="logo-partner"
+                src="images/stanford.webp"
+                alt="Stanford Graduate School of Business"
+              />
             </a>
             <a class="hero__pill" href="#apply-form">Share interest</a>
           </header>
@@ -2542,7 +2565,7 @@
           <div class="fact yellow">
             <div>
               <span class="fact-idx">02</span>
-              <div class="fact-num">120</div>
+              <div class="fact-num">120<small>in total</small></div>
             </div>
             <div>
               <div class="fact-rule"></div>
@@ -2554,17 +2577,17 @@
           <div class="fact yellow">
             <div>
               <span class="fact-idx">03</span>
-              <div class="fact-num">16-21<small>st</small></div>
+              <div class="fact-num">16-21<small>st August</small></div>
             </div>
             <div>
               <div class="fact-rule"></div>
-              <p class="fact-body">August Stanford Executive Education</p>
+              <p class="fact-body">Stanford Executive Education</p>
             </div>
           </div>
           <div class="fact mint">
             <div>
               <span class="fact-idx">04</span>
-              <div class="fact-num">21-24</div>
+              <div class="fact-num">21-24<small>th August</small></div>
             </div>
             <div>
               <div class="fact-rule"></div>
@@ -2622,22 +2645,6 @@
                   height="40"
                 />
               </div>
-              <div class="logo-carousel__item">
-                <img
-                  src="images/logos/cabify.png"
-                  alt="Cabify"
-                  width="120"
-                  height="40"
-                />
-              </div>
-              <div class="logo-carousel__item">
-                <img
-                  src="images/logos/wellhub.png"
-                  alt="Wellhub"
-                  width="120"
-                  height="40"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -2668,8 +2675,7 @@
               <p class="comp-desc">
                 A week of executive education with Stanford GSB faculty –
                 frameworks, cases, and a working room of fifty Ukrainian
-                operators. Held at Schwab Residential Center on the Stanford GSB
-                campus. Lodging and meals included.
+                operators. Held at Stanford GSB campus. Lodging and meals included.
               </p>
             </div>
             <span class="duration">6 days</span>
@@ -2693,7 +2699,7 @@
             </div>
             <div class="component--soon-message">
               <p class="component--soon-title">
-                Additional Silicon Valley programming – coming soon
+                Flagship Meet & Grit Community Event – coming soon
               </p>
             </div>
           </div>
@@ -2716,7 +2722,7 @@
                 pricing, fundraising, and growth capital.
               </p>
               <span class="track-faculty"
-                >George Foster, Huggy Rao, Michael Kraus, Nir Halevy</span
+                >Rod Brady, Michael Kraus, Michael Kraus, Huggy Rao</span
               >
             </div>
             <div class="track">
@@ -2731,7 +2737,7 @@
                 and unlock new growth.
               </p>
               <span class="track-faculty"
-                >Diyi Yang, Michael Lepech, Jonathan Levav</span
+                >Diyi Yang, George Foster</span
               >
             </div>
             <div class="track">
@@ -2746,7 +2752,7 @@
                 that comes with growth.
               </p>
               <span class="track-faculty"
-                >Diyi Yang, Michael Lepech, Jonathan Levav</span
+                >Matt Abrahams, Nir Halevy, Dan Klein</span
               >
             </div>
           </div>
@@ -3252,7 +3258,7 @@
             <div class="faq-a">
               We review every response on onrolling basis & come back to those
               who fit with the application form. Selected founders pay by 10
-              July. Programme runs 16 – 24 August.
+              July. Programme runs 16 – 21 August.
             </div>
           </details>
 
@@ -3278,9 +3284,9 @@
         <p class="eoi-sub">
           We're taking 50 Ukrainian founders to Stanford this August. Seats are
           limited and we select carefully. Share a bit about you and your
-          company below – if you're a fit, we'll be in touch with the
-          application form and next steps. Please share interest by
-          <strong>Friday, June 22, 2026</strong>.
+          company below – if you're a fit, we'll be in touch with the next steps.
+          Please share interest by
+          <strong>Monday, June 22, 2026</strong>.
         </p>
 
         <div class="timeline-block">
@@ -3291,7 +3297,7 @@
               ><span class="t-what">Share your interest</span>
             </li>
             <li>
-              <span class="t-when">Onrolling Basis</span
+              <span class="t-when">On a rolling basis</span
               ><span class="t-what"
                 >We review and come back to those who fit</span
               >
@@ -3418,16 +3424,11 @@
                   </div>
                   <div class="field">
                     <label for="companyDescription"
-                      >What does your company do and what makes it unique?<span
-                        class="field-required"
-                        aria-hidden="true"
-                        >*</span
-                      ></label
+                      >What does your company do and what makes it unique?</label
                     >
                     <textarea
                       id="companyDescription"
                       name="companyDescription"
-                      required
                       maxlength="250"
                       rows="3"
                     ></textarea>
@@ -3437,6 +3438,11 @@
 
                 <fieldset class="eoi-section">
                   <legend class="eoi-section-title">Traction</legend>
+                  <p class="eoi-section-note">
+                    Please note: all information submitted in this section will
+                    remain confidential and will be used solely for the purposes
+                    of the program selection process.
+                  </p>
                   <div class="field">
                     <label for="teamSize"
                       >Full-time team size<span
@@ -3447,7 +3453,7 @@
                     >
                     <select id="teamSize" name="teamSize" required>
                       <option value="" disabled selected hidden>
-                        Select...
+                        Select
                       </option>
                       <option value="1–10">1–10</option>
                       <option value="11–50">11–50</option>
@@ -3457,50 +3463,40 @@
                   </div>
                   <div class="field">
                     <label for="revenueLast12MonthsUsd"
-                      >Last 12 months total revenue, USDm</label
+                      >Last 12 months total revenue, USDm<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
                     >
                     <input
                       id="revenueLast12MonthsUsd"
                       name="revenueLast12MonthsUsd"
                       type="text"
                       inputmode="decimal"
-                      placeholder="e.g. 2.5"
-                    />
-                  </div>
-                  <div class="field">
-                    <label for="arrUsd">ARR, USDm (if relevant)</label>
-                    <input
-                      id="arrUsd"
-                      name="arrUsd"
-                      type="text"
-                      inputmode="decimal"
-                      placeholder="e.g. 1.2"
+                      required
                     />
                   </div>
                   <div class="field">
                     <label for="revenueGrowthPct"
-                      >Revenue growth, last 12 months, %</label
+                      >Revenue growth, last 12 months, %<span
+                        class="field-required"
+                        aria-hidden="true"
+                        >*</span
+                      ></label
                     >
                     <input
                       id="revenueGrowthPct"
                       name="revenueGrowthPct"
                       type="text"
                       inputmode="decimal"
-                      placeholder="e.g. 80"
+                      required
                     />
                   </div>
                   <div class="field">
-                    <label for="fundingStatus"
-                      >Funding status<span
-                        class="field-required"
-                        aria-hidden="true"
-                        >*</span
-                      ></label
-                    >
-                    <select id="fundingStatus" name="fundingStatus" required>
-                      <option value="" disabled selected hidden>
-                        Select...
-                      </option>
+                    <label for="fundingStatus">Funding status</label>
+                    <select id="fundingStatus" name="fundingStatus">
+                      <option value="" selected>Select</option>
                       <option value="bootstrapped">bootstrapped</option>
                       <option value="pre-seed">pre-seed</option>
                       <option value="seed">seed</option>
@@ -3527,14 +3523,11 @@
                   <div class="field">
                     <label for="hardestProblem"
                       >What is the hardest problem you're solving right
-                      now?<span class="field-required" aria-hidden="true"
-                        >*</span
-                      ></label
+                      now?</label
                     >
                     <textarea
                       id="hardestProblem"
                       name="hardestProblem"
-                      required
                       maxlength="250"
                       rows="3"
                     ></textarea>
@@ -3575,7 +3568,7 @@
                       required
                     >
                       <option value="" disabled selected hidden>
-                        Select...
+                        Select
                       </option>
                       <option value="Yes">Yes</option>
                       <option value="Likely">Likely</option>
@@ -3592,7 +3585,7 @@
                     >
                     <select id="visaStatus" name="visaStatus" required>
                       <option value="" disabled selected hidden>
-                        Select...
+                        Select
                       </option>
                       <option value="Have one">Have one</option>
                       <option value="Need to apply">Need to apply</option>
@@ -3663,8 +3656,8 @@
             <div class="eoi-side-block">
               <div class="label">Founder questions</div>
               <div class="value">
-                <a href="mailto:evelina.holovanova@endeavor.org"
-                  >evelina.holovanova@endeavor.org</a
+                <a href="mailto:stanford@endeavor.org"
+                  >stanford@endeavor.org</a
                 >
               </div>
             </div>
@@ -3693,14 +3686,29 @@
             <a href="#register">Share Interest</a>
             <a href="mailto:stanford2026@endeavor.org">Founder questions</a>
             <a href="https://endeavor.org" target="_blank" rel="noopener"
-              >Endeavor Global</a
+              >About Endeavor</a
             >
           </div>
           <div class="footer-col">
             <h4>Follow</h4>
-            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="#" target="_blank" rel="noopener">Instagram</a>
-            <a href="#" target="_blank" rel="noopener">Facebook</a>
+            <a
+              href="https://www.linkedin.com/company/endeavorglobal"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            <a
+              href="https://www.instagram.com/endeavor_global/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+            <a
+              href="https://www.facebook.com/EndeavorUkraine/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Facebook</a
+            >
           </div>
         </div>
         <div class="footer-bottom">
@@ -3818,7 +3826,6 @@
           companyDescription: getFormValue(form, "companyDescription"),
           teamSize: getFormSelectValue(form, "teamSize"),
           revenueLast12MonthsUsd: getFormValue(form, "revenueLast12MonthsUsd"),
-          arrUsd: getFormValue(form, "arrUsd"),
           revenueGrowthPct: getFormValue(form, "revenueGrowthPct"),
           fundingStatus: getFormSelectValue(form, "fundingStatus"),
           pitchDeck,
@@ -3856,10 +3863,17 @@
           ["companyName", "companyName", "Company name"],
           ["role", "yourRole", "Your role"],
           ["companyUrl", "companyUrl", "Company website or LinkedIn"],
-          ["companyDescription", "companyDescription", "Company description"],
           ["teamSize", "teamSize", "Full-time team size"],
-          ["fundingStatus", "fundingStatus", "Funding status"],
-          ["hardestProblem", "hardestProblem", "Hardest problem"],
+          [
+            "revenueLast12MonthsUsd",
+            "revenueLast12MonthsUsd",
+            "Last 12 months total revenue, USDm",
+          ],
+          [
+            "revenueGrowthPct",
+            "revenueGrowthPct",
+            "Revenue growth, last 12 months, %",
+          ],
           ["whyStanford", "whyStanford", "Why Stanford Class of 2026"],
           [
             "availabilityWeek",
