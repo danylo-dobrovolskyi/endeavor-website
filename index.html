@@ -142,6 +142,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 24px;
+        min-width: 0;
         background: var(--white);
         color: var(--ink);
         border-bottom: 1px solid rgba(1, 0, 15, 0.08);
@@ -152,7 +153,8 @@
         display: flex;
         align-items: center;
         gap: clamp(14px, 2vw, 22px);
-        flex-shrink: 0;
+        min-width: 0;
+        flex: 1 1 auto;
       }
       .logo-mark {
         width: 120px;
@@ -217,15 +219,36 @@
       }
       @media (max-width: 720px) {
         .hero__nav {
-          padding-inline: clamp(16px, 4vw, 24px);
+          gap: 10px;
+          padding: 14px 12px;
+        }
+        .logo {
+          gap: 8px;
         }
         .logo-mark {
-          width: 104px;
-          height: 32px;
+          width: 88px;
+          height: 28px;
+          flex-shrink: 0;
         }
         .logo-partner {
-          height: 38px;
-          max-width: 200px;
+          height: 32px;
+          max-width: min(108px, 30vw);
+          flex-shrink: 1;
+        }
+        .hero__pill {
+          padding: 8px 12px;
+          font-size: 10.5px;
+          letter-spacing: 0.05em;
+        }
+      }
+      @media (max-width: 380px) {
+        .logo-partner {
+          max-width: min(88px, 26vw);
+          height: 28px;
+        }
+        .hero__pill {
+          padding: 8px 10px;
+          font-size: 10px;
         }
       }
       .flag-dot {
@@ -2547,7 +2570,7 @@
               bringing Ukrainian founders for world-class learning and Silicon
               Valley access.
             </p>
-            <a class="hero__panel-btn" href="#the-program">Program</a>
+            <a class="hero__panel-btn" href="#the-program">Programme</a>
           </div>
         </div>
 
@@ -2559,7 +2582,7 @@
             </div>
             <div>
               <div class="fact-rule"></div>
-              <p class="fact-body">Ukrainian founders.</p>
+              <p class="fact-body">Ukrainian founders</p>
             </div>
           </div>
           <div class="fact yellow">
@@ -2570,7 +2593,7 @@
             <div>
               <div class="fact-rule"></div>
               <p class="fact-body">
-                Endeavor Entrepreneurs and their leadership.
+                Endeavor Entrepreneurs and their leadership
               </p>
             </div>
           </div>
@@ -3726,7 +3749,12 @@
               rel="noopener noreferrer"
               >Privacy Policy</a
             >
-            <a href="#terms">Terms</a>
+            <a
+              href="https://endeavor.org/terms-conditions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Terms</a
+            >
             <span class="footer-hashtag">#UAClassOf26</span>
           </div>
         </div>
@@ -3752,7 +3780,7 @@
       }
 
       const EOI_WEBHOOK_URL =
-        "https://script.google.com/macros/s/AKfycbyNpRV1N_wVkKsFTZK1IDUfTuItnHbvXKX8FzGjsri2F554Cg4hjUCpLGywNxcNfQ-_/exec";
+        "https://script.google.com/macros/s/AKfycbybc0ur5pcZVb4n8zMfF2kwh9mQyqqwqtO7JvW7o47v2YD3bLOLtAFW98V7_7CKGtqf/exec";
       const EOI_MAX_PDF_BYTES = 10 * 1024 * 1024;
 
       function readFileAsBase64(file) {
