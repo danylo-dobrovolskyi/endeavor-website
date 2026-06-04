@@ -112,7 +112,6 @@
       }
 
       .hero__nav,
-      .hero__links a,
       .hero__pill,
       .hero__line,
       .hero__panel-btn {
@@ -160,21 +159,6 @@
         display: block;
         object-fit: contain;
       }
-      .hero__links {
-        display: flex;
-        gap: clamp(18px, 2.4vw, 32px);
-      }
-      .hero__links a {
-        font-weight: 500;
-        font-size: 15px;
-        color: var(--ink);
-        opacity: 0.72;
-        text-decoration: none;
-        transition: opacity 0.2s;
-      }
-      .hero__links a:hover {
-        opacity: 1;
-      }
       .hero__pill {
         flex-shrink: 0;
         font-weight: 500;
@@ -193,11 +177,6 @@
       .hero__pill:hover {
         background: var(--ink);
         color: var(--white);
-      }
-      @media (max-width: 760px) {
-        .hero__links {
-          display: none;
-        }
       }
 
       .nav-tags {
@@ -230,8 +209,6 @@
       }
       @media (max-width: 720px) {
         .hero__nav {
-          flex-wrap: wrap;
-          gap: 16px;
           padding-inline: clamp(16px, 4vw, 24px);
         }
         .logo-mark {
@@ -1935,6 +1912,8 @@
       .eoi-inner {
         position: relative;
         z-index: 1;
+        min-width: 0;
+        max-width: 100%;
       }
       .eoi-eyebrow {
         background: var(--ink);
@@ -1976,12 +1955,17 @@
         grid-template-columns: 1.1fr 0.9fr;
         gap: 60px;
         align-items: start;
+        min-width: 0;
       }
       @media (max-width: 880px) {
         .eoi-grid {
           grid-template-columns: 1fr;
           gap: 36px;
         }
+      }
+      .eoi-grid > * {
+        min-width: 0;
+        max-width: 100%;
       }
       .eoi-form {
         background: var(--white);
@@ -1992,6 +1976,23 @@
         display: flex;
         flex-direction: column;
         gap: 18px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+      }
+      @media (max-width: 720px) {
+        .eoi-form {
+          padding: 22px 16px;
+        }
+        .eoi-form-fields {
+          gap: 18px !important;
+        }
+        .field input,
+        .field select,
+        .field textarea {
+          max-width: 100%;
+        }
       }
       .eoi-form-toggle {
         width: 100%;
@@ -2040,6 +2041,9 @@
         border-radius: var(--radius-sm);
         background: var(--paper);
         color: var(--ink);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         transition:
           border-color 0.2s,
           background 0.2s;
@@ -2096,6 +2100,7 @@
         border: 0;
         margin: 0;
         min-width: 0;
+        max-width: 100%;
       }
       .eoi-section + .eoi-section {
         margin-top: 6px;
@@ -2377,7 +2382,7 @@
         poster="media/hero-bg-poster.avif"
         aria-hidden="true"
       >
-        <source src="media/hero-bg.mp4" type="video/webm" />
+        <source src="media/hero-bg-2.mp4" type="video/webm" />
       </video>
 
       <div class="site-nav">
@@ -2390,11 +2395,6 @@
                 alt="Endeavor logo"
               />
             </a>
-            <nav class="hero__links" aria-label="Page sections">
-              <a href="#the-program">Programme</a>
-              <a href="#faculty">Faculty</a>
-              <a href="#newsroom">Newsroom</a>
-            </nav>
             <a class="hero__pill" href="#apply-form">Share interest</a>
           </header>
         </div>
@@ -2438,10 +2438,7 @@
 
           <div class="hero__panel fade-in delay-4">
             <p>
-              AI, Innovation &amp; Growth is an executive education program by
-              Endeavor and Stanford Graduate School of Business, bringing
-              Ukrainian and global Endeavor founders together for world-class
-              learning and Silicon Valley access.
+              AI, Innovation &amp; Growth Growth is an executive education program by Endeavor and Stanford Graduate School of Business, bringing Ukrainian founders for world-class learning and Silicon Valley access.
             </p>
             <a class="hero__panel-btn" href="#the-program">Program</a>
           </div>
