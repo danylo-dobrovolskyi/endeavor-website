@@ -321,6 +321,9 @@
         flex-direction: column;
         align-items: flex-start;
         gap: clamp(8px, 1vw, 12px);
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
       }
       .hero__line {
         display: inline-flex;
@@ -408,6 +411,27 @@
         }
         .hero__line {
           white-space: normal;
+          flex-wrap: wrap;
+          max-width: 100%;
+          font-size: clamp(22px, 7vw, 34px);
+          gap: 6px 10px;
+          padding: 0.2em 0.34em 0.26em;
+          line-height: 1;
+        }
+        .hero__line--1 {
+          font-size: clamp(20px, 5.6vw, 30px);
+        }
+        .hero__ico--play {
+          width: 1em;
+          height: 0.78em;
+        }
+      }
+      @media (max-width: 400px) {
+        .hero__line {
+          font-size: clamp(20px, 6.4vw, 26px);
+        }
+        .hero__line--1 {
+          font-size: clamp(17px, 5vw, 24px);
         }
       }
 
