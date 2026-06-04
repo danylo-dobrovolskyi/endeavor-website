@@ -869,6 +869,11 @@
         gap: 14px;
         padding-top: 22px;
       }
+      a.faculty-card {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+      }
       .faculty-card {
         padding: 22px 22px 20px;
         border-radius: var(--radius-sm);
@@ -956,7 +961,7 @@
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.1em;
-        color: var(--mint-deep);
+        color: var(--mint);
       }
       .outcome h3 {
         font-family: var(--font-body);
@@ -1104,14 +1109,19 @@
         }
       }
 
-      /* ===================== PROGRAMME VISUAL PLACEHOLDER ===================== */
-      .visual-section {
+      /* ===================== LOGO CAROUSEL SECTION ===================== */
+      .logo-carousel-section {
         padding: clamp(56px, 7vw, 100px) 0 clamp(24px, 4vw, 56px);
       }
-      .visual-section.narrow {
+
+      /* ===================== PROGRAMME VISUAL ===================== */
+      .programme-visual {
+        padding: 0 0 clamp(24px, 4vw, 56px) 0;
+      }
+      .programme-visual--narrow {
         padding: clamp(24px, 4vw, 48px) 0;
       }
-      .visual-frame {
+      .programme-visual__frame {
         width: 100%;
         aspect-ratio: 21 / 9;
         border-radius: var(--radius-md);
@@ -1121,22 +1131,22 @@
         display: grid;
         place-items: center;
       }
-      .visual-frame > img {
+      .programme-visual__frame > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
       }
-      .visual-frame.has-image::before {
+      .programme-visual__frame--has-image::before {
         display: none;
       }
-      .visual-frame.has-image .visual-overlay {
+      .programme-visual__frame--has-image .programme-visual__overlay {
         display: none;
       }
-      .visual-frame.mini {
+      .programme-visual__frame--mini {
         aspect-ratio: 21 / 7;
       }
-      .visual-frame::before {
+      .programme-visual__frame::before {
         content: "";
         position: absolute;
         inset: 14px;
@@ -1144,7 +1154,7 @@
         border-radius: calc(var(--radius-md) - 8px);
         pointer-events: none;
       }
-      .visual-overlay {
+      .programme-visual__overlay {
         position: relative;
         z-index: 1;
         display: flex;
@@ -1155,7 +1165,7 @@
         text-align: center;
         max-width: 540px;
       }
-      .visual-tag {
+      .programme-visual__tag {
         display: inline-block;
         padding: 8px 16px;
         background: var(--ink);
@@ -1166,7 +1176,7 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
       }
-      .visual-hint {
+      .programme-visual__hint {
         font-size: 14px;
         color: rgba(0, 0, 0, 0.65);
         max-width: 420px;
@@ -1474,6 +1484,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
+        align-items: stretch;
       }
       @media (max-width: 900px) {
         .pkgs {
@@ -1563,7 +1574,8 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
-        margin-bottom: 22px;
+        margin-bottom: 0;
+        flex: 1;
       }
       .pkg li {
         display: flex;
@@ -1613,7 +1625,10 @@
       .pkg.teaser {
         background: var(--yellow-soft);
         border-color: transparent;
-        min-height: 320px;
+      }
+      .pkg.teaser .pkg-tag {
+        flex: 1;
+        color: var(--text-soft);
       }
       .pkg-teaser-tag {
         display: inline-block;
@@ -1634,45 +1649,11 @@
         color: var(--text-mute);
         text-transform: uppercase;
         margin-top: auto;
-        padding-bottom: 18px;
-      }
-      .pkg-teaser-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 14px 20px;
-        background: var(--ink);
-        color: var(--white);
-        border-radius: var(--radius-sm);
-        font-family: var(--font-body);
-        font-weight: 600;
-        font-size: 15px;
-        letter-spacing: -0.01em;
-        transition:
-          background 0.2s,
-          transform 0.15s;
-      }
-      .pkg-teaser-cta:hover {
-        background: var(--mint-deep);
-        color: var(--ink);
-        transform: translateY(-1px);
-      }
-      .pkg-teaser-cta .arrow {
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: var(--mint);
-        color: var(--ink);
-        display: grid;
-        place-items: center;
-        font-size: 14px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
       }
       .pkg.teaser .pkg-name {
         color: var(--ink);
-      }
-      .pkg.teaser .pkg-tag {
-        color: var(--text-soft);
       }
 
       /* ===================== VOICES ===================== */
@@ -1900,7 +1881,9 @@
         text-transform: uppercase;
         color: var(--text-mute);
       }
-      .field input {
+      .field input,
+      .field select,
+      .field textarea {
         font-family: inherit;
         font-size: 16px;
         padding: 14px 16px;
@@ -1912,18 +1895,85 @@
           border-color 0.2s,
           background 0.2s;
       }
-      .field input::placeholder {
+      .field select {
+        cursor: pointer;
+        appearance: none;
+        color: var(--ink);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        padding-right: 40px;
+      }
+      .field select:has(option[value=""]:checked) {
         color: var(--text-mute);
       }
-      .field input:focus {
+      .field select option {
+        color: var(--ink);
+      }
+      .field textarea {
+        min-height: 96px;
+        resize: vertical;
+        line-height: 1.45;
+      }
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: var(--text-mute);
+      }
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
         outline: none;
         border-color: var(--ink);
         background: var(--white);
       }
+      .field input[type="file"] {
+        padding: 10px 14px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .field-required {
+        margin-left: 2px;
+      }
+      .field-hint {
+        font-size: 12px;
+        color: var(--text-mute);
+        line-height: 1.4;
+      }
+      .eoi-section {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding-top: 8px;
+        border: 0;
+        margin: 0;
+        min-width: 0;
+      }
+      .eoi-section + .eoi-section {
+        margin-top: 6px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .eoi-section-title {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin-bottom: -4px;
+      }
+      .field input:user-invalid,
+      .field select:user-invalid,
+      .field textarea:user-invalid {
+        border-color: #c62828;
+      }
       .field-honeypot {
         position: absolute;
         left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
         opacity: 0;
+        pointer-events: none;
       }
 
       button.cta {
@@ -2295,8 +2345,8 @@
       </div>
     </section>
 
-    <!-- ======================= PROGRAMME VISUAL (placeholder) ======================= -->
-    <section class="visual-section">
+    <!-- ======================= LOGO CAROUSEL ======================= -->
+    <section class="logo-carousel-section">
       <div class="logo-carousel" aria-label="Partner companies">
         <div class="logo-carousel__track">
           <div class="logo-carousel__group" data-logo-set>
@@ -2359,15 +2409,18 @@
           </div>
         </div>
       </div>
+    </section>
 
+    <!-- ======================= PROGRAMME VISUAL ======================= -->
+    <section class="programme-visual">
       <div class="container">
         <div
-          class="visual-frame has-image"
+          class="programme-visual__frame programme-visual__frame--has-image"
           role="img"
           aria-label="Programme visual"
         >
           <img
-            src="images/programme-visual.jpeg"
+            src="images/programme-visual.jpg"
             alt="Programme visual"
             loading="lazy"
           />
@@ -2378,7 +2431,7 @@
     <!-- ======================= PROGRAMME ======================= -->
     <section class="section" id="the-program">
       <div class="container">
-        <div class="section-num">02 / The Itinerary</div>
+        <div class="section-num">01 / The Itinerary</div>
         <div class="section-head">
           <h2 class="display">The Programme.</h2>
           <span class="section-meta">16 – 24 Aug 2026</span>
@@ -2433,51 +2486,58 @@
                 in San Francisco on Ukrainian Independence Day.
               </p>
             </div>
-            <span class="duration">1 night</span>
+            <span class="duration">1 day</span>
           </div>
         </div>
 
         <div class="inside-week" id="curriculum-at-a-glance">
           <div class="inside-week-head">
             <h3>Curriculum at a Glance</h3>
-            <span class="meta">4 Tracks · Stanford GSB Faculty</span>
+            <span class="meta"
+              >3 Tracks · Stanford Stanford Graduate School of Business
+              Faculty</span
+            >
           </div>
           <div class="tracks">
             <div class="track">
-              <span class="track-idx">01 · Scaling &amp; Strategy</span>
+              <span class="track-idx">01 · Scale &amp; Growth</span>
               <span class="track-title"
-                >How great companies grow without losing what made them
-                great.</span
-              >
-              <span class="track-faculty">George Foster, Huggy Rao</span>
-            </div>
-            <div class="track">
-              <span class="track-idx">02 · Endeavor Sprint</span>
-              <span class="track-title"
-                >Pricing, fundraising, and negotiation as growth levers.</span
-              >
-              <span class="track-faculty">Michael Kraus, Nir Halevy</span>
-            </div>
-            <div class="track">
-              <span class="track-idx"
-                >03 · Endeavor Summit & Meet and Grit - 1 day
+                >How great companies grow without losing what made them great. <br />
+                <br />
+                For founders who are scaling teams, products, markets, and
+                operations — and need to make better decisions on strategy,
+                pricing, fundraising, and growth capital.
               </span>
+              <span class="track-faculty"
+                >George Foster, Huggy Rao, Michael Kraus, Nir Halevy</span
+              >
+            </div>
+            <div class="track">
+              <span class="track-idx">02 · Innovating with AI</span>
               <span class="track-title"
-                >Where AI creates real value – and how to get your org to adopt
-                it.</span
+                >Where AI creates real value — and how to get your organization
+                to adopt it. <br />
+                <br />
+                For founders who want to move beyond AI hype and understand how
+                to use technology to build better products, improve operations,
+                and unlock new growth.</span
               >
               <span class="track-faculty"
                 >Diyi Yang, Michael Lepech, Jonathan Levav</span
               >
             </div>
             <div class="track">
-              <span class="track-idx">04 · Communication &amp; People</span>
+              <span class="track-idx">03 · Communication & Leadership </span>
               <span class="track-title"
-                >Executive presence, storytelling, and collaboration at
-                scale.</span
-              >
+                >Executive presence, storytelling, and collaboration at scale.
+                <br />
+                <br />
+                For founders who need to align teams, communicate clearly with
+                investors and boards, and lead people through the complexity
+                that comes with growth.
+              </span>
               <span class="track-faculty"
-                >Matt Abrahams, Dan Klein, Frank Flynn</span
+                >Diyi Yang, Michael Lepech, Jonathan Levav</span
               >
             </div>
           </div>
@@ -2488,7 +2548,7 @@
     <!-- ======================= FACULTY ======================= -->
     <section class="section" id="faculty">
       <div class="container">
-        <div class="section-num">03 / Faculty</div>
+        <div class="section-num">02 / Faculty</div>
         <details class="faculty-panel" open>
           <summary>
             <div class="faculty-panel-head">
@@ -2498,7 +2558,13 @@
           </summary>
           <div class="faculty-panel-body">
             <div class="faculty-grid">
-              <div class="faculty-card">
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/george-foster-b003b343/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="George Foster on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="GF">
                   <img
                     src="images/professors/george-foster.jpg"
@@ -2510,11 +2576,17 @@
                 <div class="faculty-role">
                   Faculty Director. Entrepreneurship &amp; new venture analysis.
                 </div>
-              </div>
-              <div class="faculty-card">
+              </a>
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/hayagreevarao/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Huggy Rao on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="HR">
                   <img
-                    src="images/professors/huggy-rao.jpg"
+                    src="images/professors/huggy-rao2.AVIF"
                     alt="Huggy Rao"
                     loading="lazy"
                   />
@@ -2523,8 +2595,14 @@
                 <div class="faculty-role">
                   Co-author, Scaling Up Excellence. Organisational behaviour.
                 </div>
-              </div>
-              <div class="faculty-card">
+              </a>
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/maabrahams/?skipRedirect=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Matt Abrahams on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="MA">
                   <img
                     src="images/professors/matt-abrahams.jpeg"
@@ -2536,8 +2614,14 @@
                 <div class="faculty-role">
                   Host, Think Fast, Talk Smart. Executive communication.
                 </div>
-              </div>
-              <div class="faculty-card">
+              </a>
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/nir-halevy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Nir Halevy on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="NH">
                   <img
                     src="images/professors/nir-halevy.jpg"
@@ -2549,7 +2633,7 @@
                 <div class="faculty-role">
                   Flagship negotiations professor, Stanford GSB.
                 </div>
-              </div>
+              </a>
               <div class="faculty-card">
                 <div class="faculty-photo" data-initials="FF">
                   <img
@@ -2563,7 +2647,13 @@
                   Leadership, influence &amp; team collaboration.
                 </div>
               </div>
-              <div class="faculty-card">
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/diyi-yang-10561924/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Diyi Yang on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="DY">
                   <img
                     src="images/professors/diyi-yang.jpg"
@@ -2575,8 +2665,14 @@
                 <div class="faculty-role">
                   Stanford CS. Generative AI &amp; NLP.
                 </div>
-              </div>
-              <div class="faculty-card">
+              </a>
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/jonathan-levav-0333329/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Jonathan Levav on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="JL">
                   <img
                     src="images/professors/jonathan-levav.webp"
@@ -2588,8 +2684,14 @@
                 <div class="faculty-role">
                   Behavioural science. Choice &amp; AI adoption.
                 </div>
-              </div>
-              <div class="faculty-card">
+              </a>
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/mike-lepech-b6553b9/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Michael Lepech on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="ML">
                   <img
                     src="images/professors/michael-lepech.jpg"
@@ -2601,8 +2703,14 @@
                 <div class="faculty-role">
                   AI for products &amp; services that scale.
                 </div>
-              </div>
-              <div class="faculty-card">
+              </a>
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/dan-klein-02a633/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Dan Klein on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="DK">
                   <img
                     src="images/professors/dan-klein.jpg"
@@ -2614,8 +2722,14 @@
                 <div class="faculty-role">
                   Storytelling &amp; improvisation for leaders.
                 </div>
-              </div>
-              <div class="faculty-card">
+              </a>
+              <a
+                class="faculty-card"
+                href="https://www.linkedin.com/in/maciejkraus/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Michael Kraus on LinkedIn"
+              >
                 <div class="faculty-photo" data-initials="MK">
                   <img
                     src="images/professors/maciej-kraus.jpeg"
@@ -2627,99 +2741,66 @@
                 <div class="faculty-role">
                   Pricing strategy. Capturing more value.
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </details>
       </div>
     </section>
 
-    <!-- ======================= WHO'S IN THE ROOM (Criteria) ======================= -->
-    <section class="section">
-      <div class="container">
-        <div class="section-num">07 / The brief</div>
-        <div class="section-head">
-          <h2 class="display">Who's in the room.</h2>
-          <span class="section-meta">Selection criteria · Class of '26</span>
-        </div>
-        <div class="criteria">
-          <div class="criterion">
-            <span class="criterion-mark" aria-hidden="true"></span>
-            <h3>Founder, co-founder, or CEO.</h3>
-            <p>Of a Ukrainian-built or Ukrainian-led company.</p>
-          </div>
-          <div class="criterion">
-            <span class="criterion-mark" aria-hidden="true"></span>
-            <h3>Past the scramble.</h3>
-            <p>Real revenue, growing team, product-market fit.</p>
-          </div>
-          <div class="criterion">
-            <span class="criterion-mark" aria-hidden="true"></span>
-            <h3>Ready to learn alongside peers.</h3>
-            <p>Curious and generous – here to give as much as take.</p>
-          </div>
-          <div class="criterion">
-            <span class="criterion-mark" aria-hidden="true"></span>
-            <h3>The full week.</h3>
-            <p>Available at Stanford 16 – 21 August 2026.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ======================= WHAT YOU WALK AWAY WITH ======================= -->
     <section class="section">
       <div class="container">
-        <div class="section-num">04 / Outcomes</div>
+        <div class="section-num">03 / Outcomes</div>
         <div class="section-head">
           <h2 class="display">What you walk away with.</h2>
         </div>
         <div class="outcomes">
           <div class="outcome">
             <div class="outcome-num">01</div>
-            <h3>Scale without losing what made you great.</h3>
+            <h3>Direct access to the tech frontier.</h3>
             <p>
-              Frameworks from Rao &amp; Sutton to spread mindset, not just
-              headcount.
+              Explore the frontier of Silicon Valley – from AI and company
+              building to where technology can create real value for your
+              business.
             </p>
           </div>
           <div class="outcome">
             <div class="outcome-num">02</div>
-            <h3>Sharper economics &amp; pricing.</h3>
+            <h3>A global founder network that lasts</h3>
             <p>
-              Stress-test growth, segment willingness-to-pay, capture more
-              value.
+              Connect with founders from 55+ markets, learn from peers who have
+              faced similar challenges, and build relationships that go beyond
+              the program. Entrepreneurship shouldn’t be lonely.
             </p>
           </div>
           <div class="outcome">
             <div class="outcome-num">03</div>
-            <h3>Communication, leadership &amp; storytelling.</h3>
-            <p>
-              A sharper voice for pitches, all-hands, and high-stakes moments.
-            </p>
+            <h3>A scaling playbook that protects what works.</h3>
+            <p>Grow without losing your speed, culture, and edge.</p>
           </div>
           <div class="outcome">
             <div class="outcome-num">04</div>
-            <h3>Negotiation excellence.</h3>
+            <h3>A sharper pricing strategy.</h3>
             <p>
-              Win the moments that matter – hiring top talent, closing
-              investors, structuring deals.
+              Stress-test your business model and unit economics, understand
+              what customers are willing to pay, and capture more value.
             </p>
           </div>
           <div class="outcome">
             <div class="outcome-num">05</div>
-            <h3>Growth-capital playbook.</h3>
+            <h3>A growth-capital roadmap.</h3>
             <p>
-              Current VC trends and a practical playbook for attracting growth
-              capital.
+              Understand what investors look for now — and how to raise the
+              right capital for your next stage.
             </p>
           </div>
           <div class="outcome">
             <div class="outcome-num">06</div>
-            <h3>AI bets you can defend.</h3>
+            <h3>A stronger founder voice.</h3>
             <p>
-              See where AI creates real value and how to get your org to adopt
-              it.
+              Sharpen how you communicate your vision to investors, teams,
+              boards, partners, and the people you need to bring along.
             </p>
           </div>
         </div>
@@ -2729,7 +2810,7 @@
     <!-- ======================= PACKAGES ======================= -->
     <section class="section">
       <div class="container">
-        <div class="section-num">05 / Choose your path</div>
+        <div class="section-num">04 / Choose your path</div>
         <div class="section-head">
           <h2 class="display">Three ways in.</h2>
           <span class="section-meta"
@@ -2782,10 +2863,6 @@
             <div class="pkg-teaser-meta">
               22 – 24 August · Pricing and details to follow
             </div>
-            <a class="pkg-teaser-cta" href="#register">
-              Claim interest
-              <span class="arrow">→</span>
-            </a>
           </article>
 
           <article class="pkg teaser">
@@ -2800,10 +2877,6 @@
               San Francisco on Ukrainian Independence Day.
             </p>
             <div class="pkg-teaser-meta">24 August · Details to follow</div>
-            <a class="pkg-teaser-cta" href="#register">
-              Claim interest
-              <span class="arrow">→</span>
-            </a>
           </article>
         </div>
       </div>
@@ -2812,7 +2885,7 @@
     <!-- ======================= VOICES ======================= -->
     <section class="section" id="newsroom">
       <div class="container">
-        <div class="section-num">06 / Voices</div>
+        <div class="section-num">05 / Voices</div>
         <div class="section-head">
           <h2 class="display">From the room.</h2>
         </div>
@@ -2827,9 +2900,7 @@
             </div>
             <div class="quote-mark">"</div>
             <blockquote class="q-text">
-              For the first time, Ukrainian tech has its own room at Stanford.
-              The Ukrainian founders we select will be the ones defining the
-              next decade of this ecosystem. The room is the product.
+              We are bringing some of Ukraine’s most ambitious founders and builders to Silicon Valley — to learn at one of the world’s top business schools, connect with global entrepreneurs, and get direct exposure to the heart of the tech ecosystem. This dedicated Endeavor cohort is an exceptional opportunity for Ukrainian founders and a powerful step for Ukraine’s tech ecosystem.
             </blockquote>
             <div class="q-attrib">
               <div class="q-name">Sviatoslav Sviatnenko</div>
@@ -2846,10 +2917,7 @@
             </div>
             <div class="quote-mark">"</div>
             <blockquote class="q-text">
-              Stanford shamelessly breaks the frame of what you think is real.
-              The chance to meet entrepreneurs who grew up in completely
-              different cultures, who face challenges I could not have imagined
-              – that reshapes what you think is possible.
+              Stanford shamelessly breaks the frame of what you think is real. The chance to meet entrepreneurs who grew up in completely different cultures, who face challenges I could not have imagined — that reshapes what you think is possible. That makes me even more excited for this year’s Ukraine Class at Stanford.
             </blockquote>
             <div class="q-attrib">
               <div class="q-name">Roman Prokofiev</div>
@@ -2861,20 +2929,18 @@
             <div class="q-avatar">
               <img
                 alt="Nataliya Anon"
-                src="images/speakers/nataliya-anon.jpg"
+                src="images/speakers/anton-borzov.PNG"
               />
             </div>
             <div class="quote-mark">"</div>
             <blockquote class="q-text">
-              Stanford GSB changed how I think about building companies.
-              Bringing Ukrainian founders into that same environment – in one
-              cohort – is exactly the kind of multiplier Ukrainian tech needs
-              right now.
+              The Innovation & Growth Program is something truly unique. It changes the way you think about building companies — not only because of the curriculum, but because of the people in the room. You meet founders from completely different markets and realize that great entrepreneurship happens everywhere. I still come back to the ideas, conversations, and energy from that week. I can only imagine how powerful this year’s dedicated Ukraine cohort will be.
             </blockquote>
             <div class="q-attrib">
-              <div class="q-name">Nataliya Anon</div>
+              <div class="q-name">Anton Borzov</div>
               <div class="q-role">
-                Founder, Svitla Systems · Endeavor UA Board · GSB Alumna
+                Partner at STRATMINDS. Product Design at WhatsApp · Endeavor UA
+                Board · Class of ’25
               </div>
             </div>
           </figure>
@@ -2885,7 +2951,7 @@
     <!-- ======================= FAQ ======================= -->
     <section class="section">
       <div class="container">
-        <div class="section-num">08 / Questions</div>
+        <div class="section-num">06 / Questions</div>
         <div class="section-head">
           <h2 class="display">Things founders ask.</h2>
           <span class="section-meta">If yours isn't here, write to us</span>
@@ -3010,56 +3076,285 @@
         </div>
 
         <div class="eoi-grid">
-          <form class="eoi-form" id="apply-form" novalidate>
+          <form class="eoi-form" id="apply-form">
             <div
               class="eoi-form-fields"
               style="display: flex; flex-direction: column; gap: 18px"
             >
-              <div class="field">
-                <label for="name">Full name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  autocomplete="name"
-                />
-              </div>
-              <div class="field">
-                <label for="company">Company</label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  required
-                  autocomplete="organization"
-                />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  autocomplete="email"
-                />
-              </div>
+              <fieldset class="eoi-section">
+                <legend class="eoi-section-title">Basics</legend>
+                <div class="field">
+                  <label for="fullName"
+                    >Full name<span class="field-required" aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="field">
+                  <label for="linkedIn"
+                    >LinkedIn<span class="field-required" aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    id="linkedIn"
+                    name="linkedIn"
+                    type="text"
+                    required
+                    placeholder="https://linkedin.com/in/..."
+                    autocomplete="url"
+                  />
+                </div>
+                <div class="field">
+                  <label for="email"
+                    >Email<span class="field-required" aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="field">
+                  <label for="companyName"
+                    >Company name<span class="field-required" aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    id="companyName"
+                    name="companyName"
+                    type="text"
+                    required
+                    autocomplete="organization"
+                  />
+                </div>
+                <div class="field">
+                  <label for="yourRole"
+                    >Your role<span class="field-required" aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    id="yourRole"
+                    name="yourRole"
+                    type="text"
+                    required
+                    autocomplete="organization-title"
+                  />
+                </div>
+                <div class="field">
+                  <label for="companyUrl"
+                    >Company website or LinkedIn<span
+                      class="field-required"
+                      aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    id="companyUrl"
+                    name="companyUrl"
+                    type="url"
+                    required
+                    placeholder="https://..."
+                    autocomplete="url"
+                  />
+                </div>
+                <div class="field">
+                  <label for="companyDescription"
+                    >What does your company do and what makes it unique?<span
+                      class="field-required"
+                      aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <textarea
+                    id="companyDescription"
+                    name="companyDescription"
+                    required
+                    maxlength="250"
+                    rows="3"
+                  ></textarea>
+                  <span class="field-hint">Max 250 characters</span>
+                </div>
+              </fieldset>
+
+              <fieldset class="eoi-section">
+                <legend class="eoi-section-title">Traction</legend>
+                <div class="field">
+                  <label for="teamSize"
+                    >Full-time team size<span
+                      class="field-required"
+                      aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <select id="teamSize" name="teamSize" required>
+                    <option value="" disabled selected hidden>Select...</option>
+                    <option value="1–10">1–10</option>
+                    <option value="11–50">11–50</option>
+                    <option value="51–150">51–150</option>
+                    <option value="150+">150+</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="annualRevenue">Annual revenue, 2025 (USD)</label>
+                  <select id="annualRevenue" name="annualRevenue">
+                    <option value="" selected>Prefer not to say</option>
+                    <option value="pre-rev">pre-rev</option>
+                    <option value="&lt;$500K">&lt;$500K</option>
+                    <option value="$500K–$2M">$500K–$2M</option>
+                    <option value="$2M–$10M">$2M–$10M</option>
+                    <option value="$10-50M">$10-50M</option>
+                    <option value="50+">50+</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="revenueGrowth"
+                    >Revenue growth, last 12 months</label
+                  >
+                  <select id="revenueGrowth" name="revenueGrowth">
+                    <option value="" selected>Prefer not to say</option>
+                    <option value="declining">declining</option>
+                    <option value="flat">flat</option>
+                    <option value="&lt;50%">&lt;50%</option>
+                    <option value="50–100%">50–100%</option>
+                    <option value="100%+">100%+</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="fundingStatus"
+                    >Funding status<span class="field-required" aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <select id="fundingStatus" name="fundingStatus" required>
+                    <option value="" disabled selected hidden>Select...</option>
+                    <option value="bootstrapped">bootstrapped</option>
+                    <option value="pre-seed">pre-seed</option>
+                    <option value="seed">seed</option>
+                    <option value="Series A">Series A</option>
+                    <option value="B+">B+</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="pitchDeck"
+                    >Company overview (pitch deck / one pager)</label
+                  >
+                  <input
+                    id="pitchDeck"
+                    name="pitchDeck"
+                    type="file"
+                    accept="application/pdf,.pdf"
+                  />
+                  <span class="field-hint">PDF only, max 10 MB</span>
+                </div>
+              </fieldset>
+
+              <fieldset class="eoi-section">
+                <legend class="eoi-section-title">Founder</legend>
+                <div class="field">
+                  <label for="hardestProblem"
+                    >What is the hardest problem you're solving right now?<span
+                      class="field-required"
+                      aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <textarea
+                    id="hardestProblem"
+                    name="hardestProblem"
+                    required
+                    maxlength="250"
+                    rows="3"
+                  ></textarea>
+                  <span class="field-hint">Max 250 characters</span>
+                </div>
+                <div class="field">
+                  <label for="whyStanford"
+                    >Why you should be part of Stanford Class of 2026?<span
+                      class="field-required"
+                      aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <textarea
+                    id="whyStanford"
+                    name="whyStanford"
+                    required
+                    maxlength="250"
+                    rows="3"
+                  ></textarea>
+                  <span class="field-hint">Max 250 characters</span>
+                </div>
+              </fieldset>
+
+              <fieldset class="eoi-section">
+                <legend class="eoi-section-title">Logistics</legend>
+                <div class="field">
+                  <label for="availabilityWeek"
+                    >Available for the full week, 16–21 Aug 2026?<span
+                      class="field-required"
+                      aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <select id="availabilityWeek" name="availabilityWeek" required>
+                    <option value="" disabled selected hidden>Select...</option>
+                    <option value="Yes">Yes</option>
+                    <option value="Likely">Likely</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="visaStatus"
+                    >US visa status<span class="field-required" aria-hidden="true"
+                      >*</span
+                    ></label
+                  >
+                  <select id="visaStatus" name="visaStatus" required>
+                    <option value="" disabled selected hidden>Select...</option>
+                    <option value="Have one">Have one</option>
+                    <option value="Need to apply">Need to apply</option>
+                  </select>
+                </div>
+              </fieldset>
+
               <div class="field-honeypot" aria-hidden="true">
-                <label for="website">Website</label>
                 <input
-                  id="website"
-                  name="website"
+                  id="botCheck"
+                  name="botCheck"
                   type="text"
+                  value=""
                   tabindex="-1"
                   autocomplete="off"
+                  readonly
+                  data-lpignore="true"
+                  data-1p-ignore
+                  data-form-type="other"
                 />
               </div>
               <label class="consent">
                 <input id="consent" name="consent" type="checkbox" required />
                 <span
                   >I agree to Endeavor Ukraine processing my data for the
-                  purpose of Class of '26 selection. See our
+                  purpose of Class of '26 selection.<span
+                    class="field-required"
+                    aria-hidden="true"
+                    >*</span
+                  >
+                  See our
                   <a
                     href="https://endeavor.org/privacy-policy/"
                     target="_blank"
@@ -3089,9 +3384,7 @@
           <aside class="eoi-side">
             <div class="eoi-side-block">
               <div class="label">Programme dates</div>
-              <div class="value">
-                16 - 21 August 2026. Put 4-6 weeks (block with visa)
-              </div>
+              <div class="value">16 - 21 August 2026</div>
             </div>
             <div class="eoi-side-block">
               <div class="label">Cohort size</div>
@@ -3109,8 +3402,7 @@
               <div class="label">A word on US visas</div>
               <div class="value">
                 Most Ukrainian founders need a B-1/B-2 visa. We provide
-                invitation letters once you're confirmed – budget 4 – 8 weeks
-                for processing.
+                invitation letters once you're confirmed.
               </div>
             </div>
           </aside>
@@ -3169,7 +3461,191 @@
     </footer>
 
     <script>
-      const EOI_WEBHOOK_URL = ""; // Paste your Google Apps Script / Make / Power Automate webhook URL here.
+      const EOI_WEBHOOK_URL =
+        "https://script.google.com/macros/s/AKfycbzqrMg2ChfYklpQZfv8mxj5dfO1ZVf-AquhfBUBBAiYaeYPFCJam-_MJvQGh4x9-95U/exec";
+      const EOI_MAX_PDF_BYTES = 10 * 1024 * 1024;
+
+      function readFileAsBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const base64 = reader.result.split(",")[1];
+            resolve(base64);
+          };
+          reader.onerror = () => reject(new Error("Could not read file"));
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function getFormValue(form, name) {
+        const field = form.elements.namedItem(name);
+        if (!field) return "";
+        const value =
+          field instanceof RadioNodeList ? field.value : field.value;
+        return String(value ?? "").trim();
+      }
+
+      function getFormSelectValue(form, name) {
+        const field = form.elements.namedItem(name);
+        if (!field) return "";
+        const value =
+          field instanceof RadioNodeList ? field.value : field.value;
+        return String(value ?? "");
+      }
+
+      function getFormFile(form, name) {
+        const field = form.elements.namedItem(name);
+        if (!field || field instanceof RadioNodeList || !field.files) {
+          return null;
+        }
+        return field.files[0] || null;
+      }
+
+      function showEoiStatus(status, message, type) {
+        status.textContent = message;
+        status.className = type ? `eoi-status ${type}` : "eoi-status";
+        status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      async function collectEoiPayload(form) {
+        const pitchDeckFile = getFormFile(form, "pitchDeck");
+        let pitchDeck = null;
+
+        if (pitchDeckFile) {
+          if (pitchDeckFile.type !== "application/pdf") {
+            throw new Error("Pitch deck must be a PDF file.");
+          }
+          if (pitchDeckFile.size > EOI_MAX_PDF_BYTES) {
+            throw new Error("Pitch deck must be 10 MB or smaller.");
+          }
+          pitchDeck = {
+            fileName: pitchDeckFile.name,
+            mimeType: pitchDeckFile.type,
+            sizeBytes: pitchDeckFile.size,
+            base64: await readFileAsBase64(pitchDeckFile),
+          };
+        }
+
+        return {
+          fullName: getFormValue(form, "fullName"),
+          linkedIn: getFormValue(form, "linkedIn"),
+          email: getFormValue(form, "email"),
+          companyName: getFormValue(form, "companyName"),
+          role: getFormValue(form, "yourRole"),
+          companyUrl: getFormValue(form, "companyUrl"),
+          companyDescription: getFormValue(form, "companyDescription"),
+          teamSize: getFormSelectValue(form, "teamSize"),
+          annualRevenue: getFormSelectValue(form, "annualRevenue"),
+          revenueGrowth: getFormSelectValue(form, "revenueGrowth"),
+          fundingStatus: getFormSelectValue(form, "fundingStatus"),
+          pitchDeck,
+          hardestProblem: getFormValue(form, "hardestProblem"),
+          whyStanford: getFormValue(form, "whyStanford"),
+          availabilityWeek: getFormSelectValue(form, "availabilityWeek"),
+          visaStatus: getFormSelectValue(form, "visaStatus"),
+          consent: true,
+          submittedAt: new Date().toISOString(),
+          source: window.location.href,
+        };
+      }
+
+      function looksLikeEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      }
+
+      function looksLikeUrl(value) {
+        try {
+          const normalized = /^https?:\/\//i.test(value)
+            ? value
+            : `https://${value}`;
+          new URL(normalized);
+          return true;
+        } catch {
+          return false;
+        }
+      }
+
+      function validateEoiPayload(data) {
+        const required = [
+          ["fullName", "fullName", "Full name"],
+          ["linkedIn", "linkedIn", "LinkedIn"],
+          ["email", "email", "Email"],
+          ["companyName", "companyName", "Company name"],
+          ["role", "yourRole", "Your role"],
+          ["companyUrl", "companyUrl", "Company website or LinkedIn"],
+          ["companyDescription", "companyDescription", "Company description"],
+          ["teamSize", "teamSize", "Full-time team size"],
+          ["fundingStatus", "fundingStatus", "Funding status"],
+          ["hardestProblem", "hardestProblem", "Hardest problem"],
+          ["whyStanford", "whyStanford", "Why Stanford Class of 2026"],
+          ["availabilityWeek", "availabilityWeek", "Availability for the full week"],
+          ["visaStatus", "visaStatus", "US visa status"],
+        ];
+
+        for (const [key, fieldName, label] of required) {
+          if (!data[key]) {
+            return { field: fieldName, message: `Please fill out: ${label}.` };
+          }
+        }
+
+        if (!looksLikeEmail(data.email)) {
+          return {
+            field: "email",
+            message: "Please enter a valid email address.",
+          };
+        }
+
+        if (!looksLikeUrl(data.linkedIn)) {
+          return {
+            field: "linkedIn",
+            message: "Please enter a valid LinkedIn URL.",
+          };
+        }
+
+        if (!looksLikeUrl(data.companyUrl)) {
+          return {
+            field: "companyUrl",
+            message: "Please enter a valid company website or LinkedIn URL.",
+          };
+        }
+
+        if (data.companyDescription.length > 250) {
+          return {
+            field: "companyDescription",
+            message: "Company description must be 250 characters or fewer.",
+          };
+        }
+        if (data.hardestProblem.length > 250) {
+          return {
+            field: "hardestProblem",
+            message: "Hardest problem answer must be 250 characters or fewer.",
+          };
+        }
+        if (data.whyStanford.length > 250) {
+          return {
+            field: "whyStanford",
+            message: "Why Stanford answer must be 250 characters or fewer.",
+          };
+        }
+
+        return null;
+      }
+
+      function focusFormField(form, fieldName) {
+        const field = form.elements.namedItem(fieldName);
+        if (!field || field instanceof RadioNodeList) return;
+        field.focus();
+        field.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function showEoiSuccess(form, status) {
+        form.classList.add("submitted");
+        status.textContent = "";
+        status.className = "eoi-status success";
+        if (typeof gtag === "function") {
+          gtag("event", "eoi_submit", { event_category: "engagement" });
+        }
+      }
 
       function initLogoCarousel() {
         const carousel = document.querySelector(".logo-carousel");
@@ -3179,7 +3655,8 @@
         const sourceGroup = carousel.querySelector("[data-logo-set]");
         if (!track || !sourceGroup) return;
 
-        const baseCount = Number(sourceGroup.dataset.baseCount || 0) ||
+        const baseCount =
+          Number(sourceGroup.dataset.baseCount || 0) ||
           sourceGroup.querySelectorAll(".logo-carousel__item").length;
         if (!sourceGroup.dataset.baseCount) {
           sourceGroup.dataset.baseCount = String(baseCount);
@@ -3230,8 +3707,8 @@
                   img.addEventListener("load", resolve, { once: true });
                   img.addEventListener("error", resolve, { once: true });
                 }
-              })
-          )
+              }),
+          ),
         ).then(initLogoCarousel);
       } else {
         initLogoCarousel();
@@ -3292,48 +3769,76 @@
         });
       });
 
-      document
-        .getElementById("apply-form")
-        .addEventListener("submit", async function (e) {
+      const applyForm = document.getElementById("apply-form");
+      if (applyForm) {
+        const honeypot = applyForm.elements.namedItem("botCheck");
+        if (honeypot && !(honeypot instanceof RadioNodeList)) {
+          honeypot.value = "";
+          honeypot.readOnly = true;
+        }
+
+        applyForm.addEventListener("submit", async function (e) {
           e.preventDefault();
-          const honeypot = document.getElementById("website").value;
-          if (honeypot) return;
 
           const form = e.currentTarget;
           const status = document.getElementById("eoiStatus");
-          const consent = document.getElementById("consent").checked;
+          if (!status) return;
+
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          const consent = document.getElementById("consent")?.checked;
           if (!consent) {
-            status.textContent = "Please confirm consent before submitting.";
-            status.className = "eoi-status error";
+            showEoiStatus(
+              status,
+              "Please confirm consent before submitting.",
+              "error",
+            );
             return;
           }
-          const data = {
-            name: form.name.value.trim(),
-            company: form.company.value.trim(),
-            email: form.email.value.trim(),
-            consent: true,
-            submittedAt: new Date().toISOString(),
-            source: window.location.href,
-          };
-          if (!data.name || !data.company || !data.email) {
-            status.textContent = "Please fill out all required fields.";
-            status.className = "eoi-status error";
+
+          // Honeypot: bots fill hidden fields; real users never touch it.
+          if (getFormValue(form, "botCheck")) {
+            showEoiSuccess(form, status);
             return;
           }
+
+          let data;
+          try {
+            data = await collectEoiPayload(form);
+          } catch (error) {
+            showEoiStatus(
+              status,
+              error.message || "Could not process your submission.",
+              "error",
+            );
+            return;
+          }
+
+          const validationError = validateEoiPayload(data);
+          if (validationError) {
+            focusFormField(form, validationError.field);
+            showEoiStatus(status, validationError.message, "error");
+            return;
+          }
+
+          showEoiStatus(status, "Sending...", "");
 
           if (!EOI_WEBHOOK_URL) {
-            status.textContent = "Webhook URL is not configured yet.";
-            status.className = "eoi-status error";
+            showEoiStatus(
+              status,
+              "Could not send your details right now. Please try again later.",
+              "error",
+            );
             return;
           }
-
-          status.textContent = "Sending...";
-          status.className = "eoi-status";
 
           try {
             const response = await fetch(EOI_WEBHOOK_URL, {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
+              headers: { "Content-Type": "text/plain;charset=utf-8" },
               body: JSON.stringify(data),
             });
 
@@ -3341,19 +3846,16 @@
               throw new Error("Submission failed");
             }
 
-            form.classList.add("submitted");
-            status.textContent = "";
-            status.className = "eoi-status success";
+            showEoiSuccess(form, status);
           } catch (error) {
-            status.textContent =
-              "Could not send your details right now. Please try again.";
-            status.className = "eoi-status error";
-          }
-
-          if (typeof gtag === "function") {
-            gtag("event", "eoi_submit", { event_category: "engagement" });
+            showEoiStatus(
+              status,
+              "Could not send your details right now. Please try again.",
+              "error",
+            );
           }
         });
+      }
     </script>
   </body>
 </html>
