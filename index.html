@@ -71,6 +71,7 @@
         --yellow: #ffe38a;
         --yellow-soft: #fff4c8;
         --hero-blue: #0d1daf;
+        --secondary-blue: #273ae9;
         --hero-purple: #ac27f4;
         --hero-yellow: #ffcf53;
         --hero-video-bg: #0b0b0c;
@@ -501,10 +502,19 @@
 
       /* ===================== SECTION DIVIDERS via spacing only ===================== */
       .section {
-        padding: clamp(56px, 7vw, 100px) 0;
+        padding: clamp(40px, 5vw, 68px) 0;
       }
       .section + .section {
         border-top: 1px solid var(--line);
+      }
+      .logo-carousel-section + .section,
+      #the-program + .section--outcomes,
+      .section--outcomes + .section,
+      #newsroom + .section {
+        padding-top: clamp(28px, 4vw, 44px);
+      }
+      #newsroom.section {
+        padding-bottom: clamp(28px, 4vw, 44px);
       }
 
       .section-num {
@@ -533,7 +543,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 16px;
-        margin-bottom: clamp(28px, 3vw, 44px);
+        margin-bottom: clamp(22px, 2.5vw, 36px);
       }
       .section-head h2 {
         font-family: var(--font-body);
@@ -741,14 +751,61 @@
         transform: translateY(-2px);
         box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
       }
+      .component--soon {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        padding: 0;
+      }
+      .component--soon .component--soon-blur {
+        display: grid;
+        grid-template-columns: 60px 1fr auto;
+        gap: 24px;
+        align-items: center;
+        padding: 28px 30px;
+        filter: blur(11px);
+        opacity: 0.55;
+        pointer-events: none;
+        user-select: none;
+      }
+      @media (max-width: 720px) {
+        .component--soon .component--soon-blur {
+          grid-template-columns: 50px 1fr;
+          padding: 22px;
+        }
+        .component--soon .component--soon-blur .duration {
+          grid-column: 1 / -1;
+          justify-self: start;
+        }
+      }
+      .component--soon-message {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 28px 32px;
+        text-align: center;
+      }
+      .component--soon-title {
+        font-family: var(--font-body);
+        font-size: clamp(20px, 2.2vw, 26px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        color: var(--text);
+        margin: 0;
+        max-width: 760px;
+      }
 
       /* Inside Stanford Week */
       .inside-week {
         margin-top: 36px;
         padding: 32px 30px;
         border-radius: var(--radius-md);
-        background: var(--surface-1);
-        border: 1px solid var(--line);
+        background: rgba(9, 225, 205, 0.14);
+        border: 1px solid rgba(9, 225, 205, 0.28);
       }
       .inside-week-head {
         display: flex;
@@ -953,7 +1010,7 @@
       .outcome {
         padding: 30px 26px;
         border-radius: var(--radius-md);
-        background: var(--surface-1);
+        background: var(--white);
         border: 1px solid var(--line);
         display: flex;
         flex-direction: column;
@@ -987,6 +1044,21 @@
         color: var(--text-soft);
         line-height: 1.5;
         margin-top: auto;
+      }
+
+      .section--outcomes {
+        background: var(--secondary-blue);
+        color: var(--white);
+        padding: clamp(40px, 5vw, 68px) 0;
+      }
+      .section--outcomes + .section {
+        border-top: none;
+      }
+      .section--outcomes .section-num {
+        color: rgba(255, 255, 255, 0.72);
+      }
+      .section--outcomes .section-head h2 {
+        color: var(--white);
       }
 
       /* ===================== CRITERIA ===================== */
@@ -1122,7 +1194,26 @@
 
       /* ===================== LOGO CAROUSEL SECTION ===================== */
       .logo-carousel-section {
-        padding: clamp(56px, 7vw, 100px) 0 clamp(24px, 4vw, 56px);
+        padding: clamp(32px, 4vw, 48px) 0 clamp(12px, 2vw, 20px);
+      }
+      .logo-carousel-section .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(16px, 2vw, 22px);
+      }
+      .logo-carousel-note {
+        margin: 0;
+        padding: 10px 22px;
+        border-radius: 999px;
+        background: var(--ink);
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
       }
 
       /* ===================== PROGRAMME VISUAL ===================== */
@@ -1377,7 +1468,7 @@
       .timeline {
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 0;
         counter-reset: step;
         position: relative;
@@ -1458,15 +1549,15 @@
 
       /* ===================== VISA NOTE ===================== */
       .eoi-side-block.visa-note {
-        background: var(--mint);
-        color: var(--ink);
+        background: var(--ink);
+        color: var(--white);
         border-color: transparent;
       }
       .eoi-side-block.visa-note .label {
-        color: rgba(0, 0, 0, 0.6);
+        color: rgba(255, 255, 255, 0.62);
       }
       .eoi-side-block.visa-note .value {
-        color: var(--ink);
+        color: var(--white);
         font-family: var(--font-body);
         font-size: 14px;
         font-weight: 400;
@@ -1672,6 +1763,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
+        align-items: stretch;
       }
       @media (max-width: 900px) {
         .quotes {
@@ -1681,12 +1773,9 @@
       .quote {
         padding: 32px 28px;
         border-radius: var(--radius-md);
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto 1fr auto;
-        column-gap: 16px;
-        row-gap: 14px;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         min-height: 320px;
         background: var(--surface-1);
         border: 1px solid var(--line);
@@ -1707,9 +1796,15 @@
         color: var(--white);
         border-color: transparent;
       }
+      .quote-top {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 16px;
+        align-items: center;
+        margin-bottom: 14px;
+        flex-shrink: 0;
+      }
       .q-avatar {
-        grid-column: 1;
-        grid-row: 1;
         width: 56px;
         height: 56px;
         border-radius: 50%;
@@ -1723,10 +1818,7 @@
         display: block;
       }
       .quote-mark {
-        grid-column: 2;
-        grid-row: 1;
         justify-self: end;
-        align-self: center;
         font-family: var(--font-body);
         font-size: 56px;
         line-height: 0.5;
@@ -1747,12 +1839,11 @@
       }
 
       .q-text {
-        grid-column: 1 / -1;
-        grid-row: 2;
+        flex: 1 1 auto;
+        margin: 0 0 14px;
         font-size: 15.5px;
         line-height: 1.5;
         color: var(--ink);
-        align-self: start;
       }
       .quote.mint .q-text {
         color: var(--ink);
@@ -1764,11 +1855,12 @@
         color: rgba(255, 255, 255, 0.92);
       }
       .q-attrib {
-        grid-column: 1 / -1;
-        grid-row: 3;
+        flex-shrink: 0;
+        height: 90px;
+        box-sizing: border-box;
         padding-top: 18px;
         border-top: 1px solid var(--line);
-        align-self: end;
+        margin-top: auto;
       }
       .quote.mint .q-attrib {
         border-top-color: rgba(0, 0, 0, 0.18);
@@ -1832,7 +1924,7 @@
       /* ===================== EXPRESS INTEREST ===================== */
       .eoi {
         padding: clamp(72px, 9vw, 130px) 0;
-        background: var(--yellow-soft);
+        background: var(--hero-yellow);
         color: var(--ink);
         position: relative;
         overflow: hidden;
@@ -1900,6 +1992,31 @@
         display: flex;
         flex-direction: column;
         gap: 18px;
+      }
+      .eoi-form-toggle {
+        width: 100%;
+      }
+      .eoi-form-panel {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.55s ease,
+          opacity 0.4s ease;
+      }
+      .eoi-form.is-open .eoi-form-panel {
+        max-height: 12000px;
+        opacity: 1;
+      }
+      .eoi-form.is-open .eoi-form-toggle {
+        display: none;
+      }
+      .eoi-form.submitted .eoi-form-toggle {
+        display: none;
+      }
+      .eoi-form.submitted .eoi-form-panel {
+        max-height: 12000px;
+        opacity: 1;
       }
       .field {
         display: flex;
@@ -2379,9 +2496,10 @@
 
     <!-- ======================= LOGO CAROUSEL ======================= -->
     <section class="logo-carousel-section">
-      <div class="logo-carousel" aria-label="Partner companies">
-        <div class="logo-carousel__track">
-          <div class="logo-carousel__group" data-logo-set>
+      <div class="container">
+        <div class="logo-carousel" aria-label="Partner companies">
+          <div class="logo-carousel__track">
+            <div class="logo-carousel__group" data-logo-set>
             <div class="logo-carousel__item">
               <img
                 src="images/logos/mono.png"
@@ -2440,6 +2558,8 @@
             </div>
           </div>
         </div>
+        </div>
+        <p class="logo-carousel-note">Already joining the program</p>
       </div>
     </section>
 
@@ -2448,8 +2568,7 @@
       <div class="container">
         <div class="section-num">01 / The Itinerary</div>
         <div class="section-head">
-          <h2 class="display">The Programme.</h2>
-          <span class="section-meta">16 – 24 Aug 2026</span>
+          <h2 class="display">The Programme</h2>
         </div>
 
         <div class="components">
@@ -2475,33 +2594,47 @@
             <span class="duration">6 days</span>
           </div>
 
-          <div class="component accent">
-            <div class="comp-num">II</div>
-            <div>
-              <div class="comp-meta">22 – 24 Aug · Bay Area</div>
-              <div class="comp-title">
-                Endeavor Sprint &amp; Silicon Valley Tour
+          <div class="component accent component--soon">
+            <div class="component--soon-blur" aria-hidden="true">
+              <div class="comp-num">II</div>
+              <div>
+                <div class="comp-meta">22 – 24 Aug · Bay Area</div>
+                <div class="comp-title">
+                  Endeavor Sprint &amp; Silicon Valley Tour
+                </div>
+                <p class="comp-desc">
+                  Meet iconic founders and operators in San Francisco and the
+                  greater Bay Area – company visits, capital, and a visit to Napa
+                  Valley.
+                </p>
               </div>
-              <p class="comp-desc">
-                Meet iconic founders and operators in San Francisco and the
-                greater Bay Area – company visits, capital, and a visit to Napa
-                Valley.
+              <span class="duration">3 days</span>
+            </div>
+            <div class="component--soon-message">
+              <p class="component--soon-title">
+                Additional Silicon Valley programming – coming soon
               </p>
             </div>
-            <span class="duration">3 days</span>
           </div>
 
-          <div class="component">
-            <div class="comp-num">III</div>
-            <div>
-              <div class="comp-meta">24 Aug · San Francisco</div>
-              <div class="comp-title">Meet &amp; Grit — Independence Day</div>
-              <p class="comp-desc">
-                A community gathering of Ukrainian and global founders, hosted
-                in San Francisco on Ukrainian Independence Day.
+          <div class="component component--soon">
+            <div class="component--soon-blur" aria-hidden="true">
+              <div class="comp-num">III</div>
+              <div>
+                <div class="comp-meta">24 Aug · San Francisco</div>
+                <div class="comp-title">Meet &amp; Grit — Independence Day</div>
+                <p class="comp-desc">
+                  A community gathering of Ukrainian and global founders, hosted
+                  in San Francisco on Ukrainian Independence Day.
+                </p>
+              </div>
+              <span class="duration">1 day</span>
+            </div>
+            <div class="component--soon-message">
+              <p class="component--soon-title">
+                Additional Silicon Valley programming – coming soon
               </p>
             </div>
-            <span class="duration">1 day</span>
           </div>
         </div>
 
@@ -2565,7 +2698,7 @@
     </section>
 
     <!-- ======================= FACULTY ======================= -->
-    <section class="section" id="faculty">
+    <!-- <section class="section" id="faculty">
       <div class="container">
         <div class="section-num">02 / Faculty</div>
         <details class="faculty-panel" open>
@@ -2765,14 +2898,14 @@
           </div>
         </details>
       </div>
-    </section>
+    </section> -->
 
     <!-- ======================= WHAT YOU WALK AWAY WITH ======================= -->
-    <section class="section">
+    <section class="section section--outcomes">
       <div class="container">
-        <div class="section-num">03 / Outcomes</div>
+        <div class="section-num">02 / Outcomes</div>
         <div class="section-head">
-          <h2 class="display">What you walk away with.</h2>
+          <h2 class="display">What you walk away with</h2>
         </div>
         <div class="outcomes">
           <div class="outcome">
@@ -2827,7 +2960,7 @@
     </section>
 
     <!-- ======================= PACKAGES ======================= -->
-    <section class="section">
+    <!-- <section class="section">
       <div class="container">
         <div class="section-num">04 / Choose your path</div>
         <div class="section-head">
@@ -2899,25 +3032,27 @@
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ======================= VOICES ======================= -->
     <section class="section" id="newsroom">
       <div class="container">
-        <div class="section-num">05 / Voices</div>
+        <div class="section-num">03 / Voices</div>
         <div class="section-head">
-          <h2 class="display">From the room.</h2>
+          <h2 class="display">From the room</h2>
         </div>
 
         <div class="quotes">
           <figure class="quote mint">
-            <div class="q-avatar">
-              <img
-                alt="Sviatoslav Sviatnenko"
-                src="images/speakers/sviatoslav-sviatnenko.jpeg"
-              />
+            <div class="quote-top">
+              <div class="q-avatar">
+                <img
+                  alt="Sviatoslav Sviatnenko"
+                  src="images/speakers/sviatoslav-sviatnenko.jpeg"
+                />
+              </div>
+              <div class="quote-mark">"</div>
             </div>
-            <div class="quote-mark">"</div>
             <blockquote class="q-text">
               We are bringing some of Ukraine’s most ambitious founders and builders to Silicon Valley — to learn at one of the world’s top business schools, connect with global entrepreneurs, and get direct exposure to the heart of the tech ecosystem. This dedicated Endeavor cohort is an exceptional opportunity for Ukrainian founders and a powerful step for Ukraine’s tech ecosystem.
             </blockquote>
@@ -2928,13 +3063,15 @@
           </figure>
 
           <figure class="quote ink">
-            <div class="q-avatar">
-              <img
-                alt="Roman Prokofiev"
-                src="images/speakers/roman-prokofiev.jpg"
-              />
+            <div class="quote-top">
+              <div class="q-avatar">
+                <img
+                  alt="Roman Prokofiev"
+                  src="images/speakers/roman-prokofiev.jpg"
+                />
+              </div>
+              <div class="quote-mark">"</div>
             </div>
-            <div class="quote-mark">"</div>
             <blockquote class="q-text">
               Stanford shamelessly breaks the frame of what you think is real. The chance to meet entrepreneurs who grew up in completely different cultures, who face challenges I could not have imagined — that reshapes what you think is possible. That makes me even more excited for this year’s Ukraine Class at Stanford.
             </blockquote>
@@ -2945,13 +3082,15 @@
           </figure>
 
           <figure class="quote yellow">
-            <div class="q-avatar">
-              <img
-                alt="Nataliya Anon"
-                src="images/speakers/anton-borzov.PNG"
-              />
+            <div class="quote-top">
+              <div class="q-avatar">
+                <img
+                  alt="Nataliya Anon"
+                  src="images/speakers/anton-borzov.PNG"
+                />
+              </div>
+              <div class="quote-mark">"</div>
             </div>
-            <div class="quote-mark">"</div>
             <blockquote class="q-text">
               The Innovation & Growth Program is something truly unique. It changes the way you think about building companies — not only because of the curriculum, but because of the people in the room. You meet founders from completely different markets and realize that great entrepreneurship happens everywhere. I still come back to the ideas, conversations, and energy from that week. I can only imagine how powerful this year’s dedicated Ukraine cohort will be.
             </blockquote>
@@ -2970,9 +3109,9 @@
     <!-- ======================= FAQ ======================= -->
     <section class="section">
       <div class="container">
-        <div class="section-num">06 / Questions</div>
+        <div class="section-num">04 / Questions</div>
         <div class="section-head">
-          <h2 class="display">Things founders ask.</h2>
+          <h2 class="display">Things founders ask</h2>
           <span class="section-meta">If yours isn't here, write to us</span>
         </div>
         <div class="faq-list">
@@ -3054,7 +3193,7 @@
         <span class="eoi-eyebrow">Share your interest</span>
         <h2 class="display">
           Class of <span class="accent">'26</span><br />– we're putting the room
-          together.
+          together
         </h2>
         <p class="eoi-sub">
           We're taking 50 Ukrainian founders to Stanford this August. Seats are
@@ -3085,17 +3224,22 @@
               <span class="t-when">16-21 August</span
               ><span class="t-what">Stanford GSB</span>
             </li>
-            <li>
-              <span class="t-when">22-24 August</span
-              ><span class="t-what"
-                >Optional SV Tour &amp; Independence Day</span
-              >
-            </li>
           </ol>
         </div>
 
         <div class="eoi-grid">
           <form class="eoi-form" id="apply-form">
+            <button
+              type="button"
+              class="cta eoi-form-toggle"
+              id="eoiFormToggle"
+              aria-expanded="false"
+              aria-controls="eoiFormPanel"
+            >
+              Application form
+              <span class="arrow">→</span>
+            </button>
+            <div class="eoi-form-panel" id="eoiFormPanel">
             <div
               class="eoi-form-fields"
               style="display: flex; flex-direction: column; gap: 18px"
@@ -3175,7 +3319,7 @@
                 </div>
                 <div class="field">
                   <label for="companyUrl"
-                    >Company website or LinkedIn<span
+                    >Company website<span
                       class="field-required"
                       aria-hidden="true"
                       >*</span
@@ -3396,6 +3540,7 @@
               <div class="check-circle">✓</div>
               <h3>Got it.</h3>
               <p>Thanks for sharing. We'll be in touch.</p>
+            </div>
             </div>
           </form>
 
@@ -3657,7 +3802,10 @@
       }
 
       function showEoiSuccess(form, status) {
-        form.classList.add("submitted");
+        form.classList.add("is-open", "submitted");
+        document
+          .getElementById("eoiFormToggle")
+          ?.setAttribute("aria-expanded", "true");
         status.textContent = "";
         status.className = "eoi-status success";
         if (typeof gtag === "function") {
@@ -3788,6 +3936,35 @@
       });
 
       const applyForm = document.getElementById("apply-form");
+      const eoiFormToggle = document.getElementById("eoiFormToggle");
+      const eoiFormPanel = document.getElementById("eoiFormPanel");
+
+      function openEoiForm() {
+        if (!applyForm) return;
+        applyForm.classList.add("is-open");
+        if (eoiFormToggle) {
+          eoiFormToggle.setAttribute("aria-expanded", "true");
+        }
+        window.setTimeout(() => {
+          const firstField = applyForm.querySelector(
+            "input:not([type='hidden']):not([readonly]), select, textarea",
+          );
+          firstField?.focus();
+        }, 450);
+      }
+
+      if (eoiFormToggle && applyForm) {
+        eoiFormToggle.addEventListener("click", openEoiForm);
+      }
+
+      document
+        .querySelectorAll('a[href="#apply-form"], a[href="#register"]')
+        .forEach((link) => {
+          link.addEventListener("click", () => {
+            window.setTimeout(openEoiForm, 550);
+          });
+        });
+
       if (applyForm) {
         const honeypot = applyForm.elements.namedItem("botCheck");
         if (honeypot && !(honeypot instanceof RadioNodeList)) {
