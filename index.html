@@ -784,7 +784,7 @@
         border: 1px solid var(--line);
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 8px;
         transition:
           border-color 0.2s,
           transform 0.2s;
@@ -794,21 +794,32 @@
         transform: translateY(-2px);
       }
       .track-idx {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
+        font-size: 13.5px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
         color: var(--mint);
       }
       .track-title {
         font-family: var(--font-body);
         font-weight: 600;
-        font-size: 15.5px;
+        font-size: 17px;
         letter-spacing: -0.01em;
+        line-height: 1.35;
         color: var(--text);
+      }
+      .track-desc {
+        font-family: var(--font-body);
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.45;
+        color: var(--text-soft);
+        margin: 0;
       }
       .track-faculty {
         font-size: 13px;
         color: var(--text-mute);
+        margin-top: 2px;
       }
 
       /* ===================== FACULTY ===================== */
@@ -1691,6 +1702,11 @@
         color: var(--ink);
         border-color: transparent;
       }
+      .quote.ink {
+        background: var(--ink);
+        color: var(--white);
+        border-color: transparent;
+      }
       .q-avatar {
         grid-column: 1;
         grid-row: 1;
@@ -1725,6 +1741,10 @@
         color: var(--ink);
         opacity: 0.45;
       }
+      .quote.ink .quote-mark {
+        color: var(--mint);
+        opacity: 0.55;
+      }
 
       .q-text {
         grid-column: 1 / -1;
@@ -1740,6 +1760,9 @@
       .quote.yellow .q-text {
         color: var(--ink);
       }
+      .quote.ink .q-text {
+        color: rgba(255, 255, 255, 0.92);
+      }
       .q-attrib {
         grid-column: 1 / -1;
         grid-row: 3;
@@ -1752,6 +1775,9 @@
       }
       .quote.yellow .q-attrib {
         border-top-color: rgba(0, 0, 0, 0.18);
+      }
+      .quote.ink .q-attrib {
+        border-top-color: rgba(255, 255, 255, 0.16);
       }
       .q-name {
         font-family: var(--font-body);
@@ -1772,6 +1798,12 @@
       }
       .quote.mint .q-role {
         color: rgba(0, 0, 0, 0.6);
+      }
+      .quote.ink .q-name {
+        color: var(--white);
+      }
+      .quote.ink .q-role {
+        color: rgba(255, 255, 255, 0.62);
       }
       .q-tag {
         display: inline-flex;
@@ -2411,23 +2443,6 @@
       </div>
     </section>
 
-    <!-- ======================= PROGRAMME VISUAL ======================= -->
-    <section class="programme-visual">
-      <div class="container">
-        <div
-          class="programme-visual__frame programme-visual__frame--has-image"
-          role="img"
-          aria-label="Programme visual"
-        >
-          <img
-            src="images/programme-visual.jpg"
-            alt="Programme visual"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </section>
-
     <!-- ======================= PROGRAMME ======================= -->
     <section class="section" id="the-program">
       <div class="container">
@@ -2502,12 +2517,14 @@
             <div class="track">
               <span class="track-idx">01 · Scale &amp; Growth</span>
               <span class="track-title"
-                >How great companies grow without losing what made them great. <br />
-                <br />
+                >How great companies grow without losing what made them
+                great.</span
+              >
+              <p class="track-desc">
                 For founders who are scaling teams, products, markets, and
                 operations — and need to make better decisions on strategy,
                 pricing, fundraising, and growth capital.
-              </span>
+              </p>
               <span class="track-faculty"
                 >George Foster, Huggy Rao, Michael Kraus, Nir Halevy</span
               >
@@ -2516,12 +2533,13 @@
               <span class="track-idx">02 · Innovating with AI</span>
               <span class="track-title"
                 >Where AI creates real value — and how to get your organization
-                to adopt it. <br />
-                <br />
+                to adopt it.</span
+              >
+              <p class="track-desc">
                 For founders who want to move beyond AI hype and understand how
                 to use technology to build better products, improve operations,
-                and unlock new growth.</span
-              >
+                and unlock new growth.
+              </p>
               <span class="track-faculty"
                 >Diyi Yang, Michael Lepech, Jonathan Levav</span
               >
@@ -2529,13 +2547,14 @@
             <div class="track">
               <span class="track-idx">03 · Communication & Leadership </span>
               <span class="track-title"
-                >Executive presence, storytelling, and collaboration at scale.
-                <br />
-                <br />
+                >Executive presence, storytelling, and collaboration at
+                scale.</span
+              >
+              <p class="track-desc">
                 For founders who need to align teams, communicate clearly with
                 investors and boards, and lead people through the complexity
                 that comes with growth.
-              </span>
+              </p>
               <span class="track-faculty"
                 >Diyi Yang, Michael Lepech, Jonathan Levav</span
               >
@@ -2758,7 +2777,7 @@
         <div class="outcomes">
           <div class="outcome">
             <div class="outcome-num">01</div>
-            <h3>Direct access to the tech frontier.</h3>
+            <h3>Direct access to the tech frontier</h3>
             <p>
               Explore the frontier of Silicon Valley – from AI and company
               building to where technology can create real value for your
@@ -2776,12 +2795,12 @@
           </div>
           <div class="outcome">
             <div class="outcome-num">03</div>
-            <h3>A scaling playbook that protects what works.</h3>
+            <h3>A scaling playbook that protects what works</h3>
             <p>Grow without losing your speed, culture, and edge.</p>
           </div>
           <div class="outcome">
             <div class="outcome-num">04</div>
-            <h3>A sharper pricing strategy.</h3>
+            <h3>A sharper pricing strategy</h3>
             <p>
               Stress-test your business model and unit economics, understand
               what customers are willing to pay, and capture more value.
@@ -2789,7 +2808,7 @@
           </div>
           <div class="outcome">
             <div class="outcome-num">05</div>
-            <h3>A growth-capital roadmap.</h3>
+            <h3>A growth-capital roadmap</h3>
             <p>
               Understand what investors look for now — and how to raise the
               right capital for your next stage.
@@ -2797,7 +2816,7 @@
           </div>
           <div class="outcome">
             <div class="outcome-num">06</div>
-            <h3>A stronger founder voice.</h3>
+            <h3>A stronger founder voice</h3>
             <p>
               Sharpen how you communicate your vision to investors, teams,
               boards, partners, and the people you need to bring along.
@@ -2908,7 +2927,7 @@
             </div>
           </figure>
 
-          <figure class="quote">
+          <figure class="quote ink">
             <div class="q-avatar">
               <img
                 alt="Roman Prokofiev"
@@ -3226,7 +3245,6 @@
                   >
                   <select id="revenueGrowth" name="revenueGrowth">
                     <option value="" selected>Prefer not to say</option>
-                    <option value="declining">declining</option>
                     <option value="flat">flat</option>
                     <option value="&lt;50%">&lt;50%</option>
                     <option value="50–100%">50–100%</option>
