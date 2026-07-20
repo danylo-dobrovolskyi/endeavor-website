@@ -457,10 +457,15 @@
       /* Key facts strip */
       .facts {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 14px;
         margin-top: clamp(40px, 5vw, 60px);
         align-items: stretch;
+      }
+      @media (max-width: 1100px) {
+        .facts {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
       @media (max-width: 900px) {
         .facts {
@@ -794,54 +799,6 @@
         transform: translateY(-2px);
         box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
       }
-      .component--soon {
-        position: relative;
-        overflow: hidden;
-        display: block;
-        padding: 0;
-      }
-      .component--soon .component--soon-blur {
-        display: grid;
-        grid-template-columns: 60px 1fr auto;
-        gap: 24px;
-        align-items: center;
-        padding: 28px 30px;
-        filter: blur(11px);
-        opacity: 0.55;
-        pointer-events: none;
-        user-select: none;
-      }
-      @media (max-width: 720px) {
-        .component--soon .component--soon-blur {
-          grid-template-columns: 50px 1fr;
-          padding: 22px;
-        }
-        .component--soon .component--soon-blur .duration {
-          grid-column: 1 / -1;
-          justify-self: start;
-        }
-      }
-      .component--soon-message {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 28px 32px;
-        text-align: center;
-      }
-      .component--soon-title {
-        font-family: var(--font-body);
-        font-size: clamp(20px, 2.2vw, 26px);
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        line-height: 1.2;
-        color: var(--text);
-        margin: 0;
-        max-width: 760px;
-      }
-
       /* Inside Stanford Week */
       .inside-week {
         margin-top: 36px;
@@ -2613,9 +2570,19 @@
               </p>
             </div>
           </div>
-          <div class="fact yellow">
+          <div class="fact mint">
             <div>
               <span class="fact-idx">03</span>
+              <div class="fact-num">15-16<small>August</small></div>
+            </div>
+            <div>
+              <div class="fact-rule"></div>
+              <p class="fact-body">Endeavor Sprint</p>
+            </div>
+          </div>
+          <div class="fact yellow">
+            <div>
+              <span class="fact-idx">04</span>
               <div class="fact-num">16-21<small>st August</small></div>
             </div>
             <div>
@@ -2625,12 +2592,12 @@
           </div>
           <div class="fact mint">
             <div>
-              <span class="fact-idx">04</span>
-              <div class="fact-num">21-24<small>th August</small></div>
+              <span class="fact-idx">05</span>
+              <div class="fact-num">21<small>August</small></div>
             </div>
             <div>
               <div class="fact-rule"></div>
-              <p class="fact-body">Additional programming in Silicon Valley</p>
+              <p class="fact-body">Endeavor Ukraine Meet &amp; Grit</p>
             </div>
           </div>
         </div>
@@ -2722,27 +2689,44 @@
             <span class="duration">6 days</span>
           </div>
 
-          <div class="component accent component--soon">
-            <div class="component--soon-blur" aria-hidden="true">
-              <div class="comp-num">II</div>
-              <div>
-                <div class="comp-meta">22 – 24 Aug · Bay Area</div>
-                <div class="comp-title">
-                  Endeavor Sprint &amp; Silicon Valley Tour
-                </div>
-                <p class="comp-desc">
-                  Meet iconic founders and operators in San Francisco and the
-                  greater Bay Area – company visits, capital, and a visit to
-                  Napa Valley.
-                </p>
+          <div class="component accent">
+            <div class="comp-num">II</div>
+            <div>
+              <div class="comp-meta">21 Aug</div>
+              <div class="comp-title">
+                Endeavor Ukraine Meet &amp; Grit
               </div>
-              <span class="duration">3 days</span>
-            </div>
-            <div class="component--soon-message">
-              <p class="component--soon-title">
-                Flagship Meet & Grit Community Event – coming soon
+              <p class="comp-desc">
+                One special evening, just ahead of Ukraine's Independence Day,
+                with founders, investors, and ecosystem builders – all in one
+                room. Expect unfiltered founder stories, live music, a charity
+                auction, and the kind of networking that turns into real
+                friendships.
               </p>
             </div>
+            <a
+              class="duration"
+              href="https://luma.com/meetandgritsv"
+              target="_blank"
+              rel="noopener"
+              >Register here</a
+            >
+          </div>
+
+          <div class="component mint">
+            <div class="comp-num">III</div>
+            <div>
+              <div class="comp-meta">15 – 16 Aug</div>
+              <div class="comp-title">
+                Endeavor Sprint
+              </div>
+              <p class="comp-desc">
+                Two days exploring California the way locals do – Pacific
+                coastline, legendary landscapes and top network connections.
+                Founders-only format.
+              </p>
+            </div>
+            <span class="duration">2 days</span>
           </div>
         </div>
 
